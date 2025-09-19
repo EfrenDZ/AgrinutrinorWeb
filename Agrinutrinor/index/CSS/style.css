@@ -181,7 +181,7 @@ header {
     background-position: center;
     width: 100%;
     /*El ancho es igual al de la ventana*/
-    aspect-ratio: 8000 / 3838;
+    aspect-ratio: 2000 / 959.5;
     /*El alto se calcula automaticamente*/
     position: relative;
 }
@@ -262,7 +262,7 @@ header {
     background-size: contain;
     background-position: center;
     width: 100%;
-    aspect-ratio: 8000 / 3244;
+    aspect-ratio: 2000 / 811;
     position: relative;
 }
 
@@ -377,7 +377,7 @@ h3 {
     background-size: contain;
     background-position: center;
     width: 100%;
-    aspect-ratio: 8000 / 3809;
+    aspect-ratio: 2000 / 952.25;
     position: relative;
 }
 
@@ -400,7 +400,7 @@ h3 {
     background-size: contain;
     background-position: center;
     width: 100%;
-    aspect-ratio: 8000 / 3924;
+    aspect-ratio: 2000 / 981;
     position: relative;
 }
 
@@ -443,7 +443,7 @@ h3 {
     background-size: contain;
     background-position: center;
     width: 100%;
-    aspect-ratio: 8000 / 3924;
+    aspect-ratio: 2000 / 981;
     position: relative;
 }
 
@@ -549,11 +549,19 @@ h3 {
         height: 10vw;
         margin-bottom: 1vw;
     }
-    
+    .beneficios p{
+    font-size: 2vw;
+    max-width: 80vw;
+    line-height: 1;
+    margin-top: 0vw;
+}
+
     .beneficio p {
     font-size: 2vw;
     font-weight: 700;
 }
+
+
 }
 
 .contenidoContacto {
@@ -580,7 +588,7 @@ h3 {
     background-size: contain;
     background-position: center;
     width: 100%;
-    aspect-ratio: 8000 / 2358;
+    aspect-ratio: 2000 / 589.5;
     position: relative;
 }
 

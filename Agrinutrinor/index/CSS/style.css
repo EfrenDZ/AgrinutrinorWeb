@@ -16,6 +16,16 @@ h4 {
     font-family: sans-serif
 }
 
+
+.index,
+.nosotros,
+.marcas,
+.zonas,
+.beneficios,
+.contacto {
+    margin-bottom: -1px;  /* Eliminar espacio entre secciones */
+}
+
 p {
     font-size: 2rem;
     color: white;
@@ -636,4 +646,22 @@ footer p {
     text-align: right;
     font-size: 1.3rem;
     color: var(--verdeOscuro);
+}
+
+
+
+
+
+
+
+
+/*PRODUCTOS SECCION*/
+.contenido-principal{
+    background-image: url(https://raw.githubusercontent.com/EfrenDZ/AgrinutrinorImg/refs/heads/main/BANNER.png);
+       background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    aspect-ratio: 2000 / 589.5;
+    position: relative;
 }

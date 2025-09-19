@@ -530,9 +530,10 @@ h3 {
         /* Cambia el comportamiento para pantallas pequeñas */
         flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea */
         justify-content: center; /* Centra los elementos */
-        gap: .5vw; /* Reduce el espacio entre íconos para móviles */
-        margin-top: 5vw; /* Ajusta el margen superior */
-        max-width: 80vw; /* Limita el ancho del contenedor para un mejor control */
+        gap: .2vw; /* Reduce el espacio entre íconos para móviles */
+        margin-top: 1vw; /* Ajusta el margen superior */
+        max-width: 70vw; /* Limita el ancho del contenedor para un mejor control */
+        z-index: 2;
     }
 
     .iconosBeneficios .beneficio {
@@ -546,9 +547,13 @@ h3 {
     .iconosBeneficios img {
         width: 10vw; /* Aumenta un poco el tamaño de las imágenes para que sean más visibles */
         height: 10vw;
-        margin-bottom: 2vw;
+        margin-bottom: 1vw;
     }
     
+    .beneficio p {
+    font-size: 2vw;
+    font-weight: 700;
+}
 }
 
 .contenidoContacto {
@@ -561,6 +566,12 @@ h3 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .contenidoContacto {
+        top: 10%;
+    }
 }
 
 .contacto {

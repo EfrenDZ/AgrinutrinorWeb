@@ -1,0 +1,620 @@
+html {
+    scroll-behavior: smooth;
+}
+
+
+:root {
+    --verdeOscuro: #004437;
+    --verdeClaro: #8DD600;
+    --azul: #050461;
+}
+
+p,
+h2,
+h3,
+h4 {
+    font-family: sans-serif
+}
+
+p {
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    line-height: 1.5;
+    /* Altura entre lineas */
+    margin-top: center;
+    /* Espacio arriba */
+    margin-left: center;
+    /* Espacio a los lados */
+    margin-right: 2rem;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory;
+    /*Agregar el scroll que se detiene*/
+}
+
+header {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 3%;
+    position: fixed;
+    z-index: 1000;
+    width: 94%;
+}
+
+
+.logo {
+    width: 15rem;
+    display: block;
+    align-items: left;
+}
+
+.nav-list {
+    display: flex;
+    gap: 20px;
+    /* Espacio entre los elementos del menú */
+    align-items: center;
+    list-style: none;
+    font-size: 18px;
+}
+
+.nav-list a {
+    text-decoration: none;
+    position: relative;
+    color: gray;
+    font-weight: bolder;
+}
+
+.nav-list a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 4px;
+    background-color: gray;
+    bottom: -5px;
+    /* Ajusta la posición vertical de la línea */
+    left: 0;
+    transition: 0.3s;
+}
+
+.nav-list a:hover::after {
+    width: 100%;
+    font-size: bolder;
+}
+
+.iconos-contacto {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.iconos-contacto img {
+    width: 2rem;
+    display: block;
+}
+
+.nav-list li {
+    position: relative;
+}
+
+.submenuMarcas {
+    display: none;
+    position: absolute;
+    top: 100%;
+    /* justo debajo del item padre */
+    left: 0;
+    background-color: #fff;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border: 1px solid #ccc;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.submenuMarcas li a {
+    display: block;
+    padding: 8px 12px;
+    color: #000;
+    text-decoration: none;
+}
+
+.todasMarcas:hover .submenuMarcas {
+    display: block;
+}
+
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+        position: static;
+        width: 100%;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        width: 100%;
+        gap: 20px;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .nav-list a {
+        padding: 10px;
+    }
+
+    .nav-list a:hover::after {
+        width: 0;
+    }
+
+    .submenuMarcas {
+        position: static;
+        width: 100%;
+        border: none;
+        background-color: #f9f9f9;
+        margin-top: 5px;
+    }
+
+    .todasMarcas:hover .submenuMarcas {
+        display: block;
+    }
+}
+
+/* SECCION INDEX */
+.index {
+    background-image: url(../img/1-index/PORTADA.png);
+    background-repeat: no-repeat;
+    /*La imagen no se repite si no llena el area*/
+    background-size: contain;
+    /*Se ve completa*/
+    background-position: center;
+    width: 100%;
+    /*El ancho es igual al de la ventana*/
+    aspect-ratio: 8000 / 3838;
+    /*El alto se calcula automaticamente*/
+    position: relative;
+}
+
+/*Dentro se pueden poner otros elementos*/
+
+
+.contenidoindex {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logoBlanco {
+    display: flex;
+    object-fit: contain;
+    margin-bottom: 2rem;
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    width: 22vw;
+    height: 10vw;
+}
+
+.textoPortada {
+    position: absolute;
+    top: 17vw;
+    right: 9vw;
+    height: 35vw;
+    width: 40vw;
+    /* Responsive: el ancho cambia con la ventana */
+    max-width: 45rem;
+    font-size: clamp(1rem, 2vw, 2rem);
+    /* Responsive font size */
+    line-height: 1.2;
+    /* Espaciado entre líneas */
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    white-space: normal;
+    /* Permite varias líneas */
+}
+
+.textoLogoPortada1 {
+    font-size: 1.5rem;
+    font-weight: 100;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.textoLogoPortada2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
+
+    @media (max-width: 768px) {
+    .textoPortada {
+        top: 13vw;
+        right: 4vw;
+        height: 35vw;
+        min-width: 5rem;
+    }
+    }
+
+
+
+
+/* SECCION NOSOTROS */
+.nosotros {
+    background-image: url(../img/2-nosotros/FONDO.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    aspect-ratio: 8000 / 3244;
+    position: relative;
+}
+
+.contenidoNosotros {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    top: -20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h3 {
+    color: white;
+    text-align: center;
+    font-weight: 50vw;
+    font-size: 2vw;
+    margin: 0vw;
+    padding: 0vws;
+    color: var(--verdeOscuro);
+
+}
+
+.tituloNosotrosGrande {
+    color: white;
+    text-align: center;
+    font-size: 5vw;
+    margin: 0;
+    padding: 0;
+    font-weight: bolder;
+
+}
+
+.etiqueta {
+    display: inline-block;
+    /* Para que el fondo solo abarque el texto */
+    background-color: var(--verdeClaro);
+    padding: .2vw .5vw;
+    /* Espaciado interno */
+    border-radius: .5vw;
+    /* Esquinas redondeadas */
+    font-weight: bold;
+    margin-bottom: -.5vw;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+    /* Sombra */
+}
+
+.tituloNosotros3 {
+    color: var(--verdeClaro);
+    text-align: center;
+    font-weight: 800;
+    font-size: 2vw;
+    font-family: sans-serif;
+    letter-spacing: .1vw;
+    /* Espacio entre letras */
+    margin-top: 1vw;
+    /* Espacio arriba */
+}
+
+.contenidoNosotros p,
+.contenidoBeneficios p {
+    font-size: 1.2vw;
+    color: white;
+    text-align: center;
+    font-weight: 400;
+    line-height: 1.3;
+    /* Altura entre lineas */
+    margin-top: .9vw;
+    /* Espacio arriba */
+    margin-left: 3vw;
+    /* Espacio a los lados */
+    margin-right: 3vw;
+    max-width: 55vw;
+    /* Ancho maximo del parrafo */
+}
+
+@media (max-width: 768px) {
+    h3 {
+        font-size: 3vw;
+        margin-top: 4vw;
+    }
+
+    .tituloNosotrosGrande {
+        font-size: 5vw;
+    }
+
+    .tituloNosotros3 {
+        font-size: 3vw;
+    }
+
+    .contenidoNosotros p,
+.contenidoBeneficios p {
+        font-size: 2vw;
+        max-width: 80vw;
+        line-height: 1;
+        margin-top: -2vw;
+
+    }
+
+}
+
+
+
+
+/* SECCION MARCAS */
+.marcas {
+    background-image: url(../img/3-marcas/FONDO.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    aspect-ratio: 8000 / 3809;
+    position: relative;
+}
+
+.marcas h2 {
+    color: var(--verdeOscuro)
+}
+
+.marcas p {
+    color: var(--verdeOscuro);
+    margin-top: 1vw;
+}
+
+
+
+
+/* SECCION ZONAS */
+.zonas {
+    background-image: url(../img/5-Zonas/FONDO.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    aspect-ratio: 8000 / 3924;
+    position: relative;
+}
+
+.contenidoZonas {
+    display: flex;
+    margin-right: 5vw;
+
+}
+
+
+.zonas h2 {
+    color: var(--azul)
+}
+
+.tituloZonas {
+    margin-top: 2vw;
+    text-align: right;
+}
+
+.zonas img {
+    display: relative;
+    margin: 2vw 8vw;
+    width: 50vw;
+    height: 35vw;
+    justify-content: left;
+}
+
+.zonas p {
+    color: var(--azul);
+    font-size: 1.5vw;
+    text-align: right;
+}
+
+
+
+/* SECCION BENEFICIOS Y CONTACTO */
+.beneficios {
+    background-image: url(../img/6-beneficios/FONDO.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    aspect-ratio: 8000 / 3924;
+    position: relative;
+}
+
+
+.etiqueta2 {
+    display: inline-block;
+    /* Para que el fondo solo abarque el texto */
+    background-color: var(--azul);
+    padding: 3px 6px;
+    /* Espaciado interno */
+    border-radius: 2px;
+    /* Esquinas redondeadas */
+    font-weight: bold;
+    margin-bottom: -1rem;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+    /* Sombra */
+}
+
+
+
+.contenidoBeneficios {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    top: 13%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.tituloBeneficios {
+    color: white;
+    text-align: center;
+    font-weight: 800;
+    font-size: 2rem;
+    font-family: sans-serif;
+    letter-spacing: .1rem;
+    /* Espacio entre letras */
+    margin-top: 1rem;
+    /* Espacio arriba */
+}
+
+.iconosBeneficios {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 6rem;
+    /* Espacio entre los íconos */
+    margin-top: 2rem;
+}
+
+.iconosBeneficios .beneficio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 13vw;
+}
+
+.iconosBeneficios img {
+    width: 10vw;
+    /* Tamaño pequeño y uniforme */
+    height: 10vw;
+    margin-bottom: .7vw;
+    flex-wrap: wrap;
+}
+
+.beneficio p {
+    font-size: 1.4vw;
+    color: var(--azul);
+    text-align: center;
+    font-weight: 500;
+    line-height: 1.3;
+    /* Altura entre lineas */
+    margin: 0;
+    /* Espacio arriba */
+}
+
+@media (max-width: 768px) {
+.iconosBeneficios {
+        /* Cambia el comportamiento para pantallas pequeñas */
+        flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea */
+        justify-content: center; /* Centra los elementos */
+        gap: .5vw; /* Reduce el espacio entre íconos para móviles */
+        margin-top: 5vw; /* Ajusta el margen superior */
+        max-width: 80vw; /* Limita el ancho del contenedor para un mejor control */
+    }
+
+    .iconosBeneficios .beneficio {
+        /* Define el tamaño de cada ícono */
+        flex: 0 0 calc(33.33% - 2vw); /* 3 elementos por línea. 
+        33.33% - 2vw (para el espacio) */
+        max-width: unset; /* Reinicia el max-width para que el flex-basis funcione */
+        margin-bottom: 1vw; /* Espacio entre filas */
+    }
+
+    .iconosBeneficios img {
+        width: 10vw; /* Aumenta un poco el tamaño de las imágenes para que sean más visibles */
+        height: 10vw;
+        margin-bottom: 2vw;
+    }
+    
+}
+
+.contenidoContacto {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    top: -10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contacto {
+    background-image: url(../img/7-contacto/FONDO.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    aspect-ratio: 8000 / 2358;
+    position: relative;
+}
+
+.contenidoContacto h2 {
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    /* Borde negro */
+}
+
+
+
+.etiqueta3 {
+    display: inline-block;
+    /* Para que el fondo solo abarque el texto */
+    background-color: var(--verdeClaro);
+    padding: 3px 6px;
+    /* Espaciado interno */
+    border-radius: 10px;
+    /* Esquinas redondeadas */
+    font-weight: bold;
+    margin-bottom: -1rem;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+    /* Sombra */
+}
+
+
+footer {
+    background-color: var(--verdeClaro);
+    padding: 1rem 10%;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer img {
+    width: 2rem;
+    display: block;
+}
+
+footer p {
+    margin: 0;
+    text-align: right;
+    font-size: 1.3rem;
+    color: var(--verdeOscuro);
+}

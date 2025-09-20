@@ -183,7 +183,7 @@ header {
 
 /* SECCION INDEX */
 .index {
-    background-image: url(../img/1-https://res.cloudinary.com/dha3vqp69/image/upload/v1758346912/PORTADA_fcxhsx.jpg/PORTADA.png);
+    background-image: url(https://res.cloudinary.com/dha3vqp69/image/upload/v1758346912/PORTADA_fcxhsx.jpg);
     background-repeat: no-repeat;
     /*La imagen no se repite si no llena el area*/
     background-size: contain;

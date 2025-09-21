@@ -187,13 +187,18 @@ header {
     background-repeat: no-repeat;
     /*La imagen no se repite si no llena el area*/
     background-size: contain;
+        width: 100%;
     /*Se ve completa*/
     background-position: center;
-    width: 100%;
+
     /*El ancho es igual al de la ventana*/
     aspect-ratio: 2000 / 959.5;
     /*El alto se calcula automaticamente*/
     position: relative;
+}
+
+.index-mobile {
+    display: none;
 }
 
 /*Dentro se pueden poner otros elementos*/
@@ -260,9 +265,52 @@ header {
         height: 35vw;
         min-width: 5rem;
     }
+
+.index {
+    /* El gradiente se coloca primero para que se superponga a la imagen */
+    background-image: linear-gradient(to top, #3d895c, rgba(255, 255, 255, 0) 50px), 
+                      url(https://res.cloudinary.com/dha3vqp69/image/upload/v1758346912/PORTADA_fcxhsx.jpg);
+    background-size: 200% 100%, cover;
+    background-position: left center, left center;
+    background-repeat: no-repeat;
+    height: 100vw;
+}
+
+      .index-mobile {
+        /* Muestra el contenedor y establece la segunda mitad del fondo */
+        display: block;
+        background-image: 
+  linear-gradient(to bottom, #3d895c, rgba(255, 255, 255, 0) 50px),
+  linear-gradient(to top, #3d895c, rgba(255, 255, 255, 0) 50px),
+  url(https://res.cloudinary.com/dha3vqp69/image/upload/v1758346912/PORTADA_fcxhsx.jpg);
+        background-size: 250% 100%;
+        background-position: right center;
+        background-repeat: no-repeat;
+        width: 100vw;
+        height: 100vw;
+        aspect-ratio: 2000 / 959.5;
+        
     }
 
+    .logoBlanco {
+    top: 20%;
+    left: 14%;
+    width: 60%;
+    height: 60vw;
+}
 
+.textoPortada {
+    top: 120%;
+    right: 10%;
+    width: 80vw;
+    height: 50vw;
+    max-width: none;
+    font-size: none;
+    font-size: 4.5vw;
+    text-align: left;
+}
+
+}
 
 
 /* SECCION NOSOTROS */
@@ -353,22 +401,32 @@ h3 {
 }
 
 @media (max-width: 768px) {
+    .nosotros {
+        background-size: 200% 100%;
+        background-image: linear-gradient(to bottom, #3d895c, rgba(255, 255, 255, 0) 
+                            50px),url(../img/2-nosotros/FONDO.png);
+        background-position: left center;
+        width: 100vw;
+        height: 100vw;
+    }
+    
+
     h3 {
-        font-size: 3vw;
+        font-size: 5vw;
         margin-top: 4vw;
     }
 
     .tituloNosotrosGrande {
-        font-size: 5vw;
+        font-size: 8vw;
     }
 
     .tituloNosotros3 {
-        font-size: 3vw;
+        font-size: 4vw;
     }
 
     .contenidoNosotros p,
 .contenidoBeneficios p {
-        font-size: 2vw;
+        font-size: 3.2vw;
         max-width: 80vw;
         line-height: 1;
         margin-top: -2vw;
@@ -400,6 +458,14 @@ h3 {
     margin-top: 1vw;
 }
 
+@media (max-width: 768px) {
+    .marcas {
+        background-size: 200% 100%;
+        background-position: left center;
+        width: 100vw;
+        height: 100vw;
+    }
+}
 
 
 

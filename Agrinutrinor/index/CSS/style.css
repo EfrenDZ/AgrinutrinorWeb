@@ -50,53 +50,59 @@ body {
     /*Agregar el scroll que se detiene*/
 }
 
-header {
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 3%;
-    position: fixed;
-    z-index: 1000;
-    width: 94%;
+.navbar {
+    width: 100%;
+    font-size: 18px;
+    position: static;
 }
 
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
 
-.logo {
+.logo img{
     width: 15rem;
+    height: auto;
     display: block;
     align-items: left;
 }
 
-.nav-list {
+.container-fluid {
     display: flex;
-    gap: 20px;
-    /* Espacio entre los elementos del menú */
-    align-items: center;
-    list-style: none;
-    font-size: 18px;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
 }
 
-.nav-list a {
+.navbar-collapse {
+    justify-content: center; /* Centra los elementos de la lista en la barra de navegación */
+}
+
+
+/* Este selector es más específico y solo afectará a los enlaces de la navegación */
+.navbar-nav .nav-link {
     text-decoration: none;
     position: relative;
     color: gray;
     font-weight: bolder;
 }
 
-.nav-list a::after {
+/* Aplica la pseudo-clase a los enlaces de la navegación */
+.navbar-nav .nav-link::after {
     content: '';
     position: absolute;
     width: 0;
     height: 4px;
     background-color: gray;
     bottom: -5px;
-    /* Ajusta la posición vertical de la línea */
     left: 0;
     transition: 0.3s;
 }
 
-.nav-list a:hover::after {
+/* Aplica el hover solo a los enlaces de la navegación */
+.navbar-nav .nav-link:hover::after {
     width: 100%;
     font-size: bolder;
 }
@@ -264,6 +270,7 @@ header {
         right: 4vw;
         height: 35vw;
         min-width: 5rem;
+        font-weight: bolder;
     }
 
 .index {
@@ -430,7 +437,7 @@ h3 {
         max-width: 80vw;
         line-height: 1;
         margin-top: -2vw;
-
+        font-weight: bolder;
     }
 
 }
@@ -601,6 +608,10 @@ h3 {
     /* Espacio arriba */
 }
 
+.fondoBlanco {
+    position: none;
+}
+
 @media (max-width: 768px) {
 .iconosBeneficios {
         /* Cambia el comportamiento para pantallas pequeñas */
@@ -730,4 +741,12 @@ footer p {
     width: 100%;
     aspect-ratio: 2000 / 589.5;
     position: relative;
+}
+
+
+.carousel-inner img {
+    width: 18rem;
+    height: 12rem;
+    object-fit: contain;
+    margin: 0 1rem;
 }

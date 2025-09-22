@@ -1,11 +1,23 @@
 document.addEventListener('DOMContentLoaded', function () {
-  new Splide('#mi-carrusel', {
-    type: 'loop',
-    drag: 'free',
-    focus: 'center',
-    perPage: 3,
-    autoScroll: {
-      speed: 1,
-    },
-  }).mount(window.splide.Extensions);
+    new Splide('#mi-carrusel', {
+        type: 'loop',
+        drag: 'free',
+        focus: 'center',
+        
+        // Configuración para escritorios (pantallas grandes)
+        perPage: 4, 
+
+        // Configuración para dispositivos móviles
+        breakpoints: {
+            768: { // Cuando la pantalla es de 767px o menos
+                perPage: 1, // Muestra solo 1 elemento
+            }
+        },
+
+        autoScroll: {
+            speed: 1,
+        },
+        arrows: true, 
+        pagination: true,
+    }).mount(window.splide.Extensions);
 });

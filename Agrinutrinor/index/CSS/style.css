@@ -245,7 +245,8 @@ body {
 
     @media (max-width: 768px) {
     .textoPortada {
-        top: 13vw;
+        margin-top: 6vw;
+        top: 15vw;
         right: 4vw;
         height: 35vw;
         min-width: 5rem;
@@ -413,10 +414,11 @@ h3 {
 
     .contenidoNosotros p,
 .contenidoBeneficios p {
+
         font-size: 3.2vw;
         max-width: 80vw;
         line-height: 1;
-        margin-top: -2vw;
+        margin-top: -1vw;
         font-weight: bolder;
     }
 
@@ -692,12 +694,13 @@ h3 {
     .contenidoContacto {
         top: 10%;
     }
-}
-
-.fondoBlanco {
+    .fondoBlanco {
     display: block;
     height: 50vw;
 }
+}
+
+
 
 .contacto {
     background-image: url(../img/7-contacto/FONDO.png);
@@ -732,7 +735,7 @@ h3 {
     margin-bottom: -1rem;
     box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
     /* Sombra */
-    font-size: 1.3vw;
+    font-size: 2vw;
 }
 
 
@@ -752,8 +755,14 @@ footer img {
 footer p {
     margin: 0;
     text-align: right;
-    font-size: 2vw;
+    font-size: 1.3vw;
     color: var(--verdeOscuro);
+}
+
+@media (max-width: 768px){
+    footer p{
+        font-size: 2vw
+    }
 }
 
 

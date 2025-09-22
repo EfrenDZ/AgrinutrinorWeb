@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
 
         autoScroll: {
-            speed: 1,
+            speed: 2,
         },
         arrows: true, 
         pagination: true,

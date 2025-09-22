@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const apiUrlBase = '/api'; // Simplemente la ruta relativa
-fetch(`${apiUrlBase}/productos?${params.toString()}`)
+    const apiUrlBase = '/api';
     
     const productContainer = document.getElementById('productos-container');
     const paginationControls = document.getElementById('pagination-controls');
@@ -13,7 +12,6 @@ fetch(`${apiUrlBase}/productos?${params.toString()}`)
     
     let debounceTimeout;
 
-    // --- Esta función ahora devuelve una promesa para saber cuándo termina ---
     function poblarFiltros() {
         return Promise.all([
             fetch(`${apiUrlBase}/marcas`).then(res => res.json()),
@@ -50,11 +48,9 @@ fetch(`${apiUrlBase}/productos?${params.toString()}`)
         brandFiltersContainer.querySelectorAll('input:checked').forEach(chk => {
             params.append('marca', chk.value);
         });
-
         categoryFiltersContainer.querySelectorAll('input:checked').forEach(chk => {
             params.append('categoria', chk.value);
         });
-        
         if (searchInput.value) params.append('search', searchInput.value);
 
         const activePill = brandPillsContainer.querySelector('a.active');
@@ -69,10 +65,9 @@ fetch(`${apiUrlBase}/productos?${params.toString()}`)
                     crearPaginacion(0, 0);
                     return;
                 }
-
                 data.productos.forEach(producto => {
                     const cardHtml = `
-                        <div class="col-sm-6 col-lg-4 mb-4 d-flex align-items-stretch">
+                        <div class="col-sm-6 col-lg-3 mb-4 d-flex align-items-stretch">
                             <div class="card w-100">
                                 <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
                                 <div class="card-body">
@@ -149,17 +144,13 @@ fetch(`${apiUrlBase}/productos?${params.toString()}`)
         cargarProductos(1);
     });
 
-    // --- SECUENCIA DE CARGA INICIAL (ESTE FUE EL CAMBIO CLAVE) ---
     async function init() {
-        // 1. Poblar los filtros y esperar a que termine
         await poblarFiltros();
 
-        // 2. Revisar si la URL trae un filtro de marca
         const urlParams = new URLSearchParams(window.location.search);
         const marcaIdDesdeUrl = urlParams.get('marca');
 
         if (marcaIdDesdeUrl) {
-            // 3. Si hay filtro, activarlo visualmente
             const pill = brandPillsContainer.querySelector(`a[data-marca-id="${marcaIdDesdeUrl}"]`);
             if (pill) pill.classList.add('active');
 
@@ -167,9 +158,8 @@ fetch(`${apiUrlBase}/productos?${params.toString()}`)
             if (checkbox) checkbox.checked = true;
         }
 
-        // 4. Cargar los productos 
         cargarProductos(1);
     }
 
-    init(); // Ejecutar la secuencia de carga
+    init();
 });

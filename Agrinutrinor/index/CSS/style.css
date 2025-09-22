@@ -489,6 +489,7 @@ h3 {
     width: 50vw;
     height: 35vw;
     justify-content: left;
+    z-index: 2;
 }
 
 .zonas p {
@@ -508,12 +509,15 @@ h3 {
     .contenidoZonas img {
         order: 2;
         width: 100%;
+        max-width: 75vw;
         height: auto;
+
     }
 
     .contenidoZonas p {
-        font-size: 5vw;
+        font-size: 4vw;
         text-align: center;
+        
     }
 
     .contenidoZonas h2{
@@ -523,7 +527,7 @@ h3 {
     .zonas {
         background-size: cover; /* Hace que la imagen cubra todo el espacio */
         aspect-ratio: auto; /* Permite que la altura se ajuste automáticamente */
-        height: 100vh; /* Ajusta la altura del contenedor a la altura de la pantalla */
+        height: 100%; /* Ajusta la altura del contenedor a la altura de la pantalla */
     }
 }
 
@@ -567,6 +571,7 @@ h3 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
 }
 
 
@@ -574,11 +579,11 @@ h3 {
     color: white;
     text-align: center;
     font-weight: 800;
-    font-size: 2rem;
+    font-size: 4vw;
     font-family: sans-serif;
     letter-spacing: .1rem;
     /* Espacio entre letras */
-    margin-top: 1rem;
+    margin-top: 1vw;
     /* Espacio arriba */
 }
 
@@ -642,20 +647,30 @@ h3 {
     }
 
     .iconosBeneficios img {
-        width: 10vw; /* Aumenta un poco el tamaño de las imágenes para que sean más visibles */
-        height: 10vw;
+        width: 15vw; /* Aumenta un poco el tamaño de las imágenes para que sean más visibles */
+        height: 15vw;
         margin-bottom: 1vw;
     }
-    .beneficios p{
+    .beneficiosTexto{
+    padding-top: 5vw;
     font-size: 2vw;
     max-width: 80vw;
     line-height: 1;
     margin-top: 0vw;
-}
+        text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
 
+}
     .beneficio p {
     font-size: 2vw;
     font-weight: 700;
+}
+
+.contenidoBeneficios{
+    margin-top: 20vw;
 }
 
 
@@ -677,6 +692,11 @@ h3 {
     .contenidoContacto {
         top: 10%;
     }
+}
+
+.fondoBlanco {
+    display: block;
+    height: 50vw;
 }
 
 .contacto {
@@ -719,7 +739,7 @@ h3 {
 footer {
     background-color: var(--verdeClaro);
     padding: 1rem 10%;
-    font-size: 1rem;
+    font-size: 1vw;
     display: flex;
     justify-content: space-between;
 }
@@ -732,7 +752,7 @@ footer img {
 footer p {
     margin: 0;
     text-align: right;
-    font-size: 1.3rem;
+    font-size: 2vw;
     color: var(--verdeOscuro);
 }
 

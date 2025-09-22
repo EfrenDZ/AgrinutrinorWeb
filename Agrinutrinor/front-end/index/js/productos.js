@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const apiUrlBase = 'http://localhost:3000/api';
+    const apiUrlBase = '/api'; // Simplemente la ruta relativa
+fetch(`${apiUrlBase}/productos?${params.toString()}`)
     
     const productContainer = document.getElementById('productos-container');
     const paginationControls = document.getElementById('pagination-controls');

@@ -3,7 +3,7 @@
     document.addEventListener('DOMContentLoaded', () => {
         const marcasDropdown = document.getElementById('marcas-dropdown');
         if (marcasDropdown) {
-            fetch('http://localhost:3000/api/marcas')
+            fetch('/api/marcas')
                 .then(response => response.json())
                 .then(marcas => {
                     marcasDropdown.innerHTML = ''; // Limpiar por si acaso

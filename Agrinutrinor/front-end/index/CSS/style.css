@@ -2,7 +2,6 @@ html {
     scroll-behavior: smooth;
 }
 
-
 :root {
     --verdeOscuro: #004437;
     --verdeClaro: #8DD600;
@@ -23,7 +22,8 @@ h4 {
 .zonas,
 .beneficios,
 .contacto {
-    margin-bottom: -1px;  /* Eliminar espacio entre secciones */
+    margin-bottom: -1px;
+    /* Eliminar espacio entre secciones */
 }
 
 p {
@@ -42,8 +42,9 @@ p {
 
 html,
 body {
-    margin: 0;
+    margin-top: -2.5vw;
     padding: 0;
+    padding-top: 0vw;
     font-size: 62.5%;
     box-sizing: border-box;
     scroll-snap-type: y mandatory;
@@ -53,7 +54,9 @@ body {
 .navbar {
     width: 100%;
     font-size: 18px;
-    position: static;
+    position: fixed;
+    z-index: 1000;
+    top: 0.00001vw;
 }
 
 .navbar-nav {
@@ -63,7 +66,7 @@ body {
     gap: 2rem;
 }
 
-.logo img{
+.logo img {
     width: 15rem;
     height: auto;
     display: block;
@@ -72,16 +75,19 @@ body {
 
 .container-fluid {
     display: flex;
-    justify-content: center; /* Centra el contenido horizontalmente */
-    align-items: center; /* Centra el contenido verticalmente */
+    justify-content: center;
+    /* Centra el contenido horizontalmente */
+    align-items: center;
+    /* Centra el contenido verticalmente */
 }
 
 .navbar-collapse {
-    justify-content: center; /* Centra los elementos de la lista en la barra de navegación */
+    justify-content: center;
+    /* Centra los elementos de la lista en la barra de navegación */
 }
 
 
-/* Este selector es más específico y solo afectará a los enlaces de la navegación */
+
 .navbar-nav .nav-link {
     text-decoration: none;
     position: relative;
@@ -89,7 +95,6 @@ body {
     font-weight: bolder;
 }
 
-/* Aplica la pseudo-clase a los enlaces de la navegación */
 .navbar-nav .nav-link::after {
     content: '';
     position: absolute;
@@ -101,7 +106,7 @@ body {
     transition: 0.3s;
 }
 
-/* Aplica el hover solo a los enlaces de la navegación */
+/* Aplica el hover solo a los enlaces  */
 .navbar-nav .nav-link:hover::after {
     width: 100%;
     font-size: bolder;
@@ -152,18 +157,6 @@ body {
     .nav-list a:hover::after {
         width: 0;
     }
-
-    .submenuMarcas {
-        position: static;
-        width: 100%;
-        border: none;
-        background-color: #f9f9f9;
-        margin-top: 5px;
-    }
-
-    .todasMarcas:hover .submenuMarcas {
-        display: block;
-    }
 }
 
 /* SECCION INDEX */
@@ -172,7 +165,7 @@ body {
     background-repeat: no-repeat;
     /*La imagen no se repite si no llena el area*/
     background-size: contain;
-        width: 100%;
+    width: 100%;
     /*Se ve completa*/
     background-position: center;
 
@@ -243,7 +236,7 @@ body {
     padding: 0;
 }
 
-    @media (max-width: 768px) {
+@media (max-width: 768px) {
     .textoPortada {
         margin-top: 6vw;
         top: 15vw;
@@ -253,50 +246,50 @@ body {
         font-weight: bolder;
     }
 
-.index {
-    /* El gradiente se coloca primero para que se superponga a la imagen */
-    background-image: linear-gradient(to top, #3d895c, rgba(255, 255, 255, 0) 50px), 
-                      url(https://res.cloudinary.com/dha3vqp69/image/upload/v1758346912/PORTADA_fcxhsx.jpg);
-    background-size: 200% 100%, cover;
-    background-position: left center, left center;
-    background-repeat: no-repeat;
-    height: 100vw;
-    width: 100%;
-}
+    .index {
+        /* El gradiente se coloca primero para que se superponga a la imagen */
+        background-image: linear-gradient(to top, #3d895c, rgba(255, 255, 255, 0) 50px),
+            url(https://res.cloudinary.com/dha3vqp69/image/upload/v1758346912/PORTADA_fcxhsx.jpg);
+        background-size: 200% 100%, cover;
+        background-position: left center, left center;
+        background-repeat: no-repeat;
+        height: 100vw;
+        width: 100%;
+    }
 
-      .index-mobile {
+    .index-mobile {
         /* Muestra el contenedor y establece la segunda mitad del fondo */
         display: block;
-        background-image: 
-  linear-gradient(to bottom, #3d895c, rgba(255, 255, 255, 0) 50px),
-  linear-gradient(to top, #3d895c, rgba(255, 255, 255, 0) 50px),
-  url(https://res.cloudinary.com/dha3vqp69/image/upload/v1758346912/PORTADA_fcxhsx.jpg);
+        background-image:
+            linear-gradient(to bottom, #3d895c, rgba(255, 255, 255, 0) 50px),
+            linear-gradient(to top, #3d895c, rgba(255, 255, 255, 0) 50px),
+            url(https://res.cloudinary.com/dha3vqp69/image/upload/v1758346912/PORTADA_fcxhsx.jpg);
         background-size: 250% 100%;
         background-position: right center;
         background-repeat: no-repeat;
         width: 100%;
         height: 100vw;
         aspect-ratio: 2000 / 959.5;
-        
+
     }
 
     .logoBlanco {
-    top: 20%;
-    left: 14%;
-    width: 60%;
-    height: 60vw;
-}
+        top: 20%;
+        left: 14%;
+        width: 60%;
+        height: 60vw;
+    }
 
-.textoPortada {
-    top: 120%;
-    right: 10%;
-    width: 80vw;
-    height: 50vw;
-    max-width: none;
-    font-size: none;
-    font-size: 4.5vw;
-    text-align: left;
-}
+    .textoPortada {
+        top: 120%;
+        right: 10%;
+        width: 80vw;
+        height: 50vw;
+        max-width: none;
+        font-size: none;
+        font-size: 4.5vw;
+        text-align: left;
+    }
 
 }
 
@@ -391,13 +384,12 @@ h3 {
 @media (max-width: 768px) {
     .nosotros {
         background-size: 200% 100%;
-        background-image: linear-gradient(to bottom, #3d895c, rgba(255, 255, 255, 0) 
-                            50px),url(../img/2-nosotros/FONDO.png);
+        background-image: linear-gradient(to bottom, #3d895c, rgba(255, 255, 255, 0) 50px), url(../img/2-nosotros/FONDO.png);
         background-position: left center;
         width: 100%;
         height: 100vw;
     }
-    
+
 
     h3 {
         font-size: 5vw;
@@ -413,7 +405,7 @@ h3 {
     }
 
     .contenidoNosotros p,
-.contenidoBeneficios p {
+    .contenidoBeneficios p {
 
         font-size: 3.2vw;
         max-width: 80vw;
@@ -453,6 +445,47 @@ h3 {
         background-position: left center;
         width: 100%;
         height: 100vw;
+    }
+}
+
+
+
+
+
+.splide__slide img {
+    width: auto;
+    height: auto;
+    max-height: 20vw;
+    /* altura maxima */
+    object-fit: cover;
+    /* Recorta la imagen*/
+}
+
+.splide {
+    width: 70%;
+
+}
+
+.categorias {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 10vw;
+    padding-top: 5vw;
+}
+
+.categorias h2 {
+    color: var(--azul);
+    padding-bottom: 2vw;
+}
+
+@media (max-width: 768px) {
+    .splide__slide img {
+        max-height: 80vw;
+    }
+
+    .categorias {
+        padding-bottom: 30vw;
     }
 }
 
@@ -500,7 +533,7 @@ h3 {
     text-align: right;
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
     .contenidoZonas {
         display: flex;
         flex-direction: column;
@@ -519,17 +552,20 @@ h3 {
     .contenidoZonas p {
         font-size: 4vw;
         text-align: center;
-        
+
     }
 
-    .contenidoZonas h2{
+    .contenidoZonas h2 {
         text-align: center;
     }
 
     .zonas {
-        background-size: cover; /* Hace que la imagen cubra todo el espacio */
-        aspect-ratio: auto; /* Permite que la altura se ajuste automáticamente */
-        height: 100%; /* Ajusta la altura del contenedor a la altura de la pantalla */
+        background-size: cover;
+        /* Hace que la imagen cubra todo el espacio */
+        aspect-ratio: auto;
+        /* Permite que la altura se ajuste automáticamente */
+        height: 100%;
+        /* Ajusta la altura del contenedor a la altura de la pantalla */
     }
 }
 
@@ -623,6 +659,7 @@ h3 {
     /* Altura entre lineas */
     margin: 0;
     /* Espacio arriba */
+    z-index: 4;
 }
 
 .fondoBlanco {
@@ -630,50 +667,63 @@ h3 {
 }
 
 @media (max-width: 768px) {
-.iconosBeneficios {
+    .iconosBeneficios {
         /* Cambia el comportamiento para pantallas pequeñas */
-        flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea */
-        justify-content: center; /* Centra los elementos */
-        gap: .2vw; /* Reduce el espacio entre íconos para móviles */
-        margin-top: 1vw; /* Ajusta el margen superior */
-        max-width: 70vw; /* Limita el ancho del contenedor para un mejor control */
+        flex-wrap: wrap;
+        /* Permite que los elementos se envuelvan a la siguiente línea */
+        justify-content: center;
+        /* Centra los elementos */
+        gap: .2vw;
+        /* Reduce el espacio entre íconos para móviles */
+        margin-top: 1vw;
+        /* Ajusta el margen superior */
+        max-width: 70vw;
+        /* Limita el ancho del contenedor para un mejor control */
         z-index: 2;
     }
 
     .iconosBeneficios .beneficio {
         /* Define el tamaño de cada ícono */
-        flex: 0 0 calc(33.33% - 2vw); /* 3 elementos por línea. 
+        flex: 0 0 calc(33.33% - 2vw);
+        /* 3 elementos por línea. 
         33.33% - 2vw (para el espacio) */
-        max-width: unset; /* Reinicia el max-width para que el flex-basis funcione */
-        margin-bottom: 1vw; /* Espacio entre filas */
+        max-width: unset;
+        /* Reinicia el max-width para que el flex-basis funcione */
+        margin-bottom: 1vw;
+        /* Espacio entre filas */
     }
 
     .iconosBeneficios img {
-        width: 15vw; /* Aumenta un poco el tamaño de las imágenes para que sean más visibles */
+        width: 15vw;
+        /* Aumenta un poco el tamaño de las imágenes para que sean más visibles */
         height: 15vw;
         margin-bottom: 1vw;
     }
-    .beneficiosTexto{
-    padding-top: 5vw;
-    font-size: 2vw;
-    max-width: 80vw;
-    line-height: 1;
-    margin-top: 0vw;
+
+    .beneficiosTexto {
+        padding-top: 5vw;
+        font-size: 2vw;
+        max-width: 80vw;
+        line-height: 1;
+        margin-top: 0vw;
         text-shadow:
-        -1px -1px 0 #000,
-        1px -1px 0 #000,
-        -1px 1px 0 #000,
-        1px 1px 0 #000;
+            -1px -1px 0 #000,
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;
 
-}
+
+    }
+
     .beneficio p {
-    font-size: 2vw;
-    font-weight: 700;
-}
+        font-size: 2vw;
+        font-weight: 700;
 
-.contenidoBeneficios{
-    margin-top: 20vw;
-}
+    }
+
+    .contenidoBeneficios {
+        margin-top: 20vw;
+    }
 
 
 }
@@ -694,10 +744,11 @@ h3 {
     .contenidoContacto {
         top: 10%;
     }
+
     .fondoBlanco {
-    display: block;
-    height: 50vw;
-}
+        display: block;
+        height: 50vw;
+    }
 }
 
 
@@ -759,8 +810,8 @@ footer p {
     color: var(--verdeOscuro);
 }
 
-@media (max-width: 768px){
-    footer p{
+@media (max-width: 768px) {
+    footer p {
         font-size: 2vw
     }
 }
@@ -773,9 +824,9 @@ footer p {
 
 
 /*PRODUCTOS SECCION*/
-.contenido-principal{
-    background-image: url(https://raw.githubusercontent.com/EfrenDZ/AgrinutrinorImg/refs/heads/main/BANNER.png);
-       background-repeat: no-repeat;
+.contenido-principal {
+    background-image: url(https://res.cloudinary.com/dha3vqp69/image/upload/v1758560610/BANNER_l4y3yg.png);
+    background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     width: 100%;
@@ -783,38 +834,268 @@ footer p {
     position: relative;
 }
 
-
-.splide__slide img {
-  width: auto;
-  height: auto;
-  max-height: 20vw; /* altura maxima */
-  object-fit: cover; /* Recorta la imagen*/
+.contenido-principal p {
+    position: absolute;
+    width: 40%;
+    text-align: left;
+    top: 7vw;
+    left: 10vw;
+    font-size: 1.8vw;
 }
 
-.splide{
-    width: 70%;
-    
+.contenido-principal button {
+    position: absolute;
+    top: 17vw;
+    left: 10vw;
 }
 
-.categorias{
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+body {
+    padding-top: 70px;
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+.card-text {
+    color: #000000;
+}
+
+.pagination-controls .page-link {
+    cursor: pointer;
+}
+
+.pagination-controls .page-item.active .page-link {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    color: white;
+}
+
+
+
+/* === Estructura y Layout del Catálogo === */
+#catalogo-productos {
+    background-color: #f8f9fa;
+    padding: 4vw;
+    padding-top: 1vw;
+}
+
+.catalogo-container {
+    padding: 2rem 1rem;
+}
+
+/* Barra Superior (Buscador y Marcas) */
+.top-bar {
+    margin-bottom: 2rem;
+}
+
+.search-bar {
+    width: 50%;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 50px;
+    font-size: 1.6vw;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%236c757d" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: left 1rem center;
+    padding-left: 3rem;
+}
+
+.brand-pills {
+    display: flex;
+    gap: 1vw;
+    margin-top: 1.5rem;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.brand-pills a {
+    display: inline-block;
+    padding: 0.6rem 4vw;
+    border-radius: 50px;
+    background-color: var(--verdeOscuro);
+    /* Verde oscuro */
+    color: white;
+    text-decoration: none;
+    font-weight: 800;
+    white-space: nowrap;
+    transition: background-color 0.2s;
+    font-size: 2vw;
+}
+
+.brand-pills a:hover {
+    background-color: var(--verdeOscuro);
+}
+
+.brand-pills a.active {
+    background-color: var(--verdeClaro);
+    /* Verde claro */
+    color: var(--verdeOscuro);
+    font-weight: bold;
+}
+
+/* === Sidebar de Filtros === */
+.sidebar-filters {
+    background-color: white;
+    padding: 1.5rem;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    height: auto;
+}
+
+.sidebar-filters h3 {
+    font-size: 2vw;
+    font-weight: bold;
+    color: #6c757d;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+}
+
+.filter-group {
+    margin-bottom: 2rem;
+}
+
+.filter-group h4 {
+    font-size: 1.5vw;
+    font-weight: bold;
+    color: #343a40;
+    margin-bottom: 1rem;
+}
+
+
+.filter-group .form-check {
+    margin-bottom: 0.5rem;
     display: flex;
     align-items: center;
-    flex-direction: column;
-    padding-bottom: 10vw;
-    padding-top: 5vw;
 }
 
-.categorias h2 {
-    color: var(--azul);
-    padding-bottom: 2vw;
+.filter-group .form-check-label {
+    cursor: pointer;
+    font-size: 1vw;
+}
+
+.filter-group .form-check-input {
+    transform: scale(1.2); /*tamaño del checkbox */
+    margin-right: 0.7rem; /* espacio entre checkbox y texto*/
+}
+
+/* === Grid de Productos === */
+#productos-titulo {
+    font-weight: bold;
+    color: #004d40;
+    margin-bottom: 1.5rem;
+}
+
+.card {
+    border: 1px solid #e9ecef;
+    background-color: #f2f3f2;
+    transition: box-shadow 0.2s, transform 0.2s;
+    border-radius: 8px;
+}
+
+.card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.card-body {
+    text-align: center;
+
+}
+
+.card-title {
+    font-weight: bold;
+    color: #004d40;
+    text-align: center;
+}
+
+.card-text {
+    font-size: 1vw;
+    color: #343a40;
+    margin-right: 0;
+}
+
+.card-text strong {
+    color: #000;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    padding: 10px;
+}
+
+#catalogo-productos .container-fluid {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+    flex-direction: column; /* Apila los elementos verticalmente */
+}
+
+#catalogo-productos .top-bar {
+    width: 100%; /* Asegura que la barra superior ocupe todo el ancho */
+}
+
+#catalogo-productos .row {
+    width: 100%; /* Asegura que la fila de columnas ocupe todo el ancho */
 }
 
 @media (max-width: 768px) {
-    .splide__slide img {
-        max-height: 80vw;
+    .sidebar-filters {
+        margin-bottom: 2rem; 
+        height: auto;
+        columns: 2;
     }
 
-    .categorias {
-        padding-bottom: 30vw;
+    #productos-titulo {
+        text-align: center; 
     }
+}
+
+@media (max-width: 768px) {
+    .contenido-principal p {
+        width: 40%; 
+        font-size: 2vw; 
+        top: 5vw;
+        left: 8vw;
+    }
+
+    .contenido-principal button {
+        top: 20vw; 
+        left: 8vw;
+        padding: 0.4rem 0.8rem;
+        font-size: 2vw;
+    }
+
+    /* Ajustes al catálogo */
+    .catalogo-container {
+        padding: 1rem 0.5rem; 
+    }
+
+    .search-bar {
+        padding-top: 0.6rem;
+        padding-bottom: 0.6rem;
+        font-size: 2vw;
+    }
+
+    .brand-pills a {
+        padding: 0.5rem 1rem;
+        font-size: 2vw;
+    }
+
+    .card-text{
+        font-size: 3vw;
+    }
+
+    .filter-group .form-check-label {
+    cursor: pointer;
+    font-size: 2vw;
+}
+
 }

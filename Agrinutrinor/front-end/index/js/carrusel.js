@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Configuración para dispositivos móviles
         breakpoints: {
-            768: { // Cuando la pantalla es de 767px o menos
+            768: { // Cuando la pantalla es de 768px o menos
                 perPage: 1, // Muestra solo 1 elemento
             }
         },
@@ -18,6 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
             speed: 2,
         },
         arrows: true, 
-        pagination: true,
+        pagination: false,
     }).mount(window.splide.Extensions);
 });

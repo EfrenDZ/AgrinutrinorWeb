@@ -15,7 +15,7 @@
 
 <body>
     <div class="navbar">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary **fixed-top**">
             <div class="container-fluid">
                 <a class="logo" href="#index">
                     <img src="img/1-index/LOGO_AGRINUTRINOR.png" alt="Bootstrap" width="30" height="24">
@@ -38,11 +38,8 @@
                                 aria-expanded="false">
                                 Marcas
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
+<ul class="dropdown-menu" id="marcas-dropdown">
+    </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#categorias">Categorías</a>
@@ -122,14 +119,14 @@
                 <br><br>Estamos aquí para ayudarte a alcanzar tus objetivos y asegurar el éxito de tus cultivos.
             </p>
 
-            <a href="..//productos/productos.html">Ver mas</a>
+            <a href="productos.html">Ver mas</a>
 
         </section>
     </section>
 
 
 
-    <section class="categorias">
+    <section id="categorias" class="categorias">
         <h2 class="tituloNosotrosGrande">Categorías</h2>
         <div id="mi-carrusel" class="splide" role="group" aria-label="Carrusel de Imágenes">
             <div class="splide__track">
@@ -267,7 +264,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script
         src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
-    <script src="js/carrusel.js"></script>
+    <script src="js/carrusel.js"></script><script src="js/navbar.js"></script>
+
+    sc
 </body>
 
 </html>

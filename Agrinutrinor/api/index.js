@@ -7,7 +7,7 @@ const port = 3000;
 
 app.use(cors());
 
-const connection = mysql.createConnection({
+const connection = mysql.createPool({
   host: 'tramway.proxy.rlwy.net',
   user: 'root',
   password: 'osLGMABFjMwwdjOaTmkStQTTxxcnnjfu',

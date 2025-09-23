@@ -7,22 +7,23 @@ const port = 3000;
 
 app.use(cors());
 
-// Se usa createPool y se renombra la variable a 'pool'
 const pool = mysql.createPool({
   connectionLimit: 10,
-  host: process.env.DB_HOST, // Asegúrate que las variables de entorno estén en Vercel
+  host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABASE,
   port: process.env.DB_PORT
 });
 
-
 app.get('/api/marcas', (req, res) => {
     const sql = "SELECT id, nombre FROM marca ORDER BY nombre ASC";
-    // Se usa pool.query
     pool.query(sql, (err, results) => {
-        if (err) return res.status(500).json({ error: 'Error en el servidor al obtener marcas.' });
+        if (err) {
+            // LÍNEA AÑADIDA PARA VER EL ERROR DETALLADO
+            console.error("ERROR DETALLADO EN /api/marcas:", err);
+            return res.status(500).json({ error: 'Error en el servidor al obtener marcas.' });
+        }
         res.json(results);
     });
 });
@@ -30,7 +31,11 @@ app.get('/api/marcas', (req, res) => {
 app.get('/api/categorias', (req, res) => {
     const sql = "SELECT id, nombre FROM categoria ORDER BY nombre ASC";
     pool.query(sql, (err, results) => {
-        if (err) return res.status(500).json({ error: 'Error en el servidor al obtener categorías.' });
+        if (err) {
+            // LÍNEA AÑADIDA PARA VER EL ERROR DETALLADO
+            console.error("ERROR DETALLADO EN /api/categorias:", err);
+            return res.status(500).json({ error: 'Error en el servidor al obtener categorías.' });
+        }
         res.json(results);
     });
 });
@@ -70,13 +75,19 @@ app.get('/api/productos', (req, res) => {
     const finalParamsProductos = [...params, productosPorPagina, offset];
 
     pool.query(sqlTotal, params, (errTotal, resTotal) => {
-        if (errTotal) return res.status(500).json({ error: 'Error al contar productos.' });
+        if (errTotal) {
+            console.error("ERROR DETALLADO EN /api/productos (total):", errTotal);
+            return res.status(500).json({ error: 'Error al contar productos.' });
+        }
 
         const totalProductos = resTotal[0].total;
         const totalPaginas = Math.ceil(totalProductos / productosPorPagina);
 
         pool.query(sqlProductos, finalParamsProductos, (errProductos, resProductos) => {
-            if (errProductos) return res.status(500).json({ error: 'Error al obtener productos.' });
+            if (errProductos) {
+                console.error("ERROR DETALLADO EN /api/productos (lista):", errProductos);
+                return res.status(500).json({ error: 'Error al obtener productos.' });
+            }
             res.json({
                 productos: resProductos,
                 paginaActual: parseInt(page),
@@ -86,6 +97,11 @@ app.get('/api/productos', (req, res) => {
     });
 });
 
-app.listen(port, () => {
-  console.log(`🚀 Servidor corriendo en http://localhost:${port}`);
-});
+// Este listen no se usa en Vercel, pero es útil para desarrollo local
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(port, () => {
+      console.log(`🚀 Servidor corriendo en http://localhost:${port}`);
+    });
+}
+
+module.exports = app;

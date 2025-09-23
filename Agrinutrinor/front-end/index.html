@@ -9,7 +9,7 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
-
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 </head>
 
@@ -38,8 +38,8 @@
                                 aria-expanded="false">
                                 Marcas
                             </a>
-<ul class="dropdown-menu" id="marcas-dropdown">
-    </ul>
+                            <ul class="dropdown-menu" id="marcas-dropdown">
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#categorias">Categorías</a>
@@ -56,7 +56,7 @@
                     </ul>
                 </div>
                 <div class="iconos-contacto">
-                    <a href="#1"><img class="logoTelefono" src="img/1-index/ICONO_TELEFONO.png"></a>
+                    <a href="tel:+526876880529"><img class="logoTelefono" src="img/1-index/ICONO_TELEFONO.png"></a>
                     <a
                         href="mailto:asanchez@agrinutrinor.com?subject=Contacto%20Agrinutrinor&body=Hola,%20quisiera%20más%20información.">
                         <img class="logoCorreo" src="img/1-index/ICONO_CORREO.png" alt="Correo">
@@ -72,7 +72,7 @@
 
         <section class="reveal" class="contenidoindex">
             <img class="logoBlanco" src="img/1-index/LOGO_BLANCO.png" alt="">
-            <p class="textoPortada">
+            <p class="textoPortada" data-aos="fade-up">
                 Organozyma es el bioestimulante orgánico más completo del mercado,
                 brindándote una composición perfectamente equilibrada que le brindará
                 el mayor aprovechamiento a tu cultivo.
@@ -92,7 +92,7 @@
 
 
     <section id="nosotros" class="nosotros">
-        <section class="contenidoNosotros">
+        <section class="contenidoNosotros" data-aos="fade-up">
             <h3 class="etiqueta tituloNosotros">Tu cosecha es</h3>
             <h2 class="tituloNosotrosGrande">nuestro éxito</h2>
             <h4 class="tituloNosotros3">SOMOS TU SOCIO CONFIABLE EN EL CAMPO</h4>
@@ -111,7 +111,7 @@
 
 
     <section id="marcas" class="marcas">
-        <section class="contenidoNosotros">
+        <section class="contenidoNosotros" data-aos="fade-up">
             <h3 class="etiqueta tituloh3">Somos distribuidores de las</h3>
             <h2 class="tituloNosotrosGrande">mejores marcas</h2>
             <p>En Agrinutrinor, encontrarás una amplia gama de soluciones en semillas, fertilizantes, plaguicidas,
@@ -126,7 +126,7 @@
 
 
 
-    <section id="categorias" class="categorias">
+    <section id="categorias" class="categorias" data-aos="fade-up">
         <h2 class="tituloNosotrosGrande">Categorías</h2>
         <div id="mi-carrusel" class="splide" role="group" aria-label="Carrusel de Imágenes">
             <div class="splide__track">
@@ -175,15 +175,15 @@
                     </li>
                 </ul>
             </div>
-            
+
         </div>
     </section>
 
     <section id="zonas" class="zonas">
 
-        <section class="contenidoZonas">
+        <section class="contenidoZonas" data-aos="fade-up">
 
-            <img src="img/5-Zonas/MAPA-02.png" alt="">
+            <img src="img/5-Zonas/MAPA-02.png" alt="" data-aos="fade-left">
             <div>
                 <h2 class="tituloNosotrosGrande tituloZonas">Creciendo Juntos</h2>
                 <p>Año con año, llevamos valor los campos de diversas regiones del país a través de nuestros productos y
@@ -195,7 +195,7 @@
 
 
     <section id="beneficios" class="beneficios">
-        <section class="contenidoBeneficios">
+        <section class="contenidoBeneficios" data-aos="fade-up">
             <h3 class="etiqueta2 tituloBeneficios">Estamos contigo desde la</h3>
             <h2 class="tituloNosotrosGrande">siembra hasta <br>la cosecha</h2>
             <p class="beneficiosTexto">
@@ -204,7 +204,7 @@
                 responsabilidad trasciende el simple interés comercial. Por eso, te ofrecemos:
             </p>
 
-            <div class="iconosBeneficios">
+            <div class="iconosBeneficios" data-aos="fade-left">
                 <div class="beneficio">
                     <img src="img/6-beneficios/BENEFICIOS-1.png" alt="">
                     <p>Asesoría técnica especializada</p>
@@ -230,7 +230,7 @@
 
     <div class="fondoBlanco"></div>
 
-    <section id="contacto" class="contacto">
+    <section id="contacto" class="contacto" data-aos="fade-up">
         <section class="contenidoContacto">
             <h2 class="tituloNosotrosGrande">ESTAMOS LISTOS <br>PARA AYUDARTE </h2>
             <button class="etiqueta3"
@@ -264,9 +264,12 @@
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script
         src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
-    <script src="js/carrusel.js"></script><script src="js/navbar.js"></script>
-
-    sc
+    <script src="js/carrusel.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>

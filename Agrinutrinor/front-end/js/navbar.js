@@ -22,3 +22,18 @@
                 .catch(error => console.error('Error al cargar marcas en el dropdown:', error));
         }
     });
+document.addEventListener('DOMContentLoaded', function() {
+    // Revisa si la URL actual tiene un "hash" (ej. #nosotros)
+    if (window.location.hash) {
+        // Obtiene el elemento al que apunta el hash
+        const targetElement = document.querySelector(window.location.hash);
+
+        // Si el elemento existe en la página
+        if (targetElement) {
+            // Usa el método scrollIntoView para un desplazamiento suave
+            targetElement.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    }
+});

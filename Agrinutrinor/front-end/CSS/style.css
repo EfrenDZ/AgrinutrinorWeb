@@ -690,13 +690,9 @@ h3 {
 
 @media (max-width: 768px) {
     .iconosBeneficios {
-        /* Cambia el comportamiento para pantallas pequeñas */
         flex-wrap: wrap;
-        /* Permite que los elementos se envuelvan a la siguiente línea */
         justify-content: center;
-        /* Centra los elementos */
         gap: .2vw;
-        /* Reduce el espacio entre íconos para móviles */
         margin-top: 1vw;
         /* Ajusta el margen superior */
         max-width: 70vw;
@@ -707,10 +703,7 @@ h3 {
     .iconosBeneficios .beneficio {
         /* Define el tamaño de cada ícono */
         flex: 0 0 calc(33.33% - 2vw);
-        /* 3 elementos por línea. 
-        33.33% - 2vw (para el espacio) */
         max-width: unset;
-        /* Reinicia el max-width para que el flex-basis funcione */
         margin-bottom: 1vw;
         /* Espacio entre filas */
     }
@@ -1012,7 +1005,7 @@ body {
 }
 
 .filter-group .form-check-input {
-    transform: scale(1.2vw); /*tamaño del checkbox */
+    transform: scale(1.5vw); /*tamaño del checkbox */
     margin-right: 0.7rem; /* espacio entre checkbox y texto*/
 }
 
@@ -1044,6 +1037,7 @@ body {
     font-weight: bold;
     color: #004d40;
     text-align: center;
+    font-size: 1.3vw;
 }
 
 .card-text {
@@ -1129,4 +1123,9 @@ body {
     font-size: 2.5vw;
 }
 
+}
+
+
+body {
+    overflow-x: hidden;
 }

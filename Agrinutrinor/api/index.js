@@ -17,16 +17,6 @@ const pool = mysql.createPool({
   port: process.env.DB_PORT
 });
 
-// ESTE BLOQUE SE HA ELIMINADO PORQUE NO ES COMPATIBLE CON createPool
-/*
-connection.connect(error => {
-  if (error) {
-    console.error('❌ Error al conectar a la base de datos:', error);
-    return;
-  }
-  console.log('✅ Conexión exitosa a la base de datos.');
-});
-*/
 
 app.get('/api/marcas', (req, res) => {
     const sql = "SELECT id, nombre FROM marca ORDER BY nombre ASC";

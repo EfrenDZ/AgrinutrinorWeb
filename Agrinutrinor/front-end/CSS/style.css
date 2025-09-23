@@ -1012,7 +1012,7 @@ body {
 }
 
 .filter-group .form-check-input {
-    transform: scale(1.2); /*tamaño del checkbox */
+    transform: scale(1.2vw); /*tamaño del checkbox */
     margin-right: 0.7rem; /* espacio entre checkbox y texto*/
 }
 

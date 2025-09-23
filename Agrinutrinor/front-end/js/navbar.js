@@ -23,14 +23,14 @@
         }
     });
 document.addEventListener('DOMContentLoaded', function() {
-    // Revisa si la URL actual tiene un "hash" (ej. #nosotros)
+    // Revisa si la URL si tiene el #
     if (window.location.hash) {
-        // Obtiene el elemento al que apunta el hash
+        // Obtiene el elemento al que apunta
         const targetElement = document.querySelector(window.location.hash);
 
         // Si el elemento existe en la página
         if (targetElement) {
-            // Usa el método scrollIntoView para un desplazamiento suave
+            // desplazamiento suave
             targetElement.scrollIntoView({
                 behavior: 'smooth'
             });

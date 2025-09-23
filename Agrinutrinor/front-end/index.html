@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Agrinutrinor</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="CSS/style.css">
@@ -92,12 +92,12 @@
 
 
     <section id="nosotros" class="nosotros">
-        <section class="contenidoNosotros" data-aos="fade-up">
-            <h3 class="etiqueta tituloNosotros">Tu cosecha es</h3>
-            <h2 class="tituloNosotrosGrande">nuestro éxito</h2>
-            <h4 class="tituloNosotros3">SOMOS TU SOCIO CONFIABLE EN EL CAMPO</h4>
+        <section class="contenidoNosotros" >
+            <h3 class="etiqueta tituloNosotros" data-aos="fade-left">Tu cosecha es</h3>
+            <h2 class="tituloNosotrosGrande" data-aos="fade-up">nuestro éxito</h2>
+            <h4 class="tituloNosotros3"data-aos="fade-right">SOMOS TU SOCIO CONFIABLE EN EL CAMPO</h4>
 
-            <p>
+            <p data-aos="fade-up">
                 Nos dedicamos a ofrecerte los productos y soluciones que necesitas para maximizar el rendimiento de tus
                 cultivos, protegiendo tu inversión en cada etapa.
                 Nuestro compromiso va más allá de la simple venta de productos. <br><br>Con nuestro servicio de asesoría
@@ -105,7 +105,7 @@
                 por hacer de cada temporada una experiencia única y productiva.
 
             </p>
-                        <button class="etiqueta3"
+                        <button data-aos="fade-up" class="etiqueta3"
                 onclick="window.location.href='mailto:asanchez@agrinutrinor.com?subject=Contacto%20Agrinutrinor&body=Hola,%20quisiera%20más%20información.'">
                 CONTÁCTANOS
             </button>
@@ -116,8 +116,8 @@
 
     <section id="marcas" class="marcas">
         <section class="contenidoNosotros" data-aos="fade-up">
-            <h3 class="etiqueta tituloh3">Somos distribuidores de las</h3>
-            <h2 class="tituloNosotrosGrande">mejores marcas</h2>
+            <h3 class="etiqueta tituloh3"data-aos="fade-left">Somos distribuidores de las</h3>
+            <h2 class="tituloNosotrosGrande" data-aos="fade-right">mejores marcas</h2>
             <p>En Agrinutrinor, encontrarás una amplia gama de soluciones en semillas, fertilizantes, plaguicidas,
                 fungicidas de las mejores marcas, siempre buscando ofrecerte el mejor costo-beneficio.
                 <br><br>Estamos aquí para ayudarte a alcanzar tus objetivos y asegurar el éxito de tus cultivos.
@@ -131,7 +131,7 @@
 
 
     <section id="categorias" class="categorias" data-aos="fade-up">
-        <h2 class="tituloNosotrosGrande">Categorías</h2>
+        <h2 class="tituloNosotrosGrande" data-aos="fade-left">Categorías</h2>
         <div id="mi-carrusel" class="splide" role="group" aria-label="Carrusel de Imágenes">
             <div class="splide__track">
                 <ul class="splide__list">
@@ -187,9 +187,9 @@
 
         <section class="contenidoZonas" data-aos="fade-up">
 
-            <img src="img/5-Zonas/MAPA-02.png" alt="" data-aos="fade-left">
+            <img src="img/5-Zonas/MAPA-02.png" alt="" data-aos="fade-right">
             <div>
-                <h2 class="tituloNosotrosGrande tituloZonas">Creciendo Juntos</h2>
+                <h2 class="tituloNosotrosGrande tituloZonas"data-aos="fade-left">Creciendo Juntos</h2>
                 <p>Año con año, llevamos valor los campos de diversas regiones del país a través de nuestros productos y
                     asesoría técnica honesta.</p>
             </div>
@@ -208,24 +208,24 @@
                 responsabilidad trasciende el simple interés comercial. Por eso, te ofrecemos:
             </p>
 
-            <div class="iconosBeneficios" data-aos="fade-left">
-                <div class="beneficio">
+            <div class="iconosBeneficios" >
+                <div class="beneficio" data-aos="fade-up">
                     <img src="img/6-beneficios/BENEFICIOS-1.png" alt="">
                     <p>Asesoría técnica especializada</p>
                 </div>
-                <div class="beneficio">
+                <div class="beneficio" data-aos="fade-right">
                     <img src="img/6-beneficios/BENEFICIOS-2.png" alt="">
                     <p>Alta disponibilidad de producto</p>
                 </div>
-                <div class="beneficio">
+                <div class="beneficio" data-aos="fade-up">
                     <img src="img/6-beneficios/BENEFICIOS-3.png" alt="">
                     <p>Entrega en tu campo</p>
                 </div>
-                <div class="beneficio">
+                <div class="beneficio" data-aos="fade-left">
                     <img src="img/6-beneficios/BENEFICIOS-4.png" alt="">
                     <p>Condiciones comerciales flexibles</p>
                 </div>
-                <div class="beneficio">
+                <div class="beneficio" data-aos="fade-up">
                     <img src="img/6-beneficios/BENEFICIOS-5.png" alt="">
                     <p>Productos con registro</p>
                 </div>
@@ -253,8 +253,12 @@
                 <img src="img/7-contacto/ICONO_INSTAGRAM.png" alt=""></a>
         </div>
 
-        <p>(687) 688 0529 y (687) 129 6887 <br>
-            Calle 4 S/N Col. Centro, General Juan José Ríos, México</p>
+        <div>
+        <p>(687) 688 0529 y (687) 129 6887 </p>
+        <a class="direccionMapa" href="https://maps.app.goo.gl/x8yMNGsymTWpU3cDA"> 
+            Calle 4 S/N Col. Centro, General Juan José Ríos, México</a>
+        </div>
+
 
     </footer>
 

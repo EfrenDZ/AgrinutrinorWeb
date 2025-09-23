@@ -824,6 +824,12 @@ footer p {
     color: var(--verdeOscuro);
 }
 
+.direccionMapa{
+    text-decoration: none;
+    color: var(--verdeOscuro);
+    font-size: 1.2vw;
+}
+
 @media (max-width: 768px) {
     footer p {
         font-size: 2vw

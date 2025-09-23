@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const apiUrlBase = '/api';
+    const apiUrlBase = '/api'; //tomar la url de vercel
     
     const productContainer = document.getElementById('productos-container');
     const paginationControls = document.getElementById('pagination-controls');
@@ -12,13 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
     
     let debounceTimeout;
 
-    function poblarFiltros() {
+    function poblarFiltros() { //rellenar la parte de filtro
         return Promise.all([
             fetch(`${apiUrlBase}/marcas`).then(res => res.json()),
             fetch(`${apiUrlBase}/categorias`).then(res => res.json())
         ]).then(([marcas, categorias]) => {
             brandPillsContainer.innerHTML = '';
-            brandFiltersContainer.innerHTML = '<h4>Marca</h4>';
+            brandFiltersContainer.innerHTML = '<h4>Marca</h4>'; // mete la marca con h4
             marcas.forEach(marca => {
                 const pill = document.createElement('a');
                 pill.href = "#";
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 brandFiltersContainer.appendChild(checkboxDiv);
             });
 
-            categoryFiltersContainer.innerHTML = '<h4>Categoría</h4>';
+            categoryFiltersContainer.innerHTML = '<h4>Categoría</h4>'; // mete la categoria con h4
             categorias.forEach(cat => {
                 const checkboxDiv = document.createElement('div');
                 checkboxDiv.className = 'form-check';

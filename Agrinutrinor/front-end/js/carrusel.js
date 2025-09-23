@@ -4,13 +4,13 @@ document.addEventListener('DOMContentLoaded', function () {
         drag: 'free',
         focus: 'center',
         
-        // Configuración para escritorios (pantallas grandes)
+        // pantallas grandes
         perPage: 4, 
 
         // Configuración para dispositivos móviles
         breakpoints: {
-            768: { // Cuando la pantalla es de 768px o menos
-                perPage: 1, // Muestra solo 1 elemento
+            768: { // Cuando la pantalla es de 768px
+                perPage: 1, // Muestra 1 elemento
             }
         },
 

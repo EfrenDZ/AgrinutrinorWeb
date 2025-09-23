@@ -7,14 +7,18 @@ const port = 3000;
 
 app.use(cors());
 
-const connection = mysql.createPool({
-  host: 'tramway.proxy.rlwy.net',
-  user: 'root',
-  password: 'osLGMABFjMwwdjOaTmkStQTTxxcnnjfu',
-  database: 'agrinutrinor',
-  port: 21985
+// Se usa createPool y se renombra la variable a 'pool'
+const pool = mysql.createPool({
+  connectionLimit: 10,
+  host: process.env.DB_HOST, // Asegúrate que las variables de entorno estén en Vercel
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE,
+  port: process.env.DB_PORT
 });
 
+// ESTE BLOQUE SE HA ELIMINADO PORQUE NO ES COMPATIBLE CON createPool
+/*
 connection.connect(error => {
   if (error) {
     console.error('❌ Error al conectar a la base de datos:', error);
@@ -22,10 +26,12 @@ connection.connect(error => {
   }
   console.log('✅ Conexión exitosa a la base de datos.');
 });
+*/
 
 app.get('/api/marcas', (req, res) => {
     const sql = "SELECT id, nombre FROM marca ORDER BY nombre ASC";
-    connection.query(sql, (err, results) => {
+    // Se usa pool.query
+    pool.query(sql, (err, results) => {
         if (err) return res.status(500).json({ error: 'Error en el servidor al obtener marcas.' });
         res.json(results);
     });
@@ -33,7 +39,7 @@ app.get('/api/marcas', (req, res) => {
 
 app.get('/api/categorias', (req, res) => {
     const sql = "SELECT id, nombre FROM categoria ORDER BY nombre ASC";
-    connection.query(sql, (err, results) => {
+    pool.query(sql, (err, results) => {
         if (err) return res.status(500).json({ error: 'Error en el servidor al obtener categorías.' });
         res.json(results);
     });
@@ -52,12 +58,10 @@ app.get('/api/productos', (req, res) => {
     `;
     const params = [];
     
-    // Si 'marca' existe, usa el operador IN para aceptar uno o varios valores
     if (marca) {
         baseQuery += ' AND p.marca IN (?)';
         params.push(marca);
     }
-    // Lo mismo para 'categoria'
     if (categoria) {
         baseQuery += ' AND p.categoria IN (?)';
         params.push(categoria);
@@ -73,16 +77,15 @@ app.get('/api/productos', (req, res) => {
         ${baseQuery} 
         LIMIT ? OFFSET ?`;
     
-    // Los parámetros para la consulta de productos incluyen los de paginación
     const finalParamsProductos = [...params, productosPorPagina, offset];
 
-    connection.query(sqlTotal, params, (errTotal, resTotal) => {
+    pool.query(sqlTotal, params, (errTotal, resTotal) => {
         if (errTotal) return res.status(500).json({ error: 'Error al contar productos.' });
 
         const totalProductos = resTotal[0].total;
         const totalPaginas = Math.ceil(totalProductos / productosPorPagina);
 
-        connection.query(sqlProductos, finalParamsProductos, (errProductos, resProductos) => {
+        pool.query(sqlProductos, finalParamsProductos, (errProductos, resProductos) => {
             if (errProductos) return res.status(500).json({ error: 'Error al obtener productos.' });
             res.json({
                 productos: resProductos,

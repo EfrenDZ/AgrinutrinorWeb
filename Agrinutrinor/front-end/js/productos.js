@@ -67,16 +67,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 data.productos.forEach(producto => {
                     const cardHtml = `
-                        <div class="col-sm-6 col-lg-3 mb-4 d-flex align-items-stretch">
+                        <div class="col-sm-6 col-lg-3 d-flex align-items-stretch">
                             <div class="card w-100">
                                 <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
                                 <div class="card-body">
-                                    <h5 class="card-title">${producto.nombre}</h5>
                                     <p class="card-text">
-                                        <strong>Ingrediente Activo:</strong> ${producto.ingredienteActivo}<br>
-                                        <strong>Presentación:</strong> ${producto.presentacion}<br>
-                                        <strong>Categoría:</strong> ${producto.categoria_nombre}
+                                        <strong>Ingrediente Activo:<br/></strong> ${producto.ingredienteActivo}<br>
+                                        <strong>Presentación:<br/></strong> ${producto.presentacion}<br>
+                                        <strong>Categoría:<br/></strong> ${producto.categoria_nombre}
                                     </p>
+                                    <button class="card-button" class="etiqueta3">Ficha técnica</button>
                                 </div>
                             </div>
                         </div>`;

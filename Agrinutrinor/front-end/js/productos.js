@@ -39,19 +39,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 brandFiltersContainer.appendChild(checkboxDiv);
             });
 
- new Splide('#brand-carousel', {
-    type       : 'slide',
-    perPage    : 5,
-    perMove    : 1,
-    gap        : '1rem',
-    pagination : false,
-    padding    : { left: 0, right: '5rem' }, // <-- AÑADE ESTA LÍNEA
-    breakpoints: {
-        992: { perPage: 4 },
-        768: { perPage: 3 },
-        576: { perPage: 2, padding: { right: '3rem'} }, // Espacio más chico en móvil
-    },
-}).mount();
+            new Splide('#brand-carousel', {
+                type: 'slide',
+                perPage: 5,
+                perMove: 1,
+                gap: '1rem',
+                pagination: false,
+                padding: { left: 0, right: '5rem' }, 
+                breakpoints: {
+                    992: { perPage: 4 },
+                    768: { perPage: 3 },
+                    576: { perPage: 2, padding: { right: '3rem' } }, // Espacio más chico en celular
+                },
+            }).mount();
 
             categoryFiltersContainer.innerHTML = '<h4>Categoría</h4>';
             categorias.forEach(cat => {
@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
     brandCarousel.addEventListener('click', e => {
         if (e.target.tagName !== 'A') return;
         e.preventDefault();
-        
+
         const wasActive = e.target.classList.contains('active');
         brandCarousel.querySelectorAll('a').forEach(pill => pill.classList.remove('active'));
         brandFiltersContainer.querySelectorAll('input').forEach(chk => chk.checked = false);

@@ -142,7 +142,19 @@ body {
 
 
 
+#mi-carrusel .splide__arrow {
+    height: 15vw;
+    width: 5vw; 
+    background-color: transparent;
+    margin-left:-6vw;
+    margin-right: -6vw;
+    color: #004437;
+}
 
+#mi-carrusel .splide__arrow svg {
+    height: 100%;
+    width: 100%;
+}
 
 @media (max-width: 768px) {
 .logo img {
@@ -472,6 +484,7 @@ h3 {
     width: 70%;
 
 }
+
 
 .categorias {
     display: flex;
@@ -940,6 +953,19 @@ footer p {
 }
 
 #brand-carousel{
+    width: 100%;
+}
+
+#brand-carousel .splide__arrow{
+    height: 25vw;
+    width: 10vw; 
+    background-color: transparent;
+    margin-left:-4vw;
+    margin-right: -4vw;
+}
+
+#brand-carousel .splide-arrow svg{
+    height: 100%;
     width: 100%;
 }
 

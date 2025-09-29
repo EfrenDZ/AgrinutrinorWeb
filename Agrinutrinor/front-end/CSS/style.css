@@ -956,18 +956,6 @@ footer p {
     width: 100%;
 }
 
-#brand-carousel .splide__arrow{
-    height: 25vw;
-    width: 10vw; 
-    background-color: transparent;
-    margin-left:-4vw;
-    margin-right: -4vw;
-}
-
-#brand-carousel .splide-arrow svg{
-    height: 100%;
-    width: 100%;
-}
 
 .brand-pill {
     display: flex;

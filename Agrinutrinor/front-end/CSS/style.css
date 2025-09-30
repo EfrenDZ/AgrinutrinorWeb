@@ -1,10 +1,10 @@
 html {
     scroll-behavior: smooth;
+    font-size: clamp(10px, 1vw, 16px);
 }
 
 body{
     font-family: "poppins", sans-serif;
-    
 }
 
 #index,
@@ -13,11 +13,11 @@ body{
 #categorias,
 #zonas,
 #contacto {
-    scroll-margin-top: 10vw;
+    scroll-margin-top: 10rem;
 }
 
 #beneficios {
-    scroll-margin-top: -4vw;
+    scroll-margin-top: -4rem;
 }
 
 :root {
@@ -41,7 +41,6 @@ h4 {
 .beneficios,
 .contacto {
     margin-bottom: -1px;
-    /* Eliminar espacio entre secciones */
 }
 
 p {
@@ -50,37 +49,33 @@ p {
     text-align: center;
     font-weight: 500;
     line-height: 1.5;
-    /* Altura entre lineas */
     margin-top: center;
-    /* Espacio arriba */
     margin-left: center;
-    /* Espacio a los lados */
     margin-right: 2rem;
 }
 
 html,
 body {
-    margin-top: -.5vw;
+    margin-top: -.5rem;
     padding: 0;
-    padding-top: 0vw;
-    font-size: 62.5%;
+    padding-top: 0rem;
+    /* La regla de font-size fue movida a la etiqueta 'html' sola */
     box-sizing: border-box;
     scroll-snap-type: y mandatory;
     transition: top 0.3s ease;
-    /*Agregar el scroll que se detiene*/
 }
 
 .navbar {
     width: 100%;
-    font-size: 1.3vw;
+    font-size: 1.3rem;
     position: fixed;
     z-index: 1000;
-    top: 0.00001vw;
+    top: 0.00001rem;
     transition: top 0.3s ease;
 }
 
 .navbar-hidden {
-    top: -200px; /* La mueve completamente fuera de la vista */
+    top: -200px;
 }
 
 .navbar-nav {
@@ -88,12 +83,12 @@ body {
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    padding: 1.5vw;
+    padding: 1.5rem;
 
 }
 
 .logo img {
-    width: 12.5vw;
+    width: 12.5rem;
     height: auto;
     display: block;
     align-items: left;
@@ -102,19 +97,14 @@ body {
 .container-fluid {
     display: flex;
     justify-content: space-between;
-    /* Centra el contenido horizontalmente */
     align-items: center;
-    /* Centra el contenido verticalmente */
     width: 90%;
-    padding: 1vw;
+    padding: 1rem;
 }
 
 .navbar-collapse {
     justify-content: center;
-    /* Centra los elementos de la lista en la barra de navegación */
 }
-
-
 
 .navbar-nav .nav-link {
     text-decoration: none;
@@ -134,20 +124,17 @@ body {
     transition: 0.3s;
 }
 
-/* Aplica el hover solo a los enlaces  */
 .navbar-nav .nav-link:hover::before {
     width: 100%;
     font-size: bolder;
 }
 
-
-
 #mi-carrusel .splide__arrow {
-    height: 15vw;
-    width: 5vw; 
+    height: 9rem;
+    width: 5rem; 
     background-color: transparent;
-    margin-left:-6vw;
-    margin-right: -6vw;
+    margin-left:-6rem;
+    margin-right: -6rem;
     color: #004437;
 }
 
@@ -156,16 +143,15 @@ body {
     width: 100%;
 }
 
+
 @media (max-width: 768px) {
-.logo img {
-    width: 20vw;
-}
+    .logo img {
+        width: 20rem;
+    }
 
-.navbar{
-    font-size: 3vw;
-}
-
-
+    .navbar{
+        font-size: 3rem;
+    }
 }
 
 button {
@@ -182,24 +168,16 @@ button:hover {
 .index {
     background-image: url(https://res.cloudinary.com/dha3vqp69/image/upload/v1758346912/PORTADA_fcxhsx.jpg);
     background-repeat: no-repeat;
-    /*La imagen no se repite si no llena el area*/
     background-size: contain;
     width: 100%;
-    /*Se ve completa*/
     background-position: center;
-
-    /*El ancho es igual al de la ventana*/
     aspect-ratio: 2000 / 959.5;
-    /*El alto se calcula automaticamente*/
     position: relative;
 }
 
 .index-mobile {
     display: none;
 }
-
-/*Dentro se pueden poner otros elementos*/
-
 
 .contenidoindex {
     position: absolute;
@@ -217,27 +195,23 @@ button:hover {
     position: absolute;
     top: 40%;
     left: 10%;
-    width: 22vw;
-    height: 10vw;
+    width: 22rem;
+    height: 10rem;
 }
 
 .textoPortada {
     position: absolute;
-    top: 17vw;
-    right: 9vw;
-    height: 35vw;
-    width: 40vw;
-    /* Responsive: el ancho cambia con la ventana */
-    font-size: clamp(1vw, 2vw, 1vw);
-    /* Responsive font size */
+    top: 17rem;
+    right: 9rem;
+    height: 35rem;
+    width: 40rem;
+    font-size: clamp(1rem, 2rem, 1rem); /* Esto ya usaba clamp, perfecto */
     line-height: 1.2;
-    /* Espaciado entre líneas */
     color: white;
     text-align: center;
     font-weight: 500;
-    font-size: 2vw;
+    font-size: 2rem;
     white-space: normal;
-    /* Permite varias líneas */
 }
 
 .textoLogoPortada1 {
@@ -257,27 +231,25 @@ button:hover {
 
 @media (max-width: 768px) {
     .textoPortada {
-        margin-top: 6vw;
-        top: 15vw;
-        right: 4vw;
-        height: 35vw;
+        margin-top: 6rem;
+        top: 15rem;
+        right: 4rem;
+        height: 35rem;
         min-width: 5rem;
         font-weight: bolder;
     }
 
     .index {
-        /* El gradiente se coloca primero para que se superponga a la imagen */
         background-image: linear-gradient(to top, #3d895c, rgba(255, 255, 255, 0) 50px),
             url(https://res.cloudinary.com/dha3vqp69/image/upload/v1758346912/PORTADA_fcxhsx.jpg);
         background-size: 200% 100%, cover;
         background-position: left center, left center;
         background-repeat: no-repeat;
-        height: 100vw;
+        height: 100rem;
         width: 100%;
     }
 
     .index-mobile {
-        /* Muestra el contenedor y establece la segunda mitad del fondo */
         display: block;
         background-image:
             linear-gradient(to bottom, #3d895c, rgba(255, 255, 255, 0) 50px),
@@ -287,7 +259,7 @@ button:hover {
         background-position: right center;
         background-repeat: no-repeat;
         width: 100%;
-        height: 100vw;
+        height: 100rem;
         aspect-ratio: 2000 / 959.5;
 
     }
@@ -296,22 +268,19 @@ button:hover {
         top: 20%;
         left: 14%;
         width: 60%;
-        height: 60vw;
+        height: 60rem;
     }
 
     .textoPortada {
         top: 120%;
         right: 10%;
-        width: 80vw;
-        height: 50vw;
+        width: 80rem;
+        height: 50rem;
         max-width: none;
-        font-size: none;
-        font-size: 4.5vw;
+        font-size: 4.5rem;
         text-align: left;
     }
-
 }
-
 
 /* SECCION NOSOTROS */
 .nosotros {
@@ -337,67 +306,54 @@ button:hover {
 }
 
 h3 {
-    color: white;
     text-align: center;
-    font-weight: 50vw;
-    font-size: 2vw;
-    margin: 0vw;
-    padding: 0vws;
+    font-weight: 50rem;
+    font-size: 2rem;
+    margin: 0rem;
+    padding: 0rem;
     color: var(--verdeOscuro);
-
 }
 
 .tituloNosotrosGrande {
     color: white;
     text-align: center;
-    font-size: 3.9vw;
+    font-size: 3.9rem;
     margin: 0;
     padding: 0;
     font-weight: 1000;
     line-height: .9;
-
 }
 
 .etiqueta {
     display: inline-block;
-    /* Para que el fondo solo abarque el texto */
     background-color: var(--verdeClaro);
-    padding: .2vw .5vw;
-    /* Espaciado interno */
-    border-radius: .5vw;
-    /* Esquinas redondeadas */
+    padding: .2rem .5rem;
+    border-radius: .5rem;
     font-weight: bold;
-    margin-bottom: -.5vw;
+    margin-bottom: -.5rem;
     box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
-    /* Sombra */
 }
 
 .tituloNosotros3 {
     color: var(--verdeClaro);
     text-align: center;
     font-weight: 800;
-    font-size: 2vw;
-    letter-spacing: .1vw;
-    /* Espacio entre letras */
-    margin-top: 1vw;
-    /* Espacio arriba */
+    font-size: 2rem;
+    letter-spacing: .1rem;
+    margin-top: 1rem;
 }
 
 .contenidoNosotros p,
 .contenidoBeneficios p {
-    font-size: 1.2vw;
+    font-size: 1.2rem;
     color: white;
     text-align: center;
     font-weight: 400;
     line-height: 1.3;
-    /* Altura entre lineas */
-    margin-top: .9vw;
-    /* Espacio arriba */
-    margin-left: 3vw;
-    /* Espacio a los lados */
-    margin-right: 3vw;
-    max-width: 55vw;
-    /* Ancho maximo del parrafo */
+    margin-top: .9rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    max-width: 55rem;
 }
 
 @media (max-width: 768px) {
@@ -406,37 +362,31 @@ h3 {
         background-image: linear-gradient(to bottom, #3d895c, rgba(255, 255, 255, 0) 50px), url(../img/2-nosotros/FONDO.png);
         background-position: left center;
         width: 100%;
-        height: 100vw;
+        height: 100rem;
     }
 
-
     h3 {
-        font-size: 5vw;
-        margin-top: 4vw;
+        font-size: 5rem;
+        margin-top: 4rem;
     }
 
     .tituloNosotrosGrande {
-        font-size: 8vw;
+        font-size: 8rem;
     }
 
     .tituloNosotros3 {
-        font-size: 4vw;
+        font-size: 4rem;
     }
 
     .contenidoNosotros p,
     .contenidoBeneficios p {
-
-        font-size: 3.2vw;
-        max-width: 80vw;
+        font-size: 3.2rem;
+        max-width: 80rem;
         line-height: 1;
-        margin-top: -1vw;
+        margin-top: -1rem;
         font-weight: bolder;
     }
-
 }
-
-
-
 
 /* SECCION MARCAS */
 .marcas {
@@ -455,7 +405,7 @@ h3 {
 
 .marcas p {
     color: var(--verdeOscuro);
-    margin-top: 1vw;
+    margin-top: 1rem;
 }
 
 @media (max-width: 768px) {
@@ -463,53 +413,47 @@ h3 {
         background-size: 200% 100%;
         background-position: left center;
         width: 100%;
-        height: 100vw;
+        height: 100rem;
     }
 }
 
-
-
-
+.contenidoMarcas{
+    top: 0rem;
+}
 
 .splide__slide img {
     width: auto;
     height: auto;
-    max-height: 20vw;
-    /* altura maxima */
+    max-height: 20rem;
     object-fit: cover;
-    /* Recorta la imagen*/
 }
 
 .splide {
     width: 70%;
-
 }
-
 
 .categorias {
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding-bottom: 10vw;
-    padding-top: 5vw;
+    padding-bottom: 10rem;
+    padding-top: 5rem;
 }
 
 .categorias h2 {
     color: var(--azul);
-    padding-bottom: 2vw;
+    padding-bottom: 2rem;
 }
 
 @media (max-width: 768px) {
     .splide__slide img {
-        max-height: 80vw;
+        max-height: 80rem;
     }
 
     .categorias {
-        padding-bottom: 30vw;
+        padding-bottom: 30rem;
     }
 }
-
-
 
 /* SECCION ZONAS */
 .zonas {
@@ -524,32 +468,32 @@ h3 {
 
 .contenidoZonas {
     display: flex;
-    margin-right: 5vw;
-
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto
 }
-
 
 .zonas h2 {
     color: var(--azul)
 }
 
 .tituloZonas {
-    margin-top: 2vw;
+    margin-top: 2rem;
     text-align: right;
 }
 
 .zonas img {
     display: relative;
-    margin: 2vw 8vw;
-    width: 50vw;
-    height: 35vw;
+    margin: 2rem;
+    width: 50rem;
+    height: 35rem;
     justify-content: left;
     z-index: 2;
 }
 
 .zonas p {
     color: var(--azul);
-    font-size: 1.5vw;
+    font-size: 1.5rem;
     text-align: right;
 }
 
@@ -557,22 +501,20 @@ h3 {
     .contenidoZonas {
         display: flex;
         flex-direction: column;
-        margin-top: -10vw;
+        margin-top: -10rem;
         align-items: center;
     }
 
     .contenidoZonas img {
         order: 2;
         width: 100%;
-        max-width: 75vw;
+        max-width: 75rem;
         height: auto;
-
     }
 
     .contenidoZonas p {
-        font-size: 4vw;
+        font-size: 4rem;
         text-align: center;
-
     }
 
     .contenidoZonas h2 {
@@ -581,14 +523,10 @@ h3 {
 
     .zonas {
         background-size: cover;
-        /* Hace que la imagen cubra todo el espacio */
         aspect-ratio: auto;
         height: 100%;
-        /* Ajusta la altura del contenedor a la altura de la pantalla */
     }
 }
-
-
 
 /* SECCION BENEFICIOS Y CONTACTO */
 .beneficios {
@@ -600,25 +538,17 @@ h3 {
     aspect-ratio: 2000 / 981;
     position: relative;
     z-index: 3;
-
 }
-
 
 .etiqueta2 {
     display: inline-block;
-    /* Para que el fondo solo abarque el texto */
     background-color: var(--azul);
     padding: 3px 6px;
-    /* Espaciado interno */
     border-radius: 2px;
-    /* Esquinas redondeadas */
     font-weight: bold;
     margin-bottom: -1rem;
     box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
-    /* Sombra */
 }
-
-
 
 .contenidoBeneficios {
     position: absolute;
@@ -630,27 +560,22 @@ h3 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
 }
-
 
 .tituloBeneficios {
     color: white;
     text-align: center;
     font-weight: 800;
-    font-size: 4vw;
+    font-size: 4rem;
     letter-spacing: .1rem;
-    /* Espacio entre letras */
-    margin-top: 1vw;
-    /* Espacio arriba */
+    margin-top: 1rem;
 }
 
 .iconosBeneficios {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 6rem;
-    /* Espacio entre los íconos */
+    gap: 2rem;
     margin-top: 2rem;
 }
 
@@ -659,26 +584,23 @@ h3 {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    max-width: 13vw;
+    max-width: 13rem;
 }
 
 .iconosBeneficios img {
-    width: 10vw;
-    /* Tamaño pequeño y uniforme */
-    height: 10vw;
-    margin-bottom: .7vw;
+    width: 10rem;
+    height: 10rem;
+    margin-bottom: .7rem;
     flex-wrap: wrap;
 }
 
 .beneficio p {
-    font-size: 1.4vw;
+    font-size: 1.2rem;
     color: var(--azul);
     text-align: center;
     font-weight: bolder;
     line-height: 1.3;
-    /* Altura entre lineas */
     margin: 0;
-    /* Espacio arriba */
     z-index: 8;
 }
 
@@ -686,64 +608,50 @@ h3 {
     position: none;
 }
 
-
 @media (max-width: 768px) {
     .iconosBeneficios {
         flex-wrap: wrap;
         justify-content: center;
-        gap: .2vw;
-        margin-top: 1vw;
-        /* Ajusta el margen superior */
-        max-width: 70vw;
-        /* Limita el ancho del contenedor para un mejor control */
+        gap: .2rem;
+        margin-top: 1rem;
+        max-width: 70rem;
         z-index: 2;
     }
 
     .iconosBeneficios .beneficio {
-        /* Define el tamaño de cada ícono */
-        flex: 0 0 calc(33.33% - 2vw);
+        flex: 0 0 calc(33.33% - 2rem);
         max-width: unset;
-        margin-bottom: 1vw;
-        /* Espacio entre filas */
+        margin-bottom: 1rem;
     }
 
     .iconosBeneficios img {
-        width: 15vw;
-        /* Aumenta un poco el tamaño de las imágenes para que sean más visibles */
-        height: 15vw;
-        margin-bottom: 1vw;
+        width: 15rem;
+        height: 15rem;
+        margin-bottom: 1rem;
     }
 
     .beneficiosTexto {
-        padding-top: 5vw;
-        font-size: 2vw;
-        max-width: 80vw;
+        padding-top: 5rem;
+        font-size: 2rem;
+        max-width: 80rem;
         line-height: 1;
-        margin-top: 0vw;
+        margin-top: 0rem;
         text-shadow:
             -1px -1px 0 #000,
             1px -1px 0 #000,
             -1px 1px 0 #000,
             1px 1px 0 #000;
-
-
     }
 
     .beneficio p {
-        font-size: 2vw;
+        font-size: 2rem;
         font-weight: 700;
-
     }
 
     .contenidoBeneficios {
-        margin-top: 20vw;
+        margin-top: 20rem;
     }
-
-
 }
-
-
-
 
 .contacto {
     background-image: url(../img/7-contacto/FONDO.png);
@@ -775,31 +683,24 @@ h3 {
 
     .fondoBlanco {
         display: block;
-        height: 50vw;
+        height: 50rem;
     }
 }
 
-
 .contenidoContacto h2 {
-text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-    }
-
-
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
 
 .etiqueta3 {
     display: inline-block;
     text-decoration: none;
-    /* Para que el fondo solo abarque el texto */
     background-color: var(--verdeClaro);
     color: var(--verdeOscuro);
     padding: 3px 16px;
     padding-top: 6px;
-    /* Espaciado interno */
     border-radius: 10px;
-    /* Esquinas redondeadas */
     font-weight: 800;
-    /* Sombra */
-    font-size: 1.3vw;
+    font-size: 1.3rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);;
 }
 
@@ -808,18 +709,16 @@ text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
     color: var(--verdeClaro);
 }
 
-
 @media (max-width: 768px) {
     .etiqueta3{
-        font-size: 3vw;
+        font-size: 3rem;
     }
 }
-
 
 footer {
     background-color: var(--verdeClaro);
     padding: 1rem 10%;
-    font-size: 1vw;
+    font-size: 1rem;
     display: flex;
     justify-content: space-between;
 }
@@ -832,32 +731,27 @@ footer img {
 footer p {
     margin: 0;
     text-align: right;
-    font-size: 1.3vw;
+    font-size: 1rem;
     color: var(--verdeOscuro);
+}
+
+.iconos-contacto{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .direccionMapa {
     text-decoration: none;
     color: var(--verdeOscuro);
-    font-size: 1.2vw;
+    font-size: 1rem;
 }
 
 @media (max-width: 768px) {
-    footer p {
-        font-size: 2vw
+    footer p, a {
+        font-size: 2rem
     }
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /*PRODUCTOS SECCION*/
 .contenido-principal {
@@ -868,25 +762,23 @@ footer p {
     width: 100%;
     aspect-ratio: 2000 / 589.5;
     position: relative;
-    margin-top: 4.5vw;
-
+    margin-top: 4.5rem;
 }
 
 .elementosContenido-principal {
     position: absolute;
-    top: 8vw;
+    top: 8rem;
     left: 15%;
 }
 
 .elementosContenido-principal h2 {
-    font-size: 5vw;
+    font-size: 5rem;
     font-weight: bolder;
     color: white;
     max-width: 80%;
-    line-height: 4vw;
-    padding-bottom: 2vw;
+    line-height: 4rem;
+    padding-bottom: 2rem;
 }
-
 
 .contenido-principal button {
     position: absolute;
@@ -916,13 +808,11 @@ footer p {
     color: white;
 }
 
-
-
 /* === Estructura y Layout del Catálogo === */
 #catalogo-productos {
     background-color:  white;
-    padding: 4vw;
-    padding-top: 1vw;
+    padding: 4rem;
+    padding-top: 1rem;
 }
 
 .catalogo-container {
@@ -945,7 +835,7 @@ footer p {
     padding: 0.75rem 1.5rem;
     border: 2px solid var(--verdeOscuro);
     border-radius: 50px;
-    font-size: 1.6vw;
+    font-size: 1.6rem;
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%236c757d" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>');
     background-repeat: no-repeat;
     background-position: left 1rem center;
@@ -956,10 +846,9 @@ footer p {
     width: 100%;
 }
 
-
 .brand-pill {
     display: flex;
-    gap: 1rem; /* Un espacio más predecible */
+    gap: 1rem;
     margin-top: 1.5rem;
     overflow-x: auto;
     padding-bottom: 10px;
@@ -969,21 +858,21 @@ footer p {
     color: white;
     text-decoration: none;
     font-weight: 800;
-    font-size: 10vw;
-    transition: transform 0.2s ease, background-color 0.2s ease; /* Transición suave */
+    font-size: 10rem;
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .brand-pill {
     display: inline-block;
-    padding: 0.8rem 1.5rem; /* Padding fijo para consistencia */
-    border-radius: 20px; /* Un valor alto para asegurar la forma de píldora */
+    padding: 0.8rem 1.5rem;
+    border-radius: 20px;
     background-color: var(--verdeOscuro);
     color: white;
     text-decoration: none;
     font-weight: 800;
-    font-size: 1.5vw; /* Tamaño de fuente base */
+    font-size: 1.5rem;
     white-space: nowrap;
-    transition: transform 0.2s ease, background-color 0.2s ease; /* Transición suave */
+    transition: transform 0.2s ease, background-color 0.2s ease;
     width: 100%;
     text-align: center;
 }
@@ -1016,7 +905,7 @@ footer p {
 }
 
 .sidebar-filters h3 {
-    font-size: 1.5vw;
+    font-size: 1.5rem;
     font-weight: bold;
     color: var(--verdeOscuro);
     letter-spacing: 1px;
@@ -1036,9 +925,8 @@ footer p {
     color: var(--verdeClaro);
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
-    border-bottom: 1px solid #e0e0e0; /* Línea divisoria debajo del título */
+    border-bottom: 1px solid #e0e0e0;
 }
-
 
 .filter-group .form-check {
     margin-bottom: 0.5rem;
@@ -1048,15 +936,13 @@ footer p {
 
 .filter-group .form-check-label {
     cursor: pointer;
-    font-size: .8vw;
+    font-size: .8rem;
     color: gray;
 }
 
 .filter-group .form-check-input {
     transform: scale(2);
-    /*tamaño del checkbox */
     margin-right: 0.7rem;
-    /* espacio entre checkbox y texto*/
 }
 
 /* === Grid de Productos === */
@@ -1082,7 +968,7 @@ footer p {
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin: -.3vw;
+    margin: -.3rem;
     align-items: center;
 }
 
@@ -1090,11 +976,11 @@ footer p {
     font-weight: bold;
     color: var(--verdeOscuro);
     text-align: center;
-    font-size: 1.3vw;
+    font-size: 1.3rem;
 }
 
 .card-text {
-    font-size: .8vw;
+    font-size: .8rem;
     color: gray;
     line-height: 1.2;
     margin-right: 0;
@@ -1104,7 +990,7 @@ footer p {
 .card-text strong {
     color: var(--verdeOscuro);
     font-weight: 800;
-    padding-bottom: 20vw;
+    padding-bottom: 20rem;
 }
 
 .card-button {
@@ -1112,11 +998,11 @@ footer p {
     border-radius: 4px;
     padding: 2px;
     margin-top: auto;
-    margin-bottom: 1vw;
+    margin-bottom: 1rem;
     width: 60%;
     background-color: var(--verdeOscuro);
     color: white;
-    font-size: .7vw;
+    font-size: .7rem;
 }
 
 .card-button:hover{
@@ -1124,29 +1010,24 @@ footer p {
     color: black;
 }
 
-
 .card-img-top {
     width: 100%;
     height: auto;
-    padding: 1vw;
+    padding: 1rem;
 }
 
 #catalogo-productos .container-fluid {
     display: flex;
     flex-wrap: wrap;
-    /* Permite que los elementos se envuelvan */
     flex-direction: column;
-    /* Apila los elementos verticalmente */
 }
 
 #catalogo-productos .top-bar {
     width: 100%;
-    /* Asegura que la barra superior ocupe todo el ancho */
 }
 
 #catalogo-productos .row {
     width: 100%;
-    /* Asegura que la fila de columnas ocupe todo el ancho */
 }
 
 @media (max-width: 768px) {
@@ -1164,51 +1045,68 @@ footer p {
 @media (max-width: 768px) {
     .contenido-principal p {
         width: 40%;
-        font-size: 2vw;
-        top: 5vw;
-        left: 8vw;
+        font-size: 2rem;
+        top: 5rem;
+        left: 8rem;
     }
 
     .contenido-principal button {
-        top: 10vw;
-        left: 2vw;
+        top: 10rem;
+        left: 2rem;
         padding: 0.4rem 0.8rem;
-        font-size: 2vw;
+        font-size: 2rem;
     }
 
-    /* Ajustes al catálogo */
     .catalogo-container {
         padding: 1rem 0.5rem;
         width: 70%;
     }
 
     .card-button{
-        font-size: 3vw;
+        font-size: 3rem;
     }
 
     .search-bar {
         padding-top: 0.6rem;
         padding-bottom: 0.6rem;
-        font-size: 2vw;
+        font-size: 2rem;
     }
 
     .brand-pills a {
         padding: 0.5rem 1rem;
-        font-size: 2vw;
+        font-size: 2rem;
     }
 
     .card-text {
-        font-size: 3vw;
+        font-size: 3rem;
     }
 
     .filter-group .form-check-label {
         cursor: pointer;
-        font-size: 2.5vw;
+        font-size: 2.5rem;
     }
-
 }
-
 
 body {
     overflow-x: hidden;
+}
+
+#mi-carrusel-marcas .splide__slide img {
+    width: 50%;
+    height: auto;
+}
+
+#mi-carrusel-marcas .splide__slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+#mi-carrusel-marcas{
+    width: 50%;
+}
+
+#mi-carrusel{
+    width: 70%;
 }

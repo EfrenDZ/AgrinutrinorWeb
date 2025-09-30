@@ -191,12 +191,12 @@ button:hover {
 .logoBlanco {
     display: flex;
     object-fit: contain;
-    margin-bottom: 2rem;
     position: absolute;
     top: 40%;
     left: 10%;
-    width: 22rem;
-    height: 10rem;
+    width: 22vw;   /* Ancho basado en el ancho de la ventana */
+    height: 10vw;  /* Alto basado en el ancho de la ventana */
+    margin-bottom: 2rem; /* Puedes mantener el margen en rem sin problema */
 }
 
 .textoPortada {
@@ -308,7 +308,7 @@ button:hover {
 h3 {
     text-align: center;
     font-weight: 50rem;
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin: 0rem;
     padding: 0rem;
     color: var(--verdeOscuro);
@@ -322,6 +322,7 @@ h3 {
     padding: 0;
     font-weight: 1000;
     line-height: .9;
+    margin-top: .7rem;
 }
 
 .etiqueta {
@@ -365,26 +366,32 @@ h3 {
         height: 100rem;
     }
 
+
+    .contenidoNosotros{
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     h3 {
-        font-size: 5rem;
+        font-size: 3rem;
         margin-top: 4rem;
     }
 
     .tituloNosotrosGrande {
-        font-size: 8rem;
+        font-size: 4rem;
     }
 
     .tituloNosotros3 {
-        font-size: 4rem;
+        font-size: 2rem;
     }
 
     .contenidoNosotros p,
     .contenidoBeneficios p {
-        font-size: 3.2rem;
+        font-size: 1.5rem;
         max-width: 80rem;
         line-height: 1;
         margin-top: -1rem;
-        font-weight: bolder;
     }
 }
 
@@ -426,6 +433,15 @@ h3 {
     height: auto;
     max-height: 20rem;
     object-fit: cover;
+}
+
+@media (max-width: 768px) {
+.splide__slide img {
+    width: 50%;
+    height: auto;
+    max-height: 20rem;
+    object-fit: cover;
+}
 }
 
 .splide {
@@ -474,7 +490,7 @@ h3 {
 }
 
 .zonas h2 {
-    color: var(--azul)
+    color: var(--azul);
 }
 
 .tituloZonas {
@@ -503,6 +519,9 @@ h3 {
         flex-direction: column;
         margin-top: -10rem;
         align-items: center;
+        width: 70%;
+    margin-left: auto;
+    margin-right: auto;  
     }
 
     .contenidoZonas img {
@@ -513,7 +532,7 @@ h3 {
     }
 
     .contenidoZonas p {
-        font-size: 4rem;
+        font-size: 1.5rem;
         text-align: center;
     }
 
@@ -566,7 +585,6 @@ h3 {
     color: white;
     text-align: center;
     font-weight: 800;
-    font-size: 4rem;
     letter-spacing: .1rem;
     margin-top: 1rem;
 }
@@ -576,7 +594,7 @@ h3 {
     justify-content: center;
     align-items: flex-start;
     gap: 2rem;
-    margin-top: 2rem;
+    margin-top: 2.5rem;
 }
 
 .iconosBeneficios .beneficio {
@@ -609,6 +627,9 @@ h3 {
 }
 
 @media (max-width: 768px) {
+
+
+
     .iconosBeneficios {
         flex-wrap: wrap;
         justify-content: center;
@@ -625,14 +646,14 @@ h3 {
     }
 
     .iconosBeneficios img {
-        width: 15rem;
-        height: 15rem;
+        width: 12rem;
+        height: 12rem;
         margin-bottom: 1rem;
     }
 
     .beneficiosTexto {
         padding-top: 5rem;
-        font-size: 2rem;
+        font-size: 1.5rem;
         max-width: 80rem;
         line-height: 1;
         margin-top: 0rem;
@@ -644,12 +665,15 @@ h3 {
     }
 
     .beneficio p {
-        font-size: 2rem;
+        font-size: 1.5rem;
         font-weight: 700;
     }
 
     .contenidoBeneficios {
         margin-top: 20rem;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
@@ -762,23 +786,25 @@ footer p {
     width: 100%;
     aspect-ratio: 2000 / 589.5;
     position: relative;
-    margin-top: 4.5rem;
+    margin-top: 4.5vw;
+
 }
 
 .elementosContenido-principal {
     position: absolute;
-    top: 8rem;
+    top: 8vw;
     left: 15%;
 }
 
 .elementosContenido-principal h2 {
-    font-size: 5rem;
+    font-size: 5vw;
     font-weight: bolder;
     color: white;
     max-width: 80%;
-    line-height: 4rem;
-    padding-bottom: 2rem;
+    line-height: 4vw;
+    padding-bottom: 2vw;
 }
+
 
 .contenido-principal button {
     position: absolute;
@@ -808,11 +834,13 @@ footer p {
     color: white;
 }
 
+
+
 /* === Estructura y Layout del Catálogo === */
 #catalogo-productos {
     background-color:  white;
-    padding: 4rem;
-    padding-top: 1rem;
+    padding: 4vw;
+    padding-top: 1vw;
 }
 
 .catalogo-container {
@@ -835,7 +863,7 @@ footer p {
     padding: 0.75rem 1.5rem;
     border: 2px solid var(--verdeOscuro);
     border-radius: 50px;
-    font-size: 1.6rem;
+    font-size: 1.6vw;
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%236c757d" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>');
     background-repeat: no-repeat;
     background-position: left 1rem center;
@@ -846,9 +874,10 @@ footer p {
     width: 100%;
 }
 
+
 .brand-pill {
     display: flex;
-    gap: 1rem;
+    gap: 1rem; /* Un espacio más predecible */
     margin-top: 1.5rem;
     overflow-x: auto;
     padding-bottom: 10px;
@@ -858,21 +887,21 @@ footer p {
     color: white;
     text-decoration: none;
     font-weight: 800;
-    font-size: 10rem;
-    transition: transform 0.2s ease, background-color 0.2s ease;
+    font-size: 10vw;
+    transition: transform 0.2s ease, background-color 0.2s ease; /* Transición suave */
 }
 
 .brand-pill {
     display: inline-block;
-    padding: 0.8rem 1.5rem;
-    border-radius: 20px;
+    padding: 0.8rem 1.5rem; /* Padding fijo para consistencia */
+    border-radius: 20px; /* Un valor alto para asegurar la forma de píldora */
     background-color: var(--verdeOscuro);
     color: white;
     text-decoration: none;
     font-weight: 800;
-    font-size: 1.5rem;
+    font-size: 1.5vw; /* Tamaño de fuente base */
     white-space: nowrap;
-    transition: transform 0.2s ease, background-color 0.2s ease;
+    transition: transform 0.2s ease, background-color 0.2s ease; /* Transición suave */
     width: 100%;
     text-align: center;
 }
@@ -905,7 +934,7 @@ footer p {
 }
 
 .sidebar-filters h3 {
-    font-size: 1.5rem;
+    font-size: 1.5vw;
     font-weight: bold;
     color: var(--verdeOscuro);
     letter-spacing: 1px;
@@ -925,8 +954,9 @@ footer p {
     color: var(--verdeClaro);
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0; /* Línea divisoria debajo del título */
 }
+
 
 .filter-group .form-check {
     margin-bottom: 0.5rem;
@@ -936,13 +966,15 @@ footer p {
 
 .filter-group .form-check-label {
     cursor: pointer;
-    font-size: .8rem;
+    font-size: .8vw;
     color: gray;
 }
 
 .filter-group .form-check-input {
-    transform: scale(2);
+    transform: scale(1.5);
+    /*tamaño del checkbox */
     margin-right: 0.7rem;
+    /* espacio entre checkbox y texto*/
 }
 
 /* === Grid de Productos === */
@@ -968,7 +1000,7 @@ footer p {
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin: -.3rem;
+    margin: -.3vw;
     align-items: center;
 }
 
@@ -976,11 +1008,11 @@ footer p {
     font-weight: bold;
     color: var(--verdeOscuro);
     text-align: center;
-    font-size: 1.3rem;
+    font-size: 1.3vw;
 }
 
 .card-text {
-    font-size: .8rem;
+    font-size: .8vw;
     color: gray;
     line-height: 1.2;
     margin-right: 0;
@@ -990,7 +1022,7 @@ footer p {
 .card-text strong {
     color: var(--verdeOscuro);
     font-weight: 800;
-    padding-bottom: 20rem;
+    padding-bottom: 20vw;
 }
 
 .card-button {
@@ -998,11 +1030,11 @@ footer p {
     border-radius: 4px;
     padding: 2px;
     margin-top: auto;
-    margin-bottom: 1rem;
+    margin-bottom: 1vw;
     width: 60%;
     background-color: var(--verdeOscuro);
     color: white;
-    font-size: .7rem;
+    font-size: .7vw;
 }
 
 .card-button:hover{
@@ -1010,24 +1042,29 @@ footer p {
     color: black;
 }
 
+
 .card-img-top {
     width: 100%;
     height: auto;
-    padding: 1rem;
+    padding: 1vw;
 }
 
 #catalogo-productos .container-fluid {
     display: flex;
     flex-wrap: wrap;
+    /* Permite que los elementos se envuelvan */
     flex-direction: column;
+    /* Apila los elementos verticalmente */
 }
 
 #catalogo-productos .top-bar {
     width: 100%;
+    /* Asegura que la barra superior ocupe todo el ancho */
 }
 
 #catalogo-productos .row {
     width: 100%;
+    /* Asegura que la fila de columnas ocupe todo el ancho */
 }
 
 @media (max-width: 768px) {
@@ -1045,47 +1082,50 @@ footer p {
 @media (max-width: 768px) {
     .contenido-principal p {
         width: 40%;
-        font-size: 2rem;
-        top: 5rem;
-        left: 8rem;
+        font-size: 2vw;
+        top: 5vw;
+        left: 8vw;
     }
 
     .contenido-principal button {
-        top: 10rem;
-        left: 2rem;
+        top: 10vw;
+        left: 2vw;
         padding: 0.4rem 0.8rem;
-        font-size: 2rem;
+        font-size: 2vw;
     }
 
+    /* Ajustes al catálogo */
     .catalogo-container {
         padding: 1rem 0.5rem;
         width: 70%;
     }
 
     .card-button{
-        font-size: 3rem;
+        font-size: 3vw;
     }
 
     .search-bar {
         padding-top: 0.6rem;
         padding-bottom: 0.6rem;
-        font-size: 2rem;
+        font-size: 2vw;
     }
 
     .brand-pills a {
         padding: 0.5rem 1rem;
-        font-size: 2rem;
+        font-size: 2vw;
     }
 
     .card-text {
-        font-size: 3rem;
+        font-size: 3vw;
     }
 
     .filter-group .form-check-label {
         cursor: pointer;
-        font-size: 2.5rem;
+        font-size: 2.5vw;
     }
+
 }
+
 
 body {
     overflow-x: hidden;

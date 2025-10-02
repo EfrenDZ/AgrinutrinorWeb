@@ -77,48 +77,70 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function cargarProductos(page = 1) {
-        const params = new URLSearchParams({ page });
-        brandFiltersContainer.querySelectorAll('input:checked').forEach(chk => {
-            params.append('marca', chk.value);
-        });
-        categoryFiltersContainer.querySelectorAll('input:checked').forEach(chk => {
-            params.append('categoria', chk.value);
-        });
-        if (searchInput.value) params.append('search', searchInput.value);
+    const params = new URLSearchParams({ page });
+    brandFiltersContainer.querySelectorAll('input:checked').forEach(chk => {
+        params.append('marca', chk.value);
+    });
+    categoryFiltersContainer.querySelectorAll('input:checked').forEach(chk => {
+        params.append('categoria', chk.value);
+    });
+    if (searchInput.value) params.append('search', searchInput.value);
 
-        const activePill = brandCarousel.querySelector('a.active');
-        productsTitle.textContent = (activePill?.textContent || 'TODOS LOS PRODUCTOS');
+    const activePill = brandCarousel.querySelector('a.active');
+    productsTitle.textContent = (activePill?.textContent || 'TODOS LOS PRODUCTOS');
 
-        fetch(`${apiUrlBase}/productos?${params.toString()}`)
-            .then(response => response.json())
-            .then(data => {
-                productContainer.innerHTML = '';
-                if (!data.productos || data.productos.length === 0) {
-                    productContainer.innerHTML = '<p class="text-center col-12">No se encontraron productos con estos filtros.</p>';
-                    crearPaginacion(0, 0);
-                    return;
+    fetch(`${apiUrlBase}/productos?${params.toString()}`)
+        .then(response => response.json())
+        .then(data => {
+            productContainer.innerHTML = '';
+            if (!data.productos || data.productos.length === 0) {
+                productContainer.innerHTML = '<p class="text-center col-12">No se encontraron productos con estos filtros.</p>';
+                crearPaginacion(0, 0);
+                return;
+            }
+            data.productos.forEach(producto => {
+                // --- INICIO DE CAMBIOS ---
+
+                // 1. Lógica para la imagen
+                let imagenHtml;
+                if (producto.imagen) {
+                    // Si hay imagen, usa la etiqueta <img>
+                    imagenHtml = `<img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">`;
+                } else {
+                    // Si NO hay imagen, usa un div con el nombre del producto
+                    imagenHtml = `<div class="card-img-top placeholder-img">${producto.nombre}</div>`;
                 }
-                data.productos.forEach(producto => {
-                    const cardHtml = `
-                        <div class="col-sm-6 col-lg-3 d-flex align-items-stretch">
-                            <div class="card w-100">
-                                <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
-                                <div class="card-body">
-                                    <p class="card-text">
-                                        <strong>Ingrediente Activo:<br/></strong> ${producto.ingredienteActivo}<br>
-                                        <strong>Presentación:<br/></strong> ${producto.presentacion}<br>
-                                        <strong>Categoría:<br/></strong> ${producto.categoria_nombre}
-                                    </p>
-                                    <button class="card-button" class="etiqueta3">Ficha técnica</button>
-                                </div>
+
+                // 2. Lógica para el botón de Ficha Técnica
+                let fichaTecnicaButton = ''; // Vacío por defecto
+                if (producto.fichaTecnica) {
+                    // Si hay URL de ficha técnica, crea el botón como un enlace
+                    fichaTecnicaButton = `<a href="${producto.fichaTecnica}" target="_blank" rel="noopener noreferrer" class="card-button etiqueta3">Ficha técnica</a>`;
+                }
+
+                // 3. Construcción de la tarjeta con las variables
+                const cardHtml = `
+                    <div class="col-sm-6 col-lg-3 d-flex align-items-stretch">
+                        <div class="card w-100">
+                            ${imagenHtml}
+                            <div class="card-body">
+                                <p class="card-text">
+                                    <strong>Ingrediente Activo:<br/></strong> ${producto.ingredienteActivo}<br>
+                                    <strong>Presentación:<br/></strong> ${producto.presentacion}<br>
+                                    <strong>Categoría:<br/></strong> ${producto.categoria_nombre}
+                                </p>
+                                ${fichaTecnicaButton}
                             </div>
-                        </div>`;
-                    productContainer.innerHTML += cardHtml;
-                });
-                crearPaginacion(data.totalPaginas, data.paginaActual);
-            })
-            .catch(error => console.error('Error:', error));
-    }
+                        </div>
+                    </div>`;
+                
+                // --- FIN DE CAMBIOS ---
+                productContainer.innerHTML += cardHtml;
+            });
+            crearPaginacion(data.totalPaginas, data.paginaActual);
+        })
+        .catch(error => console.error('Error:', error));
+}
     
     function crearPaginacion(totalPages, currentPage) {
         paginationControls.innerHTML = '';

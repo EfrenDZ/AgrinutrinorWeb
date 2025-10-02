@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const apiUrlBase = '/api';
-
+    
     const productContainer = document.getElementById('productos-container');
     const paginationControls = document.getElementById('pagination-controls');
     const brandCarousel = document.getElementById('brand-carousel');
@@ -9,58 +9,71 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('search-input');
     const productsTitle = document.getElementById('productos-titulo');
     const btnLimpiar = document.getElementById('btn-limpiar-filtros');
-
+    
     let debounceTimeout;
 
-    function poblarFiltros() {
-        return Promise.all([
-            fetch(`${apiUrlBase}/marcas`).then(res => res.json()),
-            fetch(`${apiUrlBase}/categorias`).then(res => res.json())
-        ]).then(([marcas, categorias]) => {
-            const splideList = document.querySelector('#brand-carousel .splide__list');
-            if (!splideList) return;
+    function poblarFiltroMarcas() {
+        return fetch(`${apiUrlBase}/marcas`).then(res => res.json())
+            .then(marcas => {
+                const splideList = document.querySelector('#brand-carousel .splide__list');
+                if (!splideList) return;
 
-            splideList.innerHTML = '';
-            brandFiltersContainer.innerHTML = '<h4>Marca</h4>';
-            marcas.forEach(marca => {
-                const slide = document.createElement('li');
-                slide.className = 'splide__slide';
-                const pill = document.createElement('a');
-                pill.href = "#";
-                pill.textContent = marca.nombre;
-                pill.dataset.marcaId = marca.id;
-                pill.className = 'brand-pill';
-                slide.appendChild(pill);
-                splideList.appendChild(slide);
+                splideList.innerHTML = '';
+                brandFiltersContainer.innerHTML = '<h4>Marca</h4>';
+                marcas.forEach(marca => {
+                    const slide = document.createElement('li');
+                    slide.className = 'splide__slide';
+                    const pill = document.createElement('a');
+                    pill.href = "#";
+                    pill.textContent = marca.nombre;
+                    pill.dataset.marcaId = marca.id;
+                    pill.className = 'brand-pill';
+                    slide.appendChild(pill);
+                    splideList.appendChild(slide);
 
-                const checkboxDiv = document.createElement('div');
-                checkboxDiv.className = 'form-check';
-                checkboxDiv.innerHTML = `<input class="form-check-input" type="checkbox" value="${marca.id}" id="marca-${marca.id}"><label class="form-check-label" for="marca-${marca.id}">${marca.nombre}</label>`;
-                brandFiltersContainer.appendChild(checkboxDiv);
+                    const checkboxDiv = document.createElement('div');
+                    checkboxDiv.className = 'form-check';
+                    checkboxDiv.innerHTML = `<input class="form-check-input" type="checkbox" value="${marca.id}" id="marca-${marca.id}"><label class="form-check-label" for="marca-${marca.id}">${marca.nombre}</label>`;
+                    brandFiltersContainer.appendChild(checkboxDiv);
+                });
+                new Splide('#brand-carousel', {
+                    type: 'slide',
+                    perPage: 5,
+                    perMove: 1,
+                    gap: '1rem',
+                    pagination: false,
+                    padding: { left: 0, right: '5rem' },
+                    breakpoints: {
+                        992: { perPage: 4 },
+                        768: { perPage: 3 },
+                        576: { perPage: 2, padding: { right: '3rem' } },
+                    },
+                }).mount();
             });
+    }
 
-            new Splide('#brand-carousel', {
-                type: 'slide',
-                perPage: 5,
-                perMove: 1,
-                gap: '1rem',
-                pagination: false,
-                padding: { left: 0, right: '5rem' }, 
-                breakpoints: {
-                    992: { perPage: 4 },
-                    768: { perPage: 3 },
-                    576: { perPage: 2, padding: { right: '3rem' } }, // Espacio más chico en celular
-                },
-            }).mount();
+    function actualizarFiltroCategorias() {
+        const marcasSeleccionadas = Array.from(brandFiltersContainer.querySelectorAll('input:checked')).map(chk => chk.value);
+        let url = `${apiUrlBase}/categorias`;
+        
+        if (marcasSeleccionadas.length > 0) {
+            const params = new URLSearchParams();
+            marcasSeleccionadas.forEach(id => params.append('marca', id));
+            url += `?${params.toString()}`;
+        }
 
-            categoryFiltersContainer.innerHTML = '<h4>Categoría</h4>';
-            categorias.forEach(cat => {
-                const checkboxDiv = document.createElement('div');
-                checkboxDiv.className = 'form-check';
-                checkboxDiv.innerHTML = `<input class="form-check-input" type="checkbox" value="${cat.id}" id="cat-${cat.id}"><label class="form-check-label" for="cat-${cat.id}">${cat.nombre}</label>`;
-                categoryFiltersContainer.appendChild(checkboxDiv);
+        fetch(url).then(res => res.json())
+            .then(categorias => {
+                const categoriasSeleccionadasAntes = new Set(Array.from(categoryFiltersContainer.querySelectorAll('input:checked')).map(chk => chk.value));
+                categoryFiltersContainer.innerHTML = '<h4>Categoría</h4>';
+                categorias.forEach(cat => {
+                    const checkboxDiv = document.createElement('div');
+                    checkboxDiv.className = 'form-check';
+                    const isChecked = categoriasSeleccionadasAntes.has(cat.id.toString()) ? 'checked' : '';
+                    checkboxDiv.innerHTML = `<input class="form-check-input" type="checkbox" value="${cat.id}" id="cat-${cat.id}" ${isChecked}><label class="form-check-label" for="cat-${cat.id}">${cat.nombre}</label>`;
+                    categoryFiltersContainer.appendChild(checkboxDiv);
+                });
             });
-        });
     }
 
     function cargarProductos(page = 1) {
@@ -106,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .catch(error => console.error('Error:', error));
     }
-
+    
     function crearPaginacion(totalPages, currentPage) {
         paginationControls.innerHTML = '';
         if (totalPages <= 1) return;
@@ -135,36 +148,39 @@ document.addEventListener('DOMContentLoaded', () => {
     brandCarousel.addEventListener('click', e => {
         if (e.target.tagName !== 'A') return;
         e.preventDefault();
-
         const wasActive = e.target.classList.contains('active');
         brandCarousel.querySelectorAll('a').forEach(pill => pill.classList.remove('active'));
         brandFiltersContainer.querySelectorAll('input').forEach(chk => chk.checked = false);
-
         if (!wasActive) {
             e.target.classList.add('active');
-            const correspondingCheckbox = document.getElementById(`marca-${e.target.dataset.marcaId}`);
-            if (correspondingCheckbox) correspondingCheckbox.checked = true;
+            const checkbox = document.getElementById(`marca-${e.target.dataset.marcaId}`);
+            if (checkbox) checkbox.checked = true;
         }
+        actualizarFiltroCategorias();
         onFilterChange();
     });
-
+    
     brandFiltersContainer.addEventListener('change', () => {
         brandCarousel.querySelectorAll('a').forEach(pill => pill.classList.remove('active'));
+        actualizarFiltroCategorias();
         onFilterChange();
     });
 
     categoryFiltersContainer.addEventListener('change', onFilterChange);
     searchInput.addEventListener('keyup', onFilterChange);
-
+    
     btnLimpiar.addEventListener('click', () => {
         searchInput.value = '';
         brandCarousel.querySelectorAll('a').forEach(pill => pill.classList.remove('active'));
         document.querySelectorAll('.sidebar-filters input:checked').forEach(chk => chk.checked = false);
+        actualizarFiltroCategorias();
         cargarProductos(1);
     });
 
     async function init() {
-        await poblarFiltros();
+        await poblarFiltroMarcas();
+        actualizarFiltroCategorias();
+
         const urlParams = new URLSearchParams(window.location.search);
         const marcaIdDesdeUrl = urlParams.get('marca');
         if (marcaIdDesdeUrl) {
@@ -172,6 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (pill) pill.classList.add('active');
             const checkbox = brandFiltersContainer.querySelector(`input[value="${marcaIdDesdeUrl}"]`);
             if (checkbox) checkbox.checked = true;
+            actualizarFiltroCategorias();
         }
         cargarProductos(1);
     }

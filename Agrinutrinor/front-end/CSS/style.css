@@ -877,17 +877,21 @@ footer p {
 
 .brand-pill {
     display: inline-block;
+    width: 100%;
+    text-align: center;
     padding: 0.8rem 1.5rem;
-    border-radius: 20px;
+    padding-bottom: 10px;    /* Espacio extra abajo que tenías en el bloque 1 */
+    border-radius: 50px;     /* El radio más pronunciado del bloque 1 */
+    margin-top: 1.5rem;      /* El margen superior que tenías en el bloque 1 */
     background-color: var(--verdeOscuro);
     color: white;
     text-decoration: none;
     font-weight: 800;
-    font-size: 1.5vw;
-    white-space: nowrap;
+    font-size: 1.5vw;        /* El tamaño correcto y responsivo del bloque 2 */
+    white-space: nowrap;     /* Evita que el texto se parta en dos líneas */
+    overflow: hidden;        /* Oculta el texto que no cabe */
+    text-overflow: ellipsis; /* Muestra "..." para el texto muy largo */
     transition: transform 0.2s ease, background-color 0.2s ease;
-    width: 100%;
-    text-align: center;
 }
 
 .brand-pill:hover {

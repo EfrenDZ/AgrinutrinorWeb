@@ -119,20 +119,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 // 3. Construcción de la tarjeta con las variables
-                const cardHtml = `
-                    <div class="col-sm-6 col-lg-3 d-flex align-items-stretch">
-                        <div class="card w-100">
-                            ${imagenHtml}
-                            <div class="card-body">
-                                <p class="card-text">
-                                    <strong>Ingrediente Activo:<br/></strong> ${producto.ingredienteActivo}<br>
-                                    <strong>Presentación:<br/></strong> ${producto.presentacion}<br>
-                                    <strong>Categoría:<br/></strong> ${producto.categoria_nombre}
-                                </p>
-                                ${fichaTecnicaButton}
-                            </div>
-                        </div>
-                    </div>`;
+const cardHtml = `
+    <div class="col-sm-6 col-lg-3 d-flex align-items-stretch">
+        <div class="card w-100">
+            ${imagenHtml}
+            <div class="card-body">
+                <p class="card-text">
+                    <strong>Ingrediente Activo:</strong>
+                    <span class="ingredientes-lista">${producto.ingredienteActivo}</span> 
+                    <strong>Presentación:</strong><br/>
+                    ${producto.presentacion}<br>
+                    <strong>Categoría:</strong><br/>
+                    ${producto.categoria_nombre}
+                </p>
+                ${fichaTecnicaButton}
+            </div>
+        </div>
+    </div>`;
                 
                 // --- FIN DE CAMBIOS ---
                 productContainer.innerHTML += cardHtml;

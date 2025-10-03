@@ -863,7 +863,7 @@ footer p {
     padding: 0.75rem 1.5rem;
     border: 2px solid var(--verdeOscuro);
     border-radius: 50px;
-    font-size: 1.6vw;
+    font-size: 1vw;
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%236c757d" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>');
     background-repeat: no-repeat;
     background-position: left 1rem center;
@@ -1067,6 +1067,12 @@ footer p {
     /* Asegura que la fila de columnas ocupe todo el ancho */
 }
 
+.ingredientes-lista {
+  display: block; /* Hace que el span se comporte como un párrafo */
+  white-space: pre-wrap; /* <-- ESTA ES LA LÍNEA CLAVE */
+  padding-left: 10px; /* Opcional: para que se vea un poco más indentado */
+}
+
 @media (max-width: 768px) {
     .sidebar-filters {
         margin-bottom: 2rem;
@@ -1150,3 +1156,4 @@ body {
 #mi-carrusel{
     width: 70%;
 }
+

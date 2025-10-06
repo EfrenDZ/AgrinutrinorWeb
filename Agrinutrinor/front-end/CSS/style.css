@@ -143,10 +143,7 @@ body {
     width: 100%;
 }
 
-#brand-carousel .splide__arrow{
-        margin-left:-6rem;
-    margin-right: -6rem;
-}
+
 
 
 @media (max-width: 768px) {
@@ -876,7 +873,14 @@ footer p {
 }
 
 #brand-carousel{
-    width: 100%;
+    width: 95%;
+}
+
+#brand-carousel .splide__arrow{
+        margin-left:-3rem;
+    margin-right: -3rem;
+    align-content: center;
+    align-items: center;
 }
 
 

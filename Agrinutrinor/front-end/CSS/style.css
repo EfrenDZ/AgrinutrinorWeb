@@ -879,8 +879,8 @@ footer p {
 #brand-carousel .splide__arrow{
         margin-left:-3rem;
     margin-right: -3rem;
-    align-content: center;
-    align-items: center;
+    background: none;
+    top: 50%;
 }
 
 
@@ -1074,7 +1074,7 @@ footer p {
 .textoCard{
     font-size: 1.7vw;
     color: var(--verdeOscuro);
-    width: 600;
+    font-weight: 600;
     text-align: center;
     line-height: 1.5;
 }

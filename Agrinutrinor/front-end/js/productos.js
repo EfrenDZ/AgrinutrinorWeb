@@ -108,17 +108,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     imagenHtml = `<img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">`;
                 } else {
                     // Si NO hay imagen, usa un div con el nombre del producto
-                    imagenHtml = `<div class="card-img-top placeholder-img">${producto.nombre}</div>`;
+                    imagenHtml = `<h2 class="card-img-top placeholder-img">${producto.nombre}</h2>`;
                 }
 
-                // 2. Lógica para el botón de Ficha Técnica
+               
                 let fichaTecnicaButton = ''; // Vacío por defecto
                 if (producto.fichaTecnica) {
-                    // Si hay URL de ficha técnica, crea el botón como un enlace
+                   
                     fichaTecnicaButton = `<a href="${producto.fichaTecnica}" target="_blank" rel="noopener noreferrer" class="card-button etiqueta3">Ficha técnica</a>`;
                 }
 
-                // 3. Construcción de la tarjeta con las variables
+              
 const cardHtml = `
     <div class="col-sm-6 col-lg-3 d-flex align-items-stretch">
         <div class="card w-100">
@@ -127,9 +127,9 @@ const cardHtml = `
                 <p class="card-text">
                     <strong>Ingrediente Activo:</strong>
                     <span class="ingredientes-lista">${producto.ingredienteActivo}</span> 
-                    <strong>Presentación:</strong><br/>
+                    <br/><strong>Presentación:</strong><br/>
                     ${producto.presentacion}<br>
-                    <strong>Categoría:</strong><br/>
+                    <br/><strong>Categoría:</strong><br/>
                     ${producto.categoria_nombre}
                 </p>
                 ${fichaTecnicaButton}

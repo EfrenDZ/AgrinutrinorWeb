@@ -889,11 +889,10 @@ footer p {
 }
 
 #brand-carousel .splide__arrow{
-    margin-left:-3rem;
+        margin-left:-3rem;
     margin-right: -3rem;
     background: none;
-    top: 50%;
-    transform: translateY(-50%);
+    margin-top: .6rem;
 }
 
 

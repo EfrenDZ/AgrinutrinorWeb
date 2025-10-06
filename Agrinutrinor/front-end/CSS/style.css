@@ -175,6 +175,7 @@ button:hover {
     background-position: center;
     aspect-ratio: 2000 / 959.5;
     position: relative;
+
 }
 
 .index-mobile {
@@ -198,6 +199,17 @@ button:hover {
     left: 10%;
     width: 22vw;   /* Ancho basado en el ancho de la ventana */
     height: 10vw;  /* Alto basado en el ancho de la ventana */
+    margin-bottom: 2rem; /* Puedes mantener el margen en rem sin problema */
+}
+
+.logoBlanco2{
+    display: flex;
+    object-fit: contain;
+    position: absolute;
+    top: 68%;
+    right: 15%;
+    width: 21vw;   /* Ancho basado en el ancho de la ventana */
+    height: 9vw;  /* Alto basado en el ancho de la ventana */
     margin-bottom: 2rem; /* Puedes mantener el margen en rem sin problema */
 }
 

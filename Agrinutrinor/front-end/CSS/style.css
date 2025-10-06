@@ -1067,15 +1067,18 @@ footer p {
 .ingredientes-lista {
   display: block; 
   white-space: pre-wrap;
+  padding-left: 10px; 
+  padding-right: 10px;
   text-align: left;
 }
 
 .textoCard{
-    font-size: 1.7vw;
+    padding: 12px;
+    font-size: 1.5vw;
     color: var(--verdeOscuro);
-    font-weight: 600;
+    font-weight: bolder;
     text-align: center;
-    line-height: 1.5;
+    line-height: 1;
 }
 
 @media (max-width: 768px) {

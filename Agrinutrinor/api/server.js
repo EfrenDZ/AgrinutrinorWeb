@@ -21,7 +21,7 @@ app.get('/api/marcas', (req, res) => {
     const sql = "SELECT id, nombre FROM marca ORDER BY nombre ASC";
     pool.query(sql, (err, results) => {
         if (err) {
-            // LÍNEA AÑADIDA PARA VER EL ERROR DETALLADO
+
             console.error("ERROR DETALLADO EN /api/marcas:", err);
             return res.status(500).json({ error: 'Error en el servidor al obtener marcas.' });
         }
@@ -29,12 +29,12 @@ app.get('/api/marcas', (req, res) => {
     });
 });
 
-// api/server.js
+// api/server
 
 app.get('/api/categorias', (req, res) => {
     const { marca } = req.query;
 
-    // Si la petición NO incluye un filtro de marca, devuelve todas las categorías
+
     if (!marca) {
         const sql = "SELECT id, nombre FROM categoria ORDER BY nombre ASC";
         pool.query(sql, (err, results) => {
@@ -45,7 +45,7 @@ app.get('/api/categorias', (req, res) => {
             res.json(results);
         });
     } else {
-        // Si la petición SÍ incluye un filtro de marca, devuelve solo las categorías relevantes
+ 
         const sql = `
             SELECT DISTINCT c.id, c.nombre 
             FROM categoria c
@@ -120,7 +120,7 @@ app.get('/api/productos', (req, res) => {
     });
 });
 
-// Este listen no se usa en Vercel, pero es útil para desarrollo local
+
 if (process.env.NODE_ENV !== 'production') {
     app.listen(port, () => {
       console.log(`🚀 Servidor corriendo en http://localhost:${port}`);

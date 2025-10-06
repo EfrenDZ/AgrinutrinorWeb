@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // 1. Lógica para la imagen
                 let imagenHtml;
                 if (producto.imagen) {
-                    // Si hay imagen, usa la etiqueta <img>
+                    // Si hay imagen, usa la etiqueta img
                     imagenHtml = `<img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">`;
                 } else {
                     // Si NO hay imagen, usa un div con el nombre del producto
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
               
 const cardHtml = `
-    <div class="col-sm-6 col-lg-3 d-flex align-items-stretch">
+    <div class="col-6 col-md-4 col-xl-3 d-flex align-items-stretch">
         <div class="card w-100">
             ${imagenHtml}
             <div class="card-body">

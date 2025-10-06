@@ -791,6 +791,13 @@ footer p {
     }
 }
 
+
+
+
+
+
+
+
 /*PRODUCTOS SECCION*/
 .contenido-principal {
     background-image: url(https://res.cloudinary.com/dha3vqp69/image/upload/v1758560610/BANNER_l4y3yg.png);
@@ -927,9 +934,9 @@ footer p {
 }
 
 @media (max-width: 767px) {
-    .brand-pill a {
-        font-size: 0.9rem;
-        padding: 0.6rem 1.2rem;
+    .brand-pill {
+        font-size: 1.5rem;
+        padding: 0.6rem 1rem;
     }
 }
 

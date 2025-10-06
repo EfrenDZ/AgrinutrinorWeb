@@ -1072,9 +1072,11 @@ footer p {
 }
 
 .textoCard{
-    font-size: 2vw;
+    font-size: 1.7vw;
     color: var(--verdeOscuro);
+    width: 600;
     text-align: center;
+    line-height: 1.5;
 }
 
 @media (max-width: 768px) {

@@ -1071,6 +1071,12 @@ footer p {
   text-align: left;
 }
 
+.textoCard{
+    font-size: 2vw;
+    color: var(--verdeOscuro);
+    text-align: center;
+}
+
 @media (max-width: 768px) {
     .sidebar-filters {
         margin-bottom: 2rem;

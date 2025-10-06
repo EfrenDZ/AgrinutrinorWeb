@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     imagenHtml = `<img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">`;
                 } else {
                     // Si NO hay imagen, usa un div con el nombre del producto
-                    imagenHtml = `<h2 class="card-img-top placeholder-img">${producto.nombre}</h2>`;
+                    imagenHtml = `<div class="textoCard" class="card-img-top placeholder-img">${producto.nombre}</div>`;
                 }
 
                

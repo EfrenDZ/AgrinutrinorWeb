@@ -873,7 +873,7 @@ footer p {
 }
 
 #brand-carousel{
-    width: 95%;
+    width: 100%;
 }
 
 #brand-carousel .splide__arrow{
@@ -1065,9 +1065,10 @@ footer p {
 }
 
 .ingredientes-lista {
-  display: block; /* Hace que el span se comporte como un párrafo */
-  white-space: pre-wrap; /* <-- ESTA ES LA LÍNEA CLAVE */
-  padding-left: 10px; /* Opcional: para que se vea un poco más indentado */
+  display: block; 
+  white-space: pre-wrap;
+  padding-left: 10px; 
+  text-align: left;
 }
 
 @media (max-width: 768px) {

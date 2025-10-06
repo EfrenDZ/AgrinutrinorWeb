@@ -143,6 +143,11 @@ body {
     width: 100%;
 }
 
+#brand-carousel .splide__arrow{
+        margin-left:-6rem;
+    margin-right: -6rem;
+}
+
 
 @media (max-width: 768px) {
     .logo img {

@@ -1135,6 +1135,7 @@ footer p {
 @media (max-width: 768px) {
     .sidebar-filters {
         margin-bottom: 2rem;
+        margin-top: -5rem;
         height: auto;
     }
 

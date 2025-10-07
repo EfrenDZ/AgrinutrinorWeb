@@ -6,16 +6,18 @@ document.addEventListener('DOMContentLoaded', function () {
         // pantallas grandes
         perPage: 4, 
         perMove:4,
+        gap: "1rem",
 
         // Configuración para dispositivos móviles
         breakpoints: {
             768: { // Cuando la pantalla es de 768px
-                perPage: 1, // Muestra 1 elemento
+                perPage: 2, // Muestra 1 elemento
+                gap: ".5rem",
             }
         },
 
         autoScroll: {
-            speed: 2,
+            speed: 1.5,
         },
         arrows: true, 
         pagination: false,
@@ -28,10 +30,8 @@ document.addEventListener('DOMContentLoaded', function () {
         breakpoints: { 
             768: {
                 perPage: 3,
+                gap: ".5rem",
             },
-            480: {
-                perPage: 2,
-            }
         },
 
         autoScroll: {

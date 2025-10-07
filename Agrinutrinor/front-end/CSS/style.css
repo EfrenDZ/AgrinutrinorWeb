@@ -131,6 +131,8 @@ body {
     font-size: bolder;
 }
 
+
+
 #mi-carrusel .splide__arrow {
     height: 9rem;
     width: 5rem; 
@@ -243,16 +245,16 @@ button:hover {
     }
 
     .index {
-        background-image: linear-gradient(to top, #3d895c, rgba(255, 255, 255, 0) 50px),
+        background-image: /* linear-gradient(to top, #3d895c, rgba(255, 255, 255, 0) 50px), */
             url(https://res.cloudinary.com/dha3vqp69/image/upload/v1758346912/PORTADA_fcxhsx.jpg);
-        background-size: 200% 100%, cover;
+        background-size: 200% 100%;
         background-position: left center, left center;
         background-repeat: no-repeat;
         height: 100rem;
         width: 100%;
     }
 
-    .index-mobile {
+    /* .index-mobile {
         display: block;
         background-image:
             linear-gradient(to bottom, #3d895c, rgba(255, 255, 255, 0) 50px),
@@ -265,13 +267,21 @@ button:hover {
         height: 100rem;
         aspect-ratio: 2000 / 959.5;
 
-    }
+    } */
 
     .logoBlanco {
         top: 20%;
-        left: 14%;
+        left: 10%;
         width: 60%;
         height: 60rem;
+    }
+
+    .logoBlanco2{
+        top: 12%;
+        left: 20%;
+        z-index: 10;
+        width: 50%;
+        height: 100rem;
     }
 
     .textoPortada {
@@ -363,7 +373,9 @@ h3 {
 @media (max-width: 768px) {
     .nosotros {
         background-size: 200% 100%;
-        background-image: linear-gradient(to bottom, #3d895c, rgba(255, 255, 255, 0) 50px), url(../img/2-nosotros/FONDO.png);
+        background-image: 
+            /* linear-gradient(to bottom, #3d895c, rgba(255, 255, 255, 0) 50px),  */
+            url(../img/2-nosotros/FONDO.png);
         background-position: left center;
         width: 100%;
         height: 100rem;
@@ -374,6 +386,7 @@ h3 {
         width: 70%;
         margin-left: auto;
         margin-right: auto;
+        margin-top: -20%;
     }
 
     h3 {
@@ -387,13 +400,14 @@ h3 {
 
     .tituloNosotros3 {
         font-size: 2rem;
+        margin-bottom: 2rem;
     }
 
     .contenidoNosotros p,
     .contenidoBeneficios p {
         font-size: 1.5rem;
         max-width: 80rem;
-        line-height: 1;
+        line-height: 1.5;
         margin-top: -1rem;
     }
 }
@@ -407,6 +421,10 @@ h3 {
     width: 100%;
     aspect-ratio: 2000 / 952.25;
     position: relative;
+}
+
+.contenidoMarcas{
+    top: 0rem;
 }
 
 .marcas h2 {
@@ -425,27 +443,20 @@ h3 {
         width: 100%;
         height: 100rem;
     }
+
+        #mi-carrusel-marcas .splide__slide img {
+        max-height: 102rem;
+    }
+
 }
 
-.contenidoMarcas{
-    top: 0rem;
-}
 
 .splide__slide img {
-    width: auto;
+    width: 100%;
     height: auto;
-    max-height: 20rem;
     object-fit: cover;
 }
 
-@media (max-width: 768px) {
-.splide__slide img {
-    width: 50%;
-    height: auto;
-    max-height: 20rem;
-    object-fit: cover;
-}
-}
 
 .splide {
     width: 70%;
@@ -630,15 +641,16 @@ h3 {
 }
 
 @media (max-width: 768px) {
-
-
+    .beneficios{
+        background-size: 200% 100%;
+    }
 
     .iconosBeneficios {
         flex-wrap: wrap;
         justify-content: center;
         gap: .2rem;
         margin-top: 1rem;
-        max-width: 70rem;
+        max-width: 70%;
         z-index: 2;
     }
 
@@ -649,9 +661,9 @@ h3 {
     }
 
     .iconosBeneficios img {
-        width: 12rem;
-        height: 12rem;
-        margin-bottom: 1rem;
+        width: 9rem;
+        height: auto;
+        margin: 1rem;
     }
 
     .beneficiosTexto {
@@ -668,12 +680,12 @@ h3 {
     }
 
     .beneficio p {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         font-weight: 700;
     }
 
     .contenidoBeneficios {
-        margin-top: 20rem;
+        margin-top: 32rem;
         width: 70%;
         margin-left: auto;
         margin-right: auto;
@@ -704,18 +716,24 @@ h3 {
 }
 
 @media (max-width: 768px) {
+    .contacto{
+       background-size: 100% 120%;
+    }
+
     .contenidoContacto {
         top: 10%;
     }
 
     .fondoBlanco {
         display: block;
-        height: 50rem;
+        height: 70rem;
     }
 }
 
 .contenidoContacto h2 {
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    font-size: 3rem;
+    padding-bottom: 1rem;
 }
 
 .etiqueta3 {
@@ -738,7 +756,7 @@ h3 {
 
 @media (max-width: 768px) {
     .etiqueta3{
-        font-size: 3rem;
+        font-size: 1.5rem;
     }
 }
 
@@ -774,11 +792,6 @@ footer p {
     font-size: 1rem;
 }
 
-@media (max-width: 768px) {
-    footer p, a {
-        font-size: 2rem
-    }
-}
 
 
 
@@ -788,6 +801,12 @@ footer p {
 
 
 /*PRODUCTOS SECCION*/
+@media (max-width: 768px){
+    body{
+        margin-top: 50px;
+    }
+}
+
 #productos-container {
     scroll-margin-top: 400px;
 }
@@ -944,7 +963,7 @@ footer p {
 }
 
 .sidebar-filters h3 {
-    font-size: 1.5vw;
+    font-size: 1.5rem;
     font-weight: bold;
     color: var(--verdeOscuro);
     letter-spacing: 1px;
@@ -960,7 +979,7 @@ footer p {
 }
 
 .filter-group h4 {
-    font-size: 2rem;
+    font-size: 1.9rem;
     color: var(--verdeClaro);
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
@@ -976,7 +995,7 @@ footer p {
 
 .filter-group .form-check-label {
     cursor: pointer;
-    font-size: .8vw;
+    font-size: 1rem;
     color: gray;
 }
 
@@ -1148,7 +1167,7 @@ footer p {
 
     .filter-group .form-check-label {
         cursor: pointer;
-        font-size: 2.5vw;
+        font-size: 1rem;
     }
 
 }
@@ -1179,6 +1198,12 @@ body {
 }
 
 
+body{
+    margin-top: 100px;
+}
 
 @media (max-width: 768px) {
+body{
+    margin-top: 50px;
+}
 }

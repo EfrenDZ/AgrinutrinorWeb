@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
         breakpoints: {
             768: { // Cuando la pantalla es de 768px
                 perPage: 1.5, // Muestra 1 elemento
-                gap: ".5rem",
+
             }
         },
 
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
         perMove: 1,       
         breakpoints: { 
             768: {
-                perPage: 3,
+                perPage: 1.5,
                 gap: ".5rem",
             },
         },

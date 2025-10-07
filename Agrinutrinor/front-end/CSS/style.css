@@ -59,12 +59,14 @@ body {
     margin-top: -.5rem;
     padding: 0;
     padding-top: 0rem;
-    /* La regla de font-size fue movida a la etiqueta 'html' sola */
+
     box-sizing: border-box;
     scroll-snap-type: y mandatory;
     transition: top 0.3s ease;
 }
 
+
+    /* NAVBAR */
 .navbar {
     width: 100%;
     font-size: 1.3rem;
@@ -141,19 +143,6 @@ body {
 #mi-carrusel .splide__arrow svg {
     height: 100%;
     width: 100%;
-}
-
-
-
-
-@media (max-width: 768px) {
-    .logo img {
-        width: 20rem;
-    }
-
-    .navbar{
-        font-size: 3rem;
-    }
 }
 
 button {
@@ -799,8 +788,12 @@ footer p {
 
 
 /*PRODUCTOS SECCION*/
+#productos-container {
+    scroll-margin-top: 400px;
+}
+
 .contenido-principal {
-    background-image: url(https://res.cloudinary.com/dha3vqp69/image/upload/v1758560610/BANNER_l4y3yg.png);
+    background-image: url(https://res.cloudinary.com/dha3vqp69/image/upload/v1759869203/BANNER_PRODUCTOS_i0e28f.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -845,13 +838,14 @@ footer p {
     color: #000000;
 }
 
-.pagination-controls .page-link {
+#pagination-controls .pagination .page-link {
     cursor: pointer;
+    color: var(--verdeOscuro);
 }
 
-.pagination-controls .page-item.active .page-link {
-    background-color: #0d6efd;
-    border-color: #0d6efd;
+#pagination-controls .pagination .page-item.active .page-link {
+    background-color: var(--verdeOscuro);
+    border-color: var(--verdeOscuro);
     color: white;
 }
 
@@ -1184,3 +1178,7 @@ body {
     width: 70%;
 }
 
+
+
+@media (max-width: 768px) {
+}

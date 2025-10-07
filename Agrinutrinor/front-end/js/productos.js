@@ -77,89 +77,123 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function cargarProductos(page = 1) {
-    const params = new URLSearchParams({ page });
-    brandFiltersContainer.querySelectorAll('input:checked').forEach(chk => {
-        params.append('marca', chk.value);
-    });
-    categoryFiltersContainer.querySelectorAll('input:checked').forEach(chk => {
-        params.append('categoria', chk.value);
-    });
-    if (searchInput.value) params.append('search', searchInput.value);
+        productContainer.scrollIntoView({ behavior: 'smooth' });
 
-    const activePill = brandCarousel.querySelector('a.active');
-    productsTitle.textContent = (activePill?.textContent || 'TODOS LOS PRODUCTOS');
+        const params = new URLSearchParams({ page });
+        brandFiltersContainer.querySelectorAll('input:checked').forEach(chk => params.append('marca', chk.value));
+        categoryFiltersContainer.querySelectorAll('input:checked').forEach(chk => params.append('categoria', chk.value));
+        if (searchInput.value) params.append('search', searchInput.value);
 
-    fetch(`${apiUrlBase}/productos?${params.toString()}`)
-        .then(response => response.json())
-        .then(data => {
-            productContainer.innerHTML = '';
-            if (!data.productos || data.productos.length === 0) {
-                productContainer.innerHTML = '<p class="text-center col-12">No se encontraron productos con estos filtros.</p>';
-                crearPaginacion(0, 0);
-                return;
-            }
-            data.productos.forEach(producto => {
-                // --- INICIO DE CAMBIOS ---
+        const activePill = brandCarousel.querySelector('a.active');
+        productsTitle.textContent = (activePill?.textContent || 'TODOS LOS PRODUCTOS');
 
-                // 1. Lógica para la imagen
-                let imagenHtml;
-                if (producto.imagen) {
-                    // Si hay imagen, usa la etiqueta img
-                    imagenHtml = `<img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">`;
-                } else {
-                    // Si NO hay imagen, usa un div con el nombre del producto
-                    imagenHtml = `<div class="textoCard" class="card-img-top placeholder-img">${producto.nombre}</div>`;
+        fetch(`${apiUrlBase}/productos?${params.toString()}`)
+            .then(response => response.json())
+            .then(data => {
+                if (!data.productos || data.productos.length === 0) {
+                    productContainer.innerHTML = '<p class="text-center col-12">No se encontraron productos con estos filtros.</p>';
+                    crearPaginacion(0, 0);
+                    return;
                 }
 
-               
-                let fichaTecnicaButton = ''; // Vacío por defecto
-                if (producto.fichaTecnica) {
-                   
-                    fichaTecnicaButton = `<a href="${producto.fichaTecnica}" target="_blank" rel="noopener noreferrer" class="card-button etiqueta3">Ficha técnica</a>`;
-                }
+                const allCardsHtml = data.productos.map(producto => {
+                    const imagenHtml = producto.imagen
+                        ? `<img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">`
+                        : `<div class="textoCard card-img-top placeholder-img">${producto.nombre}</div>`;
+                    
+                    const fichaTecnicaButton = producto.fichaTecnica
+                        ? `<a href="${producto.fichaTecnica}" target="_blank" rel="noopener noreferrer" class="card-button etiqueta3">Ficha técnica</a>`
+                        : '';
 
-              
-const cardHtml = `
-    <div class="col-6 col-md-4 col-xl-3 d-flex align-items-stretch">
-        <div class="card w-100">
-            ${imagenHtml}
-            <div class="card-body">
-                <p class="card-text">
-                    <strong>Ingrediente Activo:</strong>
-                    <span class="ingredientes-lista">${producto.ingredienteActivo}</span> 
-                    <br/><strong>Presentación:</strong><br/>
-                    ${producto.presentacion}<br>
-                    <br/><strong>Categoría:</strong><br/>
-                    ${producto.categoria_nombre}
-                </p>
-                ${fichaTecnicaButton}
-            </div>
-        </div>
-    </div>`;
-                
-                // --- FIN DE CAMBIOS ---
-                productContainer.innerHTML += cardHtml;
-            });
-            crearPaginacion(data.totalPaginas, data.paginaActual);
-        })
-        .catch(error => console.error('Error:', error));
-}
+                    return `
+                        <div class="col-12 col-md-4 col-xl-3 d-flex align-items-stretch">
+                            <div class="card w-100">
+                                ${imagenHtml}
+                                <div class="card-body">
+                                    <p class="card-text">
+                                        <strong>Ingrediente Activo:</strong>
+                                        <span class="ingredientes-lista">${producto.ingredienteActivo}</span> 
+                                        <br/><strong>Presentación:</strong><br/>
+                                        ${producto.presentacion}<br>
+                                        <br/><strong>Categoría:</strong><br/>
+                                        ${producto.categoria_nombre}
+                                    </p>
+                                    ${fichaTecnicaButton}
+                                </div>
+                            </div>
+                        </div>`;
+                }).join('');
+
+                productContainer.innerHTML = allCardsHtml;
+                crearPaginacion(data.totalPaginas, data.paginaActual);
+            })
+            .catch(error => console.error('Error:', error));
+    }
     
     function crearPaginacion(totalPages, currentPage) {
         paginationControls.innerHTML = '';
         if (totalPages <= 1) return;
+
         let ul = document.createElement('ul');
         ul.className = 'pagination';
-        for (let i = 1; i <= totalPages; i++) {
+
+        const crearBoton = (texto, pageNum, isDisabled = false, isActive = false) => {
             let li = document.createElement('li');
-            li.className = `page-item ${i === currentPage ? 'active' : ''}`;
+            li.className = 'page-item';
+            if (isDisabled) li.classList.add('disabled');
+            if (isActive) li.classList.add('active');
             let a = document.createElement('a');
             a.className = 'page-link';
-            a.textContent = i;
-            a.onclick = () => cargarProductos(i);
+            a.textContent = texto;
+            if (!isDisabled) {
+                a.href = '#';
+                a.onclick = (e) => {
+                    e.preventDefault();
+                    cargarProductos(pageNum);
+                };
+            }
             li.appendChild(a);
-            ul.appendChild(li);
+            return li;
+        };
+
+        ul.appendChild(crearBoton('«', 1, currentPage === 1));
+        ul.appendChild(crearBoton('‹', currentPage - 1, currentPage === 1));
+
+        const maxPaginasVisibles = 5;
+        let inicio, fin;
+
+        if (totalPages <= maxPaginasVisibles) {
+            inicio = 1;
+            fin = totalPages;
+        } else {
+            let offset = Math.floor(maxPaginasVisibles / 2);
+            inicio = currentPage - offset;
+            fin = currentPage + offset;
+            if (inicio < 1) {
+                fin += (1 - inicio);
+                inicio = 1;
+            }
+            if (fin > totalPages) {
+                inicio -= (fin - totalPages);
+                fin = totalPages;
+            }
         }
+        
+        if (inicio > 1) {
+           ul.appendChild(crearBoton('...', inicio > 2 ? currentPage - 2 : 1));
+        }
+
+        for (let i = inicio; i <= fin; i++) {
+            ul.appendChild(crearBoton(i, i, false, i === currentPage));
+        }
+        
+        if (fin < totalPages) {
+            ul.appendChild(crearBoton('...', fin < totalPages - 1 ? currentPage + 2 : totalPages));
+        }
+
+        ul.appendChild(crearBoton('›', currentPage + 1, currentPage === totalPages));
+        ul.appendChild(crearBoton('»', totalPages, currentPage === totalPages));
+
         paginationControls.appendChild(ul);
     }
 
@@ -204,7 +238,7 @@ const cardHtml = `
 
     async function init() {
         await poblarFiltroMarcas();
-        actualizarFiltroCategorias();
+        await actualizarFiltroCategorias();
 
         const urlParams = new URLSearchParams(window.location.search);
         const marcaIdDesdeUrl = urlParams.get('marca');
@@ -213,9 +247,10 @@ const cardHtml = `
             if (pill) pill.classList.add('active');
             const checkbox = brandFiltersContainer.querySelector(`input[value="${marcaIdDesdeUrl}"]`);
             if (checkbox) checkbox.checked = true;
-            actualizarFiltroCategorias();
+            await actualizarFiltroCategorias();
         }
         cargarProductos(1);
     }
+
     init();
 });

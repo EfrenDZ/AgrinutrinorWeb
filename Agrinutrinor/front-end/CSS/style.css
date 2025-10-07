@@ -1006,6 +1006,25 @@ footer p {
     /* espacio entre checkbox y texto*/
 }
 
+.filtros-wrapper .filter-group {
+    margin-bottom: 1.5rem;
+}
+
+
+/* --- ESTILOS PARA MÓVIL --- */
+@media (max-width: 768px) {
+    .filtros-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Dos columnas en móvil */
+        gap: 1.5rem;                   /* Espacio entre ellas */
+    }
+
+    /* Quitamos el margen inferior en móvil porque el 'gap' ya se encarga del espacio */
+    .filtros-wrapper .filter-group {
+        margin-bottom: 0;
+    }
+}
+
 /* === Grid de Productos === */
 #productos-titulo {
     font-weight: bold;
@@ -1117,7 +1136,6 @@ footer p {
     .sidebar-filters {
         margin-bottom: 2rem;
         height: auto;
-        columns: 2;
     }
 
     #productos-titulo {

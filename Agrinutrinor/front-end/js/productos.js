@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Definición de variables globales y constantes
     const apiUrlBase = '/api';
-    
     const productContainer = document.getElementById('productos-container');
     const paginationControls = document.getElementById('pagination-controls');
     const brandCarousel = document.getElementById('brand-carousel');
@@ -9,9 +9,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('search-input');
     const productsTitle = document.getElementById('productos-titulo');
     const btnLimpiar = document.getElementById('btn-limpiar-filtros');
-    
     let debounceTimeout;
+    let CargaInicial = true;
 
+    // Muestra esqueletos de tarjetas de productos
+    function mostrarSkeletonsDeProductos(cantidad = 8) {
+        let skeletonsHtml = '';
+        for (let i = 0; i < cantidad; i++) {
+            skeletonsHtml += `
+                <div class="col-12 col-md-4 col-xl-3 d-flex align-items-stretch">
+                    <div class="skeleton-card w-100">
+                        <div class="skeleton skeleton-image"></div>
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text skeleton-text-short"></div>
+                        <div class="skeleton skeleton-text"></div>
+                    </div>
+                </div>
+            `;
+        }
+        productContainer.innerHTML = skeletonsHtml;
+    }
+    
+    // Pobla el carrusel y los filtros de marcas
     function poblarFiltroMarcas() {
         return fetch(`${apiUrlBase}/marcas`).then(res => res.json())
             .then(marcas => {
@@ -52,6 +71,49 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     }
 
+    // Pobla los filtros de categorías por primera vez
+    function poblarFiltroCategorias() {
+        const sql = `${apiUrlBase}/categorias`;
+        return fetch(sql).then(res => res.json())
+            .then(categorias => {
+                categoryFiltersContainer.innerHTML = '<h4>Categoría</h4>';
+                categorias.forEach(cat => {
+                    const checkboxDiv = document.createElement('div');
+                    checkboxDiv.className = 'form-check';
+                    checkboxDiv.innerHTML = `<input class="form-check-input" type="checkbox" value="${cat.id}" id="cat-${cat.id}"><label class="form-check-label" for="cat-${cat.id}">${cat.nombre}</label>`;
+                    categoryFiltersContainer.appendChild(checkboxDiv);
+                });
+            });
+    }
+
+    // Actualiza los filtros de marcas (ocultando/mostrando)
+    function actualizarFiltroMarcas() {
+        const categoriasSeleccionadas = Array.from(categoryFiltersContainer.querySelectorAll('input:checked')).map(chk => chk.value);
+        let url = `${apiUrlBase}/marcas`;
+        
+        if (categoriasSeleccionadas.length > 0) {
+            const params = new URLSearchParams();
+            categoriasSeleccionadas.forEach(id => params.append('categoria', id));
+            url += `?${params.toString()}`;
+        }
+
+        return fetch(url).then(res => res.json())
+            .then(marcasValidas => {
+                const idsValidos = new Set(marcasValidas.map(m => m.id.toString()));
+                const todosLosCheckboxesDeMarca = brandFiltersContainer.querySelectorAll('.form-check');
+
+                todosLosCheckboxesDeMarca.forEach(checkboxDiv => {
+                    const checkboxInput = checkboxDiv.querySelector('input');
+                    if (idsValidos.has(checkboxInput.value)) {
+                        checkboxDiv.style.display = 'block';
+                    } else {
+                        checkboxDiv.style.display = 'none';
+                    }
+                });
+            });
+    }
+
+    // Actualiza los filtros de categorías (ocultando/mostrando)
     function actualizarFiltroCategorias() {
         const marcasSeleccionadas = Array.from(brandFiltersContainer.querySelectorAll('input:checked')).map(chk => chk.value);
         let url = `${apiUrlBase}/categorias`;
@@ -62,22 +124,30 @@ document.addEventListener('DOMContentLoaded', () => {
             url += `?${params.toString()}`;
         }
 
-        fetch(url).then(res => res.json())
-            .then(categorias => {
-                const categoriasSeleccionadasAntes = new Set(Array.from(categoryFiltersContainer.querySelectorAll('input:checked')).map(chk => chk.value));
-                categoryFiltersContainer.innerHTML = '<h4>Categoría</h4>';
-                categorias.forEach(cat => {
-                    const checkboxDiv = document.createElement('div');
-                    checkboxDiv.className = 'form-check';
-                    const isChecked = categoriasSeleccionadasAntes.has(cat.id.toString()) ? 'checked' : '';
-                    checkboxDiv.innerHTML = `<input class="form-check-input" type="checkbox" value="${cat.id}" id="cat-${cat.id}" ${isChecked}><label class="form-check-label" for="cat-${cat.id}">${cat.nombre}</label>`;
-                    categoryFiltersContainer.appendChild(checkboxDiv);
+        return fetch(url).then(res => res.json())
+            .then(categoriasValidas => {
+                const idsValidos = new Set(categoriasValidas.map(c => c.id.toString()));
+                const todosLosCheckboxesDeCategoria = categoryFiltersContainer.querySelectorAll('.form-check');
+
+                todosLosCheckboxesDeCategoria.forEach(checkboxDiv => {
+                    const checkboxInput = checkboxDiv.querySelector('input');
+                    if (idsValidos.has(checkboxInput.value)) {
+                        checkboxDiv.style.display = 'block';
+                    } else {
+                        checkboxDiv.style.display = 'none';
+                    }
                 });
             });
     }
 
+    // Carga los productos desde la API
     function cargarProductos(page = 1) {
+        mostrarSkeletonsDeProductos();
+        if (!CargaInicial) {
         productContainer.scrollIntoView({ behavior: 'smooth' });
+    }
+    
+        CargaInicial = false;
 
         const params = new URLSearchParams({ page });
         brandFiltersContainer.querySelectorAll('input:checked').forEach(chk => params.append('marca', chk.value));
@@ -130,6 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(error => console.error('Error:', error));
     }
     
+    // Crea los controles de paginación
     function crearPaginacion(totalPages, currentPage) {
         paginationControls.innerHTML = '';
         if (totalPages <= 1) return;
@@ -197,6 +268,7 @@ document.addEventListener('DOMContentLoaded', () => {
         paginationControls.appendChild(ul);
     }
 
+    // Ejecuta la carga de productos con un retardo
     function onFilterChange() {
         clearTimeout(debounceTimeout);
         debounceTimeout = setTimeout(() => {
@@ -204,6 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 500);
     }
 
+    // Maneja clic en el carrusel de marcas
     brandCarousel.addEventListener('click', e => {
         if (e.target.tagName !== 'A') return;
         e.preventDefault();
@@ -219,38 +292,68 @@ document.addEventListener('DOMContentLoaded', () => {
         onFilterChange();
     });
     
+    // Maneja cambio en los filtros de marca
     brandFiltersContainer.addEventListener('change', () => {
         brandCarousel.querySelectorAll('a').forEach(pill => pill.classList.remove('active'));
         actualizarFiltroCategorias();
         onFilterChange();
     });
 
-    categoryFiltersContainer.addEventListener('change', onFilterChange);
+    // Maneja cambio en los filtros de categoría
+    categoryFiltersContainer.addEventListener('change', () => {
+        actualizarFiltroMarcas();
+        onFilterChange();
+    });
+
+    // Maneja escritura en el campo de búsqueda
     searchInput.addEventListener('keyup', onFilterChange);
     
+    // Maneja clic en el botón de limpiar filtros
     btnLimpiar.addEventListener('click', () => {
         searchInput.value = '';
         brandCarousel.querySelectorAll('a').forEach(pill => pill.classList.remove('active'));
         document.querySelectorAll('.sidebar-filters input:checked').forEach(chk => chk.checked = false);
-        actualizarFiltroCategorias();
+        // Muestra todos los filtros de nuevo
+        document.querySelectorAll('.sidebar-filters .form-check').forEach(el => el.style.display = 'block');
         cargarProductos(1);
     });
 
+    // Función de inicialización
     async function init() {
-        await poblarFiltroMarcas();
-        await actualizarFiltroCategorias();
-
         const urlParams = new URLSearchParams(window.location.search);
         const marcaIdDesdeUrl = urlParams.get('marca');
-        if (marcaIdDesdeUrl) {
-            const pill = brandCarousel.querySelector(`a[data-marca-id="${marcaIdDesdeUrl}"]`);
-            if (pill) pill.classList.add('active');
-            const checkbox = brandFiltersContainer.querySelector(`input[value="${marcaIdDesdeUrl}"]`);
-            if (checkbox) checkbox.checked = true;
-            await actualizarFiltroCategorias();
+        const categoriaIdDesdeUrl = urlParams.get('categoria');
+    
+        await poblarFiltroMarcas();
+        await poblarFiltroCategorias(); 
+    
+        const sidebarFiltros = document.querySelector('.sidebar-filters');
+        if (sidebarFiltros) {
+            sidebarFiltros.classList.add('cargado');
         }
+
+        if (marcaIdDesdeUrl) {
+            const checkboxMarca = brandFiltersContainer.querySelector(`input[value="${marcaIdDesdeUrl}"]`);
+            if (checkboxMarca) {
+                checkboxMarca.checked = true;
+                const pill = brandCarousel.querySelector(`a[data-marca-id="${marcaIdDesdeUrl}"]`);
+                if (pill) pill.classList.add('active');
+                await actualizarFiltroCategorias();
+            }
+        }
+    
+        if (categoriaIdDesdeUrl) {
+            const checkboxCategoria = categoryFiltersContainer.querySelector(`input[value="${categoriaIdDesdeUrl}"]`);
+            if (checkboxCategoria) {
+                checkboxCategoria.checked = true;
+                await actualizarFiltroMarcas();
+            }
+        }
+    
         cargarProductos(1);
+        history.replaceState(null, '', window.location.pathname);
     }
 
+    // Ejecuta la inicialización
     init();
 });

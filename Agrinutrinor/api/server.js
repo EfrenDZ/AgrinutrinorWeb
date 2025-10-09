@@ -18,10 +18,30 @@ const pool = mysql.createPool({
 });
 
 app.get('/api/marcas', (req, res) => {
-    const sql = "SELECT id, nombre FROM marca ORDER BY nombre ASC";
-    pool.query(sql, (err, results) => {
-        if (err) {
 
+    const { categoria } = req.query;
+
+    let sql;
+    let params = [];
+
+    if (categoria) {
+
+        sql = `
+            SELECT DISTINCT m.id, m.nombre 
+            FROM marca m
+            JOIN productos p ON m.id = p.marca
+            WHERE p.categoria IN (?)
+            ORDER BY m.nombre ASC
+        `;
+        params.push(categoria);
+    } else {
+
+        sql = "SELECT id, nombre FROM marca ORDER BY nombre ASC";
+    }
+
+
+    pool.query(sql, params, (err, results) => {
+        if (err) {
             console.error("ERROR DETALLADO EN /api/marcas:", err);
             return res.status(500).json({ error: 'Error en el servidor al obtener marcas.' });
         }

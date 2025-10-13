@@ -1065,6 +1065,10 @@ footer p {
     align-items: flex-start;
 }
 
+.sidebar-filters .filter-group .form-check {
+    align-items: flex-start
+}
+
 .filter-group .form-check-label {
     cursor: pointer;
     font-size: 1rem;

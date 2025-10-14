@@ -284,6 +284,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // 1. Limpiar todos los filtros primero
         searchInput.value = '';
         document.querySelectorAll('.sidebar-filters input:checked').forEach(chk => chk.checked = false);
+        //    Y restablecer la visibilidad de todos los filtros
+        document.querySelectorAll('.sidebar-filters .form-check').forEach(el => el.style.display = 'block');
         brandCarousel.querySelectorAll('a.active').forEach(pill => pill.classList.remove('active'));
 
         // 2. Seleccionar la nueva marca

@@ -297,12 +297,12 @@ button:hover {
 
 /* SECCION NOSOTROS */
 .nosotros {
-    background-image: url(../img/2-nosotros/FONDO.png);
+    background-image: url(https://res.cloudinary.com/dha3vqp69/image/upload/v1760391040/FONDO_gkklon.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     width: 100%;
-    aspect-ratio: 2000 / 811;
+    aspect-ratio: 2000 / 812;
     position: relative;
 }
 
@@ -375,7 +375,7 @@ h3 {
         background-size: 200% 100%;
         background-image: 
             /* linear-gradient(to bottom, #3d895c, rgba(255, 255, 255, 0) 50px),  */
-            url(../img/2-nosotros/FONDO.png);
+            url(https://res.cloudinary.com/dha3vqp69/image/upload/v1760391040/FONDO_gkklon.png);
         background-position: left center;
         width: 100%;
         height: 100rem;
@@ -414,12 +414,12 @@ h3 {
 
 /* SECCION MARCAS */
 .marcas {
-    background-image: url(../img/3-marcas/FONDO.png);
+    background-image: url(https://res.cloudinary.com/dha3vqp69/image/upload/v1760392354/FONDO_MARCAS_FINAL_gcz4cs.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     width: 100%;
-    aspect-ratio: 2000 / 952.25;
+    aspect-ratio: 1474 / 706;
     position: relative;
 }
 
@@ -487,7 +487,7 @@ h3 {
 
 /* SECCION ZONAS */
 .zonas {
-    background-image: url(../img/5-Zonas/FONDO.png);
+    background-image: url(https://res.cloudinary.com/dha3vqp69/image/upload/v1760391040/FONDO_m7hr0n.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -564,12 +564,12 @@ h3 {
 
 /* SECCION BENEFICIOS Y CONTACTO */
 .beneficios {
-    background-image: url(../img/6-beneficios/FONDO.png);
+    background-image: url(https://res.cloudinary.com/dha3vqp69/image/upload/v1760391038/FONDO_pddllp.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     width: 100%;
-    aspect-ratio: 4000 / 1962;
+    aspect-ratio: 4000 / 1964;
     position: relative;
     z-index: 3;
 }
@@ -700,7 +700,7 @@ h3 {
     background-size: contain;
     background-position: center;
     width: 100%;
-    aspect-ratio: 2000 / 627;
+    aspect-ratio: 2000 / 629;
     position: relative;
     z-index: 1;
 }

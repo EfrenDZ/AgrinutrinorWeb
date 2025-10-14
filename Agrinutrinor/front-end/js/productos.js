@@ -280,14 +280,23 @@ document.addEventListener('DOMContentLoaded', () => {
     brandCarousel.addEventListener('click', e => {
         if (e.target.tagName !== 'A') return;
         e.preventDefault();
-        const wasActive = e.target.classList.contains('active');
-        brandCarousel.querySelectorAll('a').forEach(pill => pill.classList.remove('active'));
-        brandFiltersContainer.querySelectorAll('input').forEach(chk => chk.checked = false);
-        if (!wasActive) {
-            e.target.classList.add('active');
-            const checkbox = document.getElementById(`marca-${e.target.dataset.marcaId}`);
-            if (checkbox) checkbox.checked = true;
+
+        // 1. Limpiar todos los filtros primero
+        searchInput.value = '';
+        document.querySelectorAll('.sidebar-filters input:checked').forEach(chk => chk.checked = false);
+        brandCarousel.querySelectorAll('a.active').forEach(pill => pill.classList.remove('active'));
+
+        // 2. Seleccionar la nueva marca
+        const pillSeleccionada = e.target;
+        const marcaId = pillSeleccionada.dataset.marcaId;
+        pillSeleccionada.classList.add('active');
+        
+        const checkboxMarca = document.getElementById(`marca-${marcaId}`);
+        if (checkboxMarca) {
+            checkboxMarca.checked = true;
         }
+
+        // 3. Actualizar filtros dependientes y cargar productos
         actualizarFiltroCategorias();
         onFilterChange();
     });

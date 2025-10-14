@@ -31,13 +31,6 @@ body{
     --azul: #050461;
 }
 
-p,
-h2,
-h3,
-h4 {
-    font-family: 'Poppins', sans-serif;
-}
-
 
 .index,
 .nosotros,
@@ -302,7 +295,7 @@ button:hover {
     background-size: contain;
     background-position: center;
     width: 100%;
-    aspect-ratio: 2000 / 811;
+    aspect-ratio: 2000 / 812;
     position: relative;
 }
 
@@ -723,7 +716,7 @@ h3 {
 
     .fondoBlanco {
         display: block;
-        height: 50rem;
+        height: 70rem;
     }
 }
 
@@ -1068,6 +1061,7 @@ footer p {
     cursor: pointer;
     font-size: 1rem;
     color: gray;
+        align-items: flex-start
 }
 
 .filter-group .form-check-input {

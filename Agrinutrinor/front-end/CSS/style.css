@@ -534,7 +534,7 @@ h3 {
 @media (max-width: 768px) {
 
     #zonas {
-    scroll-margin-top: -10rem;
+    scroll-margin-top: -30rem;
 }
 
     .contenidoZonas {

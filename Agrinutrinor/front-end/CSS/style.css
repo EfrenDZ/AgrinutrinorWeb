@@ -675,16 +675,11 @@ h3 {
     }
 
     .beneficiosTexto {
-        padding-top: 5rem;
+        padding-top: 3rem;
         font-size: 1.5rem;
         max-width: 80rem;
         line-height: 1;
         margin-top: 0rem;
-        text-shadow:
-            -1px -1px 0 #000,
-            1px -1px 0 #000,
-            -1px 1px 0 #000,
-            1px 1px 0 #000;
     }
 
     .beneficio p {

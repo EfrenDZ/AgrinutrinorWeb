@@ -532,6 +532,11 @@ h3 {
 }
 
 @media (max-width: 768px) {
+
+    #zonas {
+    scroll-margin-top: -10rem;
+}
+
     .contenidoZonas {
         display: flex;
         flex-direction: column;

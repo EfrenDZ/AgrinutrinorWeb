@@ -29,8 +29,17 @@ body{
     scroll-margin-top: -4rem;
 }
 
-#zonas {
-    scroll-margin-top: 0rem;
+@media (max-width: 768px) {
+    #zonas {
+    scroll-margin-top: -30rem;
+}
+
+#nosotros,
+#marcas,
+#categorias{
+    scroll-margin-top: -20rem;
+}
+
 }
 
 :root {
@@ -533,9 +542,7 @@ h3 {
 
 @media (max-width: 768px) {
 
-    #zonas {
-    scroll-margin-top: -30rem;
-}
+
 
     .contenidoZonas {
         display: flex;

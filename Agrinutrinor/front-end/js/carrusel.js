@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Configuración para dispositivos móviles
         breakpoints: {
             768: { // Cuando la pantalla es de 768px
-                perPage: 1.5, // Muestra 1 elemento
+                perPage: 1, // Muestra 1 elemento
 
             }
         },

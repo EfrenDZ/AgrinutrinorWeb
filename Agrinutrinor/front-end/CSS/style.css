@@ -30,7 +30,7 @@ body{
 }
 
 #zonas {
-    scroll-margin-top: 50rem;
+    scroll-margin-top: 0rem;
 }
 
 :root {

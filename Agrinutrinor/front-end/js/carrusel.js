@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
         breakpoints: {
             768: { // Cuando la pantalla es de 768px
                 perPage: 1, // Muestra 1 elemento
+                speed: 3,
+                perMove: 1,
 
             }
         },

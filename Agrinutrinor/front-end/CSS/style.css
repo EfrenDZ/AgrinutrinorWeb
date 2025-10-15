@@ -7,10 +7,15 @@ body{
     font-family: "poppins", sans-serif;
     min-height: 100vh;
     display: flex;
-  flex-direction: column;
-      overflow-x: hidden;
+    flex-direction: column;
+    overflow-x: hidden;
     margin-top: 100px;
 }
+
+.main-content {
+    flex: 1 0 auto;
+}
+
 
 #index,
 #nosotros,
@@ -29,13 +34,6 @@ body{
     --verdeOscuro: #004437;
     --verdeClaro: #8DD600;
     --azul: #050461;
-}
-
-p,
-h2,
-h3,
-h4 {
-    font-family: 'Poppins', sans-serif;
 }
 
 
@@ -390,7 +388,7 @@ h3 {
     }
 
     h3 {
-        font-size: 3rem;
+        font-size: 2.8rem;
         margin-top: 4rem;
     }
 
@@ -405,7 +403,7 @@ h3 {
 
     .contenidoNosotros p,
     .contenidoBeneficios p {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         max-width: 80rem;
         line-height: 1.5;
         margin-top: -1rem;
@@ -414,7 +412,7 @@ h3 {
 
 /* SECCION MARCAS */
 .marcas {
-    background-image: url(https://res.cloudinary.com/dha3vqp69/image/upload/v1760392354/FONDO_MARCAS_FINAL_gcz4cs.png);
+    background-image: url(https://res.cloudinary.com/dha3vqp69/image/upload/v1760560310/FONDO_MARCAS_FINAL2_zcyoqh.jpg);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -1064,16 +1062,18 @@ footer p {
     align-items: flex-start
 }
 
-.filter-group .form-check-input {
-    transform: scale(1.5);
-    margin-right: 0.7rem;
-    margin-top: 0.25em;
-}
-
 .filter-group .form-check-label {
     cursor: pointer;
     font-size: 1rem;
     color: gray;
+        align-items: flex-start
+}
+
+.filter-group .form-check-input {
+    transform: scale(1.5);
+    /*tamaño del checkbox */
+    margin-right: 0.7rem;
+    /* espacio entre checkbox y texto*/
 }
 
 .filtros-wrapper .filter-group {

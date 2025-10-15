@@ -540,6 +540,7 @@ h3 {
     }
 
     .contenidoZonas img {
+        padding-top: 10rem;
         order: 2;
         width: 100%;
         max-width: 75rem;
@@ -556,7 +557,8 @@ h3 {
     }
 
     .zonas {
-        background-size: cover;
+            background-position: left bottom;
+        
     }
 }
 
@@ -641,6 +643,9 @@ h3 {
 }
 
 @media (max-width: 768px) {
+
+ .beneficios{            background-position: left top;
+ }
 
     .iconosBeneficios {
         flex-wrap: wrap;

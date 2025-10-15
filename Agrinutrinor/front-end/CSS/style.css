@@ -21,13 +21,16 @@ body{
 #nosotros,
 #marcas,
 #categorias,
-#zonas,
 #contacto {
     scroll-margin-top: 10rem;
 }
 
 #beneficios {
     scroll-margin-top: -4rem;
+}
+
+#zonas {
+    scroll-margin-top: 25rem;
 }
 
 :root {

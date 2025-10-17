@@ -861,6 +861,7 @@ footer p {
 }
 
 .contenido-principal {
+    margin-top: 80px;
     background-image: url(https://res.cloudinary.com/dha3vqp69/image/upload/v1759869203/BANNER_PRODUCTOS_i0e28f.png);
     background-repeat: no-repeat;
     background-size: contain;
@@ -1211,6 +1212,11 @@ footer p {
 
     .textoCard{
         font-size: 3rem;
+    }
+
+
+    .contenido-principal {
+        margin-top: 50px;
     }
 
     .contenido-principal p {

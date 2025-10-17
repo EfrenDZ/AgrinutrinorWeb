@@ -1,3 +1,4 @@
+
 html {
     scroll-behavior: smooth;
     font-size: clamp(10px, 1vw, 16px);
@@ -16,7 +17,7 @@ body{
 
 .main-content {
     flex: 1 0 auto;
-        padding-top: 100px; 
+
 }
 
 
@@ -36,6 +37,10 @@ body{
 }
 
 @media (max-width: 768px) {
+    body {
+        padding-top: 50px;
+    }
+
     #zonas {
     scroll-margin-top: -30rem;
 }
@@ -718,6 +723,7 @@ h3 {
     .fondoBlanco {
         display: block;
         height: 10rem;
+        display: none;
     }
 }
 
@@ -1288,7 +1294,4 @@ footer p {
 }
 
 
-html, body {
-overflow-x: clip;
-  height: 100%;
-}
+html { overflow-x: clip; }

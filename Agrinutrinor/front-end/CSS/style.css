@@ -1,25 +1,45 @@
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 html {
     scroll-behavior: smooth;
     font-size: clamp(10px, 1vw, 16px);
-    height: 100%;
     margin: 0;
 }
 
-body{
-    font-family: "poppins", sans-serif;
-    min-height: 100vh; 
+body {
     display: flex;
     flex-direction: column;
+    /* Usa la altura real calculada por el script */
+    min-height: 100vh; /* Fallback para escritorio */
+    min-height: calc(var(--vh, 1vh) * 100);
+    
+    font-family: "poppins", sans-serif;
     width: 100%;
     margin: 0;
+    overflow-x: clip;
+
 }
 
 .main-content {
-    flex: 1 0 auto;
-
+    padding-top: 50px;
 }
 
+footer {
+    /* Esta es la regla que empuja el footer hacia abajo */
+    margin-top: auto;
+    
+    background-color: var(--verdeClaro);
+    padding: 1rem 10%;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+}
 
 #index,
 #nosotros,
@@ -37,20 +57,15 @@ body{
 }
 
 @media (max-width: 768px) {
-    body {
-        padding-top: 50px;
+    #zonas {
+        scroll-margin-top: -30rem;
     }
 
-    #zonas {
-    scroll-margin-top: -30rem;
-}
-
-#nosotros,
-#marcas,
-#categorias{
-    scroll-margin-top: 20rem;
-}
-
+    #nosotros,
+    #marcas,
+    #categorias {
+        scroll-margin-top: 20rem;
+    }
 }
 
 :root {
@@ -58,7 +73,6 @@ body{
     --verdeClaro: #8DD600;
     --azul: #050461;
 }
-
 
 .index,
 .nosotros,
@@ -75,15 +89,11 @@ p {
     text-align: center;
     font-weight: 500;
     line-height: 1.5;
-    margin-top: center;
-    margin-left: center;
-    margin-right: 2rem;
 }
 
-    /* NAVBAR */
+/* NAVBAR */
 .navbar {
-    width: 100%;
-    max-width: 100vw;
+    width: 100vw;
     font-size: 1.3rem;
     position: fixed;
     z-index: 1000;
@@ -102,7 +112,6 @@ p {
     align-items: center;
     gap: 2rem;
     padding: 1.5rem;
-
 }
 
 .logo img {
@@ -147,13 +156,11 @@ p {
     font-size: bolder;
 }
 
-
-
 #mi-carrusel .splide__arrow {
     height: 9rem;
-    width: 5rem; 
+    width: 5rem;
     background-color: transparent;
-    margin-left:-6rem;
+    margin-left: -6rem;
     margin-right: -6rem;
     color: #004437;
 }
@@ -181,12 +188,10 @@ button:hover {
     width: 100%;
     background-position: center;
     aspect-ratio: 2000 / 959.5;
-    /* Pista para el navegador para optimizar el renderizado */
     will-change: transform;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     position: relative;
-
 }
 
 .index-mobile {
@@ -208,63 +213,28 @@ button:hover {
     position: absolute;
     top: 40%;
     left: 10%;
-    width: 22vw;    /* Ancho basado en el ancho de la ventana */
-    height: 10vw;   /* Alto basado en el ancho de la ventana */
-    margin-bottom: 2rem; /* Puedes mantener el margen en rem sin problema */
+    width: 22vw;
+    height: 10vw;
+    margin-bottom: 2rem;
 }
 
-.logoBlanco2{
+.logoBlanco2 {
     display: flex;
     object-fit: contain;
     position: absolute;
     top: 68%;
     right: 15%;
-    width: 21vw;    /* Ancho basado en el ancho de la ventana */
-    height: 9vw;  /* Alto basado en el ancho de la ventana */
-    margin-bottom: 2rem; /* Puedes mantener el margen en rem sin problema */
-}
-
-.textoLogoPortada1 {
-    font-size: 1.5rem;
-    font-weight: 100;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-}
-
-.textoLogoPortada2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin: 0;
-    padding: 0;
+    width: 21vw;
+    height: 9vw;
+    margin-bottom: 2rem;
 }
 
 @media (max-width: 768px) {
     .index {
-        background-image: /* linear-gradient(to top, #3d895c, rgba(255, 255, 255, 0) 50px), */
-            url(https://res.cloudinary.com/dha3vqp69/image/upload/v1758346912/PORTADA_fcxhsx.jpg);
         background-size: 200% 100%;
         background-position: left center, left center;
-        background-repeat: no-repeat;
-                width: 100%;
         height: 80rem;
-
     }
-
-    /* .index-mobile {
-        display: block;
-        background-image:
-            linear-gradient(to bottom, #3d895c, rgba(255, 255, 255, 0) 50px),
-            linear-gradient(to top, #3d895c, rgba(255, 255, 255, 0) 50px),
-            url(https://res.cloudinary.com/dha3vqp69/image/upload/v1758346912/PORTADA_fcxhsx.jpg);
-        background-size: 250% 100%;
-        background-position: right center;
-        background-repeat: no-repeat;
-        width: 100%;
-        height: 100rem;
-        aspect-ratio: 2000 / 959.5;
-
-    } */
 
     .logoBlanco {
         top: 45%;
@@ -273,7 +243,7 @@ button:hover {
         height: auto;
     }
 
-    .logoBlanco2{
+    .logoBlanco2 {
         top: 54%;
         left: 20%;
         z-index: 10;
@@ -360,20 +330,14 @@ h3 {
 @media (max-width: 768px) {
     .nosotros {
         background-size: 200% 100%;
-        background-image: 
-            /* linear-gradient(to bottom, #3d895c, rgba(255, 255, 255, 0) 50px),  */
-            url(https://res.cloudinary.com/dha3vqp69/image/upload/v1760391040/FONDO_gkklon.png);
-        background-position: left center;
-        width: 100%;
         height: 50rem;
+        background-position: left;
     }
-
-
+    
     .contenidoNosotros{
         width: 80%;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: -20%;
+        margin: auto;
+        top: -80%;
     }
 
     h3 {
@@ -394,7 +358,7 @@ h3 {
     .contenidoBeneficios p {
         font-size: 1.5rem;
         max-width: 80rem;
-        line-height: 1.5;
+        line-height: 1.3;
         margin-top: -1rem;
     }
 }
@@ -411,7 +375,12 @@ h3 {
 }
 
 .contenidoMarcas{
-    top: 0rem;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .marcas h2 {
@@ -426,18 +395,17 @@ h3 {
 @media (max-width: 768px) {
     .contenidoMarcas{
         width: 80%;
+        margin: auto;
     }
     .marcas {
         background-size: 200% 100%;
-        background-position: left center;
-        width: 100%;
         height: 100rem;
+        background-position: left;
     }
 
-        #mi-carrusel-marcas .splide__slide img {
+    #mi-carrusel-marcas .splide__slide img {
         max-height: 102rem;
     }
-
 }
 
 
@@ -484,13 +452,15 @@ h3 {
     width: 100%;
     aspect-ratio: 2000 / 982;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .contenidoZonas {
     display: flex;
     width: 60%;
-    margin-left: auto;
-    margin-right: auto
+    align-items: center;
 }
 
 .zonas h2 {
@@ -504,10 +474,8 @@ h3 {
 }
 
 .zonas img {
-    display: relative;
     width: 50rem;
     height: 35rem;
-    justify-content: left;
     z-index: 2;
 }
 
@@ -518,14 +486,13 @@ h3 {
 }
 
 @media (max-width: 768px) {
-
-
-
+    .zonas {
+        height: 100rem;
+        background-position: center;
+    }
+    
     .contenidoZonas {
-        display: flex;
         flex-direction: column;
-        padding-top: 35rem;
-        align-items: center;
         width: 70%;
         padding-left: 2rem;
     }
@@ -545,14 +512,6 @@ h3 {
 
     .contenidoZonas h2 {
         text-align: center;
-    }
-
-    .zonas {
-        background-size: 200% 100%;
-        background-position: center;
-        width: 100%;
-        height: 100rem;
-       
     }
 }
 
@@ -581,9 +540,6 @@ h3 {
 .contenidoBeneficios {
     position: absolute;
     inset: 0;
-    width: 100%;
-    height: 100%;
-    top: 13%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -632,22 +588,16 @@ h3 {
     max-width: 8rem;
 }
 
-.fondoBlanco {
-    position: none;
-}
-
 @media (max-width: 768px) {
-
- .beneficios{        
-         background-size: 200% 100%;
-        background-position: center ;
-        width: 100%;
+    .beneficios{        
         height: 100rem;
- }
-
+    }
+    .contenidoBeneficios {
+        width: 80%;
+        margin: auto;
+    }
     .iconosBeneficios {
         flex-wrap: wrap;
-        justify-content: center;
         gap: .2rem;
         margin-top: 1rem;
         max-width: 70%;
@@ -678,13 +628,6 @@ h3 {
         font-size: 1.3rem;
         font-weight: 700;
     }
-
-    .contenidoBeneficios {
-        margin-top: 2rem;
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;
-    }
 }
 
 .contacto {
@@ -695,35 +638,22 @@ h3 {
     width: 100%;
     aspect-ratio: 2000 / 629;
     position: relative;
-    z-index: 1;
-}
-
-.contenidoContacto {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    top: 10%;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
+.contenidoContacto {
+    width: 100%;
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 @media (max-width: 768px) {
     .contacto{
-       background-size: 200% 100%;
        height: 50rem;
-    }
 
-    .contenidoContacto {
-        top: 20%;
-    }
-
-    .fondoBlanco {
-        display: block;
-        height: 10rem;
-        display: none;
     }
 }
 
@@ -731,6 +661,7 @@ h3 {
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
     font-size: 3rem;
     padding-bottom: 1rem;
+    display: flex;
 }
 
 .etiqueta3 {
@@ -757,17 +688,6 @@ h3 {
     }
 }
 
-footer {
-    background-color: var(--verdeClaro);
-    margin-top: auto;
-    padding: 1rem 10%;
-    font-size: 1rem;
-    display: flex;
-    justify-content: space-between;
-    z-index: 10;
-   box-sizing: border-box;
-}
-
 footer img {
     width: 2rem;
     display: block;
@@ -791,6 +711,9 @@ footer p {
     color: var(--verdeOscuro);
     font-size: 1rem;
 }
+
+
+
 
 
 

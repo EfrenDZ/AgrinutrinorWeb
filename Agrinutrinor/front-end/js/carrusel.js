@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
         perMove:4,
         gap: "1rem",
 
-        // Configuración para dispositivos móviles
+        // Configuración para dcelular
         breakpoints: {
             768: { // Cuando la pantalla es de 768px
                 perPage: 1, // Muestra 1 elemento

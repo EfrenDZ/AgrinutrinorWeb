@@ -168,6 +168,11 @@ p {
     width: 100%;
 }
 
+#mi-carrusel{
+    width: 60%;
+    
+}
+
 button {
     color: var(--verdeOscuro);
     border: none;
@@ -390,6 +395,23 @@ h3 {
     margin-top: 1rem;
 }
 
+#mi-carrusel-marcas .splide__slide img {
+    width: 80%;
+    height: auto;
+}
+
+
+#mi-carrusel-marcas .splide__slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+#mi-carrusel-marcas{
+    width: 50%;
+}
+
 @media (max-width: 768px) {
     .contenidoMarcas{
         width: 80%;
@@ -404,6 +426,13 @@ h3 {
     #mi-carrusel-marcas .splide__slide img {
         max-height: 102rem;
     }
+
+    #mi-carrusel-marcas{
+    width: 80%;
+    background-color: white;
+    border: white 2px solid;
+    border-radius: 10px
+}
 }
 
 
@@ -598,7 +627,7 @@ h3 {
         flex-wrap: wrap;
         gap: .2rem;
         margin-top: 1rem;
-        max-width: 70%;
+        max-width: 80%;
         z-index: 2;
     }
 
@@ -971,8 +1000,8 @@ footer p {
 
 .filter-group .form-check {
     margin-bottom: 0.5rem;
-    display: flex;
-    align-items: flex-start;
+    display: flex; /* Usa flexbox para alinear el checkbox y el texto */
+    align-items: flex-start;  /* Alinea el checkbox con el texto */
 }
 
 .filter-group .form-check-label {
@@ -980,7 +1009,7 @@ footer p {
     font-size: 1rem;
     color: gray;
     display: flex;
-        align-items: flex-start
+    align-items:  flex-start;
 }
 
 .filter-group .form-check-input {
@@ -1185,26 +1214,7 @@ footer p {
 }
 
 
-#mi-carrusel-marcas .splide__slide img {
-    width: 40%;
-    height: auto;
-}
 
-#mi-carrusel-marcas .splide__slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-}
-
-#mi-carrusel-marcas{
-    width: 50%;
-}
-
-#mi-carrusel{
-    width: 60%;
-    
-}
 
 
 html { overflow-x: clip; }

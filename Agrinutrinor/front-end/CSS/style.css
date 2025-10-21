@@ -721,9 +721,7 @@ footer p {
 
 
 /*PRODUCTOS SECCION*/
-/* --- ESTILOS PARA SKELETONS --- */
-
-/* Clase base para el efecto de animación brillante */
+/*SKELETONS */
 .skeleton {
   opacity: .7;
   animation: skeleton-loading 1.2s linear infinite alternate;
@@ -747,7 +745,7 @@ footer p {
 }
 
 .skeleton-card .skeleton-image {
-  height: 150px; /* Altura similar a tus imágenes de producto */
+  height: 150px; /* Altura similar a imágenes */
   border-radius: 0.25rem;
   margin-bottom: 1rem;
 }
@@ -762,7 +760,7 @@ footer p {
   width: 60%;
 }
 
-/* Esqueleto para los filtros (checkbox) */
+/* Esqueleto para checkbox */
 .skeleton-filter {
   display: flex;
   align-items: center;
@@ -848,7 +846,7 @@ footer p {
 
 
 
-/* === Estructura y Layout del Catálogo === */
+/* Estructura del Catálogo  */
 #catalogo-productos {
     background-color:  white;
     padding: 4vw;
@@ -865,7 +863,7 @@ footer p {
     }
 }
 
-/* Barra Superior (Buscador y Marcas) */
+/* Barra Superior */
 .top-bar {
     margin-bottom: 2rem;
 }
@@ -931,7 +929,7 @@ footer p {
     }
 }
 
-/* === Sidebar de Filtros === */
+/*Sidebar de Filtros */
 .sidebar-filters {
     background-color: white;
     padding: 1rem;
@@ -977,10 +975,6 @@ footer p {
     align-items: flex-start;
 }
 
-.sidebar-filters .filter-group .form-check {
-    align-items: flex-start
-}
-
 .filter-group .form-check-label {
     cursor: pointer;
     font-size: 1rem;
@@ -989,10 +983,8 @@ footer p {
 }
 
 .filter-group .form-check-input {
-    transform: scale(1.5);
-    /*tamaño del checkbox */
-    margin-right: 0.7rem;
-    /* espacio entre checkbox y texto*/
+    transform: scale(1.5); /*tamaño del checkbox */
+    margin-right: 0.7rem; /* espacio entre checkbox y texto*/
 }
 
 .filtros-wrapper .filter-group {
@@ -1000,7 +992,7 @@ footer p {
 }
 
 
-/* --- ESTILOS PARA MÓVIL --- */
+/* ESTILOS PARA CELULAR */
 @media (max-width: 768px) {
     .filtros-wrapper {
         display: grid;
@@ -1014,7 +1006,7 @@ footer p {
     }
 }
 
-/* === Grid de Productos === */
+/* Grid de Productos */
 #productos-titulo {
     font-weight: bold;
     color: var(--verdeOscuro);
@@ -1090,12 +1082,11 @@ footer p {
 
 #catalogo-productos .top-bar {
     width: 100%;
-    /* Asegura que la barra superior ocupe todo el ancho */
+    /* barra superior ocupa todo el ancho */
 }
 
 #catalogo-productos .row {
     width: 100%;
-    /* Asegura que la fila de columnas ocupe todo el ancho */
 }
 
 .ingredientes-lista {

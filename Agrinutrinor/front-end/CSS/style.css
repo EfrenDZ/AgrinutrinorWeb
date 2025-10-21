@@ -17,7 +17,6 @@ body {
     /* Usa la altura real calculada por el script */
     min-height: 100vh; /* Fallback para escritorio */
     min-height: calc(var(--vh, 1vh) * 100);
-    
     font-family: "poppins", sans-serif;
     width: 100%;
     margin: 0;
@@ -31,9 +30,7 @@ body {
 }
 
 footer {
-    /* Esta es la regla que empuja el footer hacia abajo */
-    margin-top: auto;
-    
+    margin-top: auto;     /* empuja el footer hacia abajo */
     background-color: var(--verdeClaro);
     padding: 1rem 10%;
     font-size: 1rem;

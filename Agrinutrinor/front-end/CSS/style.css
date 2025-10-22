@@ -56,7 +56,7 @@ footer {
 
 @media (max-width: 768px) {
     #zonas {
-        scroll-margin-top: -30rem;
+        scroll-margin-top: -60%;
     }
 
     #nosotros,
@@ -430,7 +430,6 @@ h3 {
 
     #mi-carrusel-marcas{
     width: 80%;
-    background-color: white;
     border: white 2px solid;
     border-radius: 10px
 }
@@ -502,9 +501,9 @@ h3 {
 }
 
 .tituloZonas {
-    margin-top: -4rem;
+    margin-top: -13rem;
     text-align: right;
-    margin-right: 1.7rem;
+    margin-right: 0;
 }
 
 .zonas img {

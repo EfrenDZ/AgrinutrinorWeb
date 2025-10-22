@@ -247,7 +247,7 @@ button:hover {
     }
 
     .logoBlanco2 {
-        top: 54%;
+        top: 56%;
         left: 20%;
         z-index: 10;
         width: 50%;
@@ -340,7 +340,7 @@ h3 {
     .contenidoNosotros{
         width: 80%;
         margin: auto;
-        top: -80%;
+        top: -70%;
     }
 
     h3 {
@@ -396,7 +396,7 @@ h3 {
 }
 
 #mi-carrusel-marcas .splide__slide img {
-    width: 80%;
+    width: 50%;
     height: auto;
 }
 
@@ -414,6 +414,7 @@ h3 {
 
 @media (max-width: 768px) {
     .contenidoMarcas{
+        top: -15%;
         width: 80%;
         margin: auto;
     }
@@ -468,6 +469,12 @@ h3 {
     .categorias {
         padding-bottom: 30rem;
     }
+
+    .categorias h2 {
+    color: var(--azul);
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
 }
 
 /* SECCION ZONAS */
@@ -495,7 +502,7 @@ h3 {
 }
 
 .tituloZonas {
-    margin-top: 2rem;
+    margin-top: -4rem;
     text-align: right;
     margin-right: 1.7rem;
 }
@@ -622,6 +629,7 @@ h3 {
     .contenidoBeneficios {
         width: 80%;
         margin: auto;
+        top: 10%;
     }
     .iconosBeneficios {
         flex-wrap: wrap;
@@ -823,6 +831,7 @@ footer p {
     width: 100%;
     aspect-ratio: 2000 / 589.5;
     position: relative;
+
 
 }
 
@@ -1165,20 +1174,25 @@ footer p {
 
     .contenido-principal {
         margin-top: 50px;
+                background-size: 200% 100%;
+                height: 30rem;
     }
 
-    .contenido-principal p {
-        width: 40%;
-        font-size: 2vw;
-        top: 5vw;
-        left: 8vw;
+    .elementosContenido-principal {
+        top: 20vw;
+        left: 8%;
+    }
+
+.elementosContenido-principal h2 {
+        font-size: 8vw;
+        line-height: 6vw;
     }
 
     .contenido-principal button {
-        top: 10vw;
+        top: 15vw;
         left: 2vw;
         padding: 0.4rem 0.8rem;
-        font-size: 2vw;
+        font-size: 4vw;
     }
 
     /* Ajustes al catálogo */

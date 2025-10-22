@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
         gap    : "0rem",      
         breakpoints: { 
             768: {
-                perPage: 1.5,
+                perPage: 2,
                 gap: ".5rem",
             },
         },
@@ -75,8 +75,8 @@ document.addEventListener('DOMContentLoaded', function () {
 //             // "Cuando la pantalla sea MÁS PEQUEÑA que 768px..."
 //             768: {
 //                 grid: {         // Activa el grid
-//                     rows: 3,
-//                     cols: 2,
+//                     rows: 2,
+//                     cols: 1,
 //                     gap : {
 //                         row: '1.5rem',
 //                         col: '1rem'

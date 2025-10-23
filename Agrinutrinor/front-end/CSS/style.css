@@ -173,15 +173,6 @@ p {
     
 }
 
-button {
-    color: var(--verdeOscuro);
-    border: none;
-}
-
-button:hover {
-    background-color: var(--verdeOscuro);
-    color: var(--verdeClaro);
-}
 
 /* SECCION INDEX */
 .index {
@@ -704,6 +695,7 @@ h3 {
     color: var(--verdeOscuro);
     padding: 3px 16px;
     padding-top: 6px;
+    border: none;
     border-radius: 10px;
     font-weight: 800;
     font-size: 1.3rem;
@@ -714,6 +706,7 @@ h3 {
     background-color: var(--verdeOscuro);
     color: var(--verdeClaro);
 }
+
 
 @media (max-width: 768px) {
     .etiqueta3{

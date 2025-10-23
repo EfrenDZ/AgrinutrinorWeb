@@ -181,7 +181,7 @@ p {
     background-size: cover;
     width: 100%;
     background-position: center;
-    aspect-ratio: 2000 / 959.5;
+    aspect-ratio: 8000 / 3838;
     will-change: transform;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
@@ -253,7 +253,7 @@ p {
     background-size: cover;
     background-position: center;
     width: 100%;
-    aspect-ratio: 2000 / 812;
+    aspect-ratio: 8000 / 3244;
     position: relative;
 }
 
@@ -364,7 +364,7 @@ h3 {
     background-size: cover;
     background-position: center;
     width: 100%;
-    aspect-ratio: 1474 / 705;
+    aspect-ratio: 8000 / 3809;
     position: relative;
 }
 
@@ -472,7 +472,7 @@ h3 {
     background-size: cover;
     background-position: center;
     width: 100%;
-    aspect-ratio: 2000 / 982;
+    aspect-ratio: 8000 / 3924;
     position: relative;
     display: flex;
     align-items: center;

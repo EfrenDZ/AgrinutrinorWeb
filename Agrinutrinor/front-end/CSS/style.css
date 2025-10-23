@@ -618,7 +618,7 @@ h3 {
     line-height: 1.3;
     margin: 0;
     z-index: 8;
-    max-width: 8rem;
+    max-width: 10rem;
 }
 
 @media (max-width: 768px) {
@@ -660,7 +660,8 @@ h3 {
 
     .beneficio p {
         font-size: 1.3rem;
-        font-weight: 700;
+        font-weight: bolder;
+        text-align: center;
     }
 }
 

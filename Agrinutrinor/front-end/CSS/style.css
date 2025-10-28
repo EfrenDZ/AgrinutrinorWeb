@@ -29,6 +29,7 @@ body {
     padding-top: 50px;
 }
 
+
 footer {
     margin-top: auto;     /* empuja el footer hacia abajo */
     background-color: var(--verdeClaro);
@@ -828,8 +829,15 @@ footer p {
 @media (max-width: 768px) {
     #productos-container {
         scroll-margin-top: 100px;
+        justify-content: center !important;
+        margin-left: auto;
+        margin-right: auto;
+    
+        
     }
 }
+
+
 
 .contenido-principal {
     margin-top: 50px;
@@ -955,7 +963,7 @@ footer p {
     color: white;
     text-decoration: none;
     font-weight: 800;
-    font-size: 1rem;        
+    font-size: 1.2rem;        
     white-space: nowrap;    
     overflow: hidden;      
     text-overflow: ellipsis; 
@@ -975,7 +983,8 @@ footer p {
 
 @media (max-width: 767px) {
     .brand-pill {
-        font-size: 1.5rem;
+        max-width: 105px;
+        font-size: 1.3rem;
         padding: 0.6rem 1rem;
     }
 }
@@ -1048,11 +1057,10 @@ footer p {
 @media (max-width: 768px) {
     .filtros-wrapper {
         display: grid;
-        grid-template-columns: 1fr 1fr; /* Dos columnas en móvil */
-        gap: 1.5rem;                   /* Espacio entre ellas */
+        grid-template-columns: 1fr 1fr; /* Dos columnas en celular */
+        gap: 1.5rem;                   /* Espacio entre cada una */
     }
 
-    /* Quitamos el margen inferior en móvil porque el 'gap' ya se encarga del espacio */
     .filtros-wrapper .filter-group {
         margin-bottom: 0;
     }
@@ -1210,8 +1218,11 @@ footer p {
 
     /* Ajustes al catálogo */
     .catalogo-container {
+
         padding: 1rem 0.5rem;
         width: 70%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .card-button{
@@ -1241,3 +1252,4 @@ footer p {
 }
 
 html { overflow-x: clip; }
+

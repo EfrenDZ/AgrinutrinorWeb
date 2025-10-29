@@ -181,12 +181,12 @@ p {
 
 /* SECCION INDEX */
 .index {
-    background-image: url(https://res.cloudinary.com/dha3vqp69/image/upload/v1758346912/PORTADA_fcxhsx.jpg);
+    background-image: url(https://res.cloudinary.com/dha3vqp69/image/upload/w_1920,q_auto,f_auto/v1758346912/PORTADA_fcxhsx.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
     background-position: center;
-    aspect-ratio: 8000 / 3838;
+    aspect-ratio: 16000 / 7676;
     will-change: transform;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
@@ -253,7 +253,7 @@ p {
 
 /* SECCION NOSOTROS */
 .nosotros {
-    background-image: url(https://res.cloudinary.com/dha3vqp69/image/upload/v1760391040/FONDO_gkklon.png);
+    background-image: url(https://res.cloudinary.com/dha3vqp69/image/upload/w_1920,q_auto,f_auto/v1760391040/FONDO_gkklon.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -364,7 +364,7 @@ h3 {
 
 /* SECCION MARCAS */
 .marcas {
-    background-image: url(https://res.cloudinary.com/dha3vqp69/image/upload/v1760560310/FONDO_MARCAS_FINAL2_zcyoqh.jpg);
+    background-image: url(https://res.cloudinary.com/dha3vqp69/image/upload/w_1920,q_auto,f_auto/v1761771254/FONDO-MARCAS_nvyzms.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -471,8 +471,8 @@ h3 {
 }
 
 /* SECCION ZONAS */
-.zonas {
-    background-image: url(https://res.cloudinary.com/dha3vqp69/image/upload/v1760391040/FONDO_m7hr0n.png);
+.zonas { 
+    background-image: url(https://res.cloudinary.com/dha3vqp69/image/upload/w_1920,q_auto,f_auto/v1761772075/FONDO_ZONAS2_fg4xge.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -544,12 +544,12 @@ h3 {
 
 /* SECCION BENEFICIOS Y CONTACTO */
 .beneficios {
-    background-image: url(https://res.cloudinary.com/dha3vqp69/image/upload/v1760391038/FONDO_pddllp.png);
+    background-image: url(https://res.cloudinary.com/dha3vqp69/image/upload/w_1920,q_auto,f_auto/v1760391038/FONDO_pddllp.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     width: 100%;
-    aspect-ratio: 4000 / 1963;
+    aspect-ratio: 8000 / 3924;
     position: relative;
     z-index: 3;
 }

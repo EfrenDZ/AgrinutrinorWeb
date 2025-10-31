@@ -1,4 +1,3 @@
-
 *,
 *::before,
 *::after {
@@ -20,8 +19,8 @@ body {
     font-family: "poppins", sans-serif;
     width: 100%;
     margin: 0;
-    overflow-x: clip;
-    overflow-y: hidden;
+    overflow-x: clip; /* Evita el desbordamiento horizontal */
+    overflow-y: hidden; /* Evita el desbordamiento vertical */
 
 }
 
@@ -33,7 +32,7 @@ body {
 footer {
     margin-top: auto;     /* empuja el footer hacia abajo */
     background-color: var(--verdeClaro);
-    padding: 1rem 10%;
+    padding: 1rem 10%; /* Ajusta el padding según sea necesario */
     font-size: 1rem;
     display: flex;
     justify-content: space-between;
@@ -44,7 +43,7 @@ footer {
 #nosotros,
 #marcas,
 #categorias {
-    scroll-margin-top: 10rem;
+    scroll-margin-top: 10rem; /* La posicion hacia la cual llega el scroll */
 }
 
 #contacto {
@@ -94,7 +93,7 @@ p {
 .navbar {
     width: 100vw;
     font-size: 1.3rem;
-    position: fixed;
+    position: fixed; /* Fija la barra de navegación*/
     z-index: 1000;
     top: 0;
     transform: translateY(0);
@@ -116,7 +115,7 @@ p {
 .logo img {
     width: 12.5rem;
     height: auto;
-    display: block;
+    display: block; /* Elimina espacio debajo de la imagen */
     align-items: left;
 }
 
@@ -182,8 +181,8 @@ p {
 /* SECCION INDEX */
 .index {
     background-image: url(https://res.cloudinary.com/dha3vqp69/image/upload/w_1920,q_auto,f_auto/v1758346912/PORTADA_fcxhsx.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+    background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
     width: 100%;
     background-position: center;
     aspect-ratio: 16000 / 7676;
@@ -1252,4 +1251,3 @@ footer p {
 }
 
 html { overflow-x: clip; }
-

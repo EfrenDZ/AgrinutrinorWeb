@@ -229,24 +229,21 @@ p {
 
 @media (max-width: 768px) {
     .index {
-        background-size: 200% 100%;
-        background-position: left center, left center;
-        height: 80rem;
+        background-image: url(https://res.cloudinary.com/dha3vqp69/image/upload/v1762551250/FONOD_INDEX_MOVIL_ovqtso.jpg);
+        aspect-ratio:   4130 / 4998;
+        
+
     }
 
     .logoBlanco {
-        top: 45%;
-        left: 10%;
-        width: 60%;
+        top: 10%;
+        left: 62%;
+        width: 35%;
         height: auto;
     }
 
     .logoBlanco2 {
-        top: 56%;
-        left: 20%;
-        z-index: 10;
-        width: 50%;
-        height: auto
+        display: none;
     }
 }
 
@@ -327,15 +324,14 @@ h3 {
 
 @media (max-width: 768px) {
     .nosotros {
-        background-size: 200% 100%;
-        height: 50rem;
-        background-position: left;
+        background-image: url(https://res.cloudinary.com/dha3vqp69/image/upload/w_1920,q_auto,f_auto/v1762551310/FONOD_NOSOTROS_MOVIL-split_dcu5ju.jpg);
+        aspect-ratio:   928 / 1120;
     }
     
     .contenidoNosotros{
         width: 80%;
         margin: auto;
-        top: -70%;
+        top: -50%;
     }
 
     h3 {

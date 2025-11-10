@@ -335,23 +335,24 @@ h3 {
     }
 
     h3 {
-        font-size: 3rem;
+        font-size: 2.5rem;
         margin-top: 4rem;
     }
 
     .tituloNosotrosGrande {
-        font-size: 4rem;
+        font-size: 3rem;
     }
 
     .tituloNosotros3 {
-        font-size: 2rem;
+        font-size: 1.8rem;
         margin-bottom: 2rem;
+        max-width: 30rem;
     }
 
     .contenidoNosotros p,
     .contenidoBeneficios p {
         font-size: 1.5rem;
-        max-width: 80rem;
+        max-width: 30rem;
         line-height: 1.3;
         margin-top: -1rem;
     }
@@ -455,7 +456,7 @@ h3 {
     }
 
     .categorias {
-        padding-bottom: 30rem;
+        padding-bottom: 6rem;
     }
 
     .categorias h2 {
@@ -528,6 +529,7 @@ h3 {
     }
 
     .contenidoZonas p {
+        margin-top: 3rem;
         font-size: 1.5rem;
         text-align: center;
     }

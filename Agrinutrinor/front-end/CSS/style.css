@@ -56,7 +56,7 @@ footer {
 
 @media (max-width: 768px) {
     #zonas {
-        scroll-margin-top: -60%;
+        scroll-margin-top: -10rem;
     }
 
     #nosotros,

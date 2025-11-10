@@ -300,6 +300,10 @@ h3 {
     box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
 }
 
+@media (max-width: 768px) {
+    .etiqueta {max-width: 30rem;    }
+}
+
 .tituloNosotros3 {
     color: var(--verdeClaro);
     text-align: center;
@@ -559,6 +563,10 @@ h3 {
     font-weight: bold;
     margin-bottom: -1rem;
     box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .etiqueta2 {max-width: 30rem;    }
 }
 
 .contenidoBeneficios {

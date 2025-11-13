@@ -13,8 +13,7 @@ html {
 body {
     display: flex;
     flex-direction: column;
-    /* Usa la altura real calculada por el script */
-    min-height: 100vh; /* Fallback para escritorio */
+    min-height: 100vh; 
     min-height: calc(var(--vh, 1vh) * 100);
     font-family: "poppins", sans-serif;
     width: 100%;
@@ -182,7 +181,7 @@ p {
 .index {
     background-image: url(https://res.cloudinary.com/dha3vqp69/image/upload/w_1920,q_auto,f_auto/v1758346912/PORTADA_fcxhsx.jpg);
     background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
-    background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+    background-size: cover; /* la imagen cubre todo el contenedor */
     width: 100%;
     background-position: center;
     aspect-ratio: 16000 / 7676;
@@ -233,6 +232,10 @@ p {
         aspect-ratio:   4130 / 4998;
         
 
+    }
+
+    .contenidoindex {
+        padding-top: 5rem;
     }
 
     .logoBlanco {
@@ -1030,13 +1033,13 @@ footer p {
     color: var(--verdeClaro);
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
-    border-bottom: 1px solid #e0e0e0; /* Línea divisoria debajo del título */
+    border-bottom: 1px solid #e0e0e0; /* Linea divisoria debajo del título */
 }
 
 
 .filter-group .form-check {
     margin-bottom: 0.5rem;
-    display: flex; /* Usa flexbox para alinear el checkbox y el texto */
+    display: flex; /* flexbox para alinear el checkbox y el texto */
     align-items: flex-start;  /* Alinea el checkbox con el texto */
 }
 
@@ -1142,7 +1145,7 @@ footer p {
     flex-wrap: wrap;
     /* Permite que los elementos se envuelvan */
     flex-direction: column;
-    /* Apila los elementos verticalmente */
+    /* ordena los elementos verticalmente */
 }
 
 #catalogo-productos .top-bar {

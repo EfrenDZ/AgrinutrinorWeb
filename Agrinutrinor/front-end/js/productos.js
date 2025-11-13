@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let debounceTimeout;
     let CargaInicial = true;
 
-    // Muestra esqueletos de tarjetas de productos
+    // Muestra los skeletons de las tarjetas de productos
     function mostrarSkeletonsDeProductos(cantidad = 8) {
         let skeletonsHtml = '';
         for (let i = 0; i < cantidad; i++) {
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         productContainer.innerHTML = skeletonsHtml;
     }
     
-    // Pobla el carrusel y los filtros de marcas
+    // llena el carrusel y los filtros de marcas
     function poblarFiltroMarcas() {
         return fetch(`${apiUrlBase}/marcas`).then(res => res.json())
             .then(marcas => {
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     }
 
-    // Pobla los filtros de categorías por primera vez
+    // Llena los filtros de categorías por primera vez
     function poblarFiltroCategorias() {
         const sql = `${apiUrlBase}/categorias`;
         return fetch(sql).then(res => res.json())
@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(error => console.error('Error:', error));
     }
     
-    // Crea los controles de paginación
+    // Crea los controles de paginación (abajo los numeros de paginas)
     function crearPaginacion(totalPages, currentPage) {
         paginationControls.innerHTML = '';
         if (totalPages <= 1) return;
@@ -281,14 +281,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target.tagName !== 'A') return;
         e.preventDefault();
 
-        // 1. Limpiar todos los filtros primero
+        
         searchInput.value = '';
         document.querySelectorAll('.sidebar-filters input:checked').forEach(chk => chk.checked = false);
-        //    Y restablecer la visibilidad de todos los filtros
+        
         document.querySelectorAll('.sidebar-filters .form-check').forEach(el => el.style.display = 'block');
         brandCarousel.querySelectorAll('a.active').forEach(pill => pill.classList.remove('active'));
 
-        // 2. Seleccionar la nueva marca
+    
         const pillSeleccionada = e.target;
         const marcaId = pillSeleccionada.dataset.marcaId;
         pillSeleccionada.classList.add('active');
@@ -319,17 +319,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // Maneja escritura en el campo de búsqueda
     searchInput.addEventListener('keyup', onFilterChange);
     
-    // Maneja clic en el botón de limpiar filtros
+    // Maneja click en el botón de limpiar filtros
     btnLimpiar.addEventListener('click', () => {
         searchInput.value = '';
         brandCarousel.querySelectorAll('a').forEach(pill => pill.classList.remove('active'));
         document.querySelectorAll('.sidebar-filters input:checked').forEach(chk => chk.checked = false);
-        // Muestra todos los filtros de nuevo
+        // Muestra todos los filtros
         document.querySelectorAll('.sidebar-filters .form-check').forEach(el => el.style.display = 'block');
         cargarProductos(1);
     });
 
-    // Función de inicialización
+    // inicialización
     async function init() {
         const urlParams = new URLSearchParams(window.location.search);
         const marcaIdDesdeUrl = urlParams.get('marca');

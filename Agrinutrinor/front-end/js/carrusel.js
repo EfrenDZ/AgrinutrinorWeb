@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // document.addEventListener('DOMContentLoaded', function () {
 
-//     // --- 1. CARRUSEL DE CATEGORÍAS (ID: #mi-carrusel) ---
+//     
 //     new Splide('#mi-carrusel', {
         
 //         // --- Config. DESKTOP (Por defecto) ---
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
 //                 perPage: 4,
 //             },
             
-//             // "Cuando la pantalla sea MÁS PEQUEÑA que 768px..."
+//             // "Cuando la pantalla sea MÁS PEQUEÑA que 768px"
 //             768: {
 //                 grid: {         // Activa el grid
 //                     rows: 2,
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
 //                         col: '1rem'
 //                     }
 //                 },
-//                 perPage: 1,     // Muestra 1 "página" del grid
+//                 perPage: 1,     // Muestra 1 página del grid
 //                 arrows: true,
 //             }
 //         }
@@ -90,8 +90,8 @@ document.addEventListener('DOMContentLoaded', function () {
 //     }).mount(window.splide.Extensions);
 
 
-//     // --- 2. CARRUSEL DE MARCAS (ID: #mi-carrusel-marcas) ---
-//     // (Este ya estaba bien, pero incluyo la corrección de 'extensions')
+//    
+//    // Configuración del carrusel de marcas
 //     new Splide('#mi-carrusel-marcas', {
 //         type   : 'loop',    
 //         perPage: 4,         

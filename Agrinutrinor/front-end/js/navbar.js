@@ -4,21 +4,21 @@ let lastScrollY = window.scrollY;
 window.addEventListener('scroll', () => {
     const currentScrollY = window.scrollY;
 
-    // Si estás muy cerca de la parte superior, siempre muestra la navbar
-    if (currentScrollY <= 10) {
+    // Al estar muy cerca de la parte de arriba, se muestra la navbar
+    if (currentScrollY <= 15) {
         navbar.classList.remove('navbar-hidden');
         return;
     }
 
-    // Si bajas el scroll, oculta la navbar
+    // al hacer scroll abajo se oculta la navbar
     if (currentScrollY > lastScrollY) {
         navbar.classList.add('navbar-hidden');
     } else {
-        // Si subes el scroll, muestra la navbar
+        // scroll arriba muestra la navbar
         navbar.classList.remove('navbar-hidden');
     }
 
-    // Actualiza la última posición de scroll
+    // para actualizar la última posición del scroll
     lastScrollY = currentScrollY;
 });
 

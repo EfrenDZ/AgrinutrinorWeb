@@ -524,15 +524,15 @@ h3 {
     .contenidoZonas {
         flex-direction: column;
         width: 70%;
-        padding-left: 2rem;
+        
     }
 
     .contenidoZonas img {
         padding-top: 10rem;
         order: 2;
-        width: 100%;
-        max-width: 75rem;
-        height: 40rem;
+        width: 130%;
+        max-width: 90rem;
+        height: auto;
     }
 
     .contenidoZonas p {
